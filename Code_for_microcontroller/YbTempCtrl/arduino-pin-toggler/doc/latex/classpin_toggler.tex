@@ -1,0 +1,133 @@
+\hypertarget{classpin_toggler}{}\section{pin\+Toggler$<$ num\+Pins $>$ Class Template Reference}
+\label{classpin_toggler}\index{pin\+Toggler$<$ num\+Pins $>$@{pin\+Toggler$<$ num\+Pins $>$}}
+
+
+Class for toggling pins.  
+
+
+
+
+{\ttfamily \#include $<$pin\+Toggler.\+h$>$}
+
+
+
+Inherits pin\+Toggler\+Base.
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init} (const uint8\+\_\+t $\ast$L\+E\+D\+\_\+\+Pins)
+\begin{DoxyCompactList}\small\item\em Initiate the pins and T\+I\+M\+E\+R1. \end{DoxyCompactList}\item 
+static int \hyperlink{classpin_toggler_a42ae0ac4f841dae592195f26bffb109e}{set\+Flash\+Rate} (const size\+\_\+t L\+ED, const \hyperlink{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943}{F\+L\+A\+S\+H\+R\+A\+TE} rate)
+\begin{DoxyCompactList}\small\item\em Change the flash rate of an L\+ED managed by this routine. \end{DoxyCompactList}\item 
+static int \hyperlink{classpin_toggler_a07d46769a8b3fc20758bfb41b240179a}{get\+Pin} (const size\+\_\+t L\+ED)
+\begin{DoxyCompactList}\small\item\em Return the pin corresponding to a given L\+ED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int num\+Pins$>$\\*
+class pin\+Toggler$<$ num\+Pins $>$}
+
+Class for toggling pins. 
+
+This class maintains a list of pins that it controls as outputs. It initiates T\+I\+M\+E\+R1 and uses this to trigger an interrupt routine, allowing arbitary numbers of pins to be toggled at selectable rates.
+
+This class implements a singleton and all access to it is via static methods. The first usage of \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()} will define the value of num\+Pins. Attempts to use \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()} with another value of num\+Pins after this will fail with an error code.
+
+For example usage see the Arduino sketches located in the {\ttfamily examples} directory.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em num\+Pins} & The number of pins that this object will handle. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\index{pin\+Toggler@{pin\+Toggler}!get\+Pin@{get\+Pin}}
+\index{get\+Pin@{get\+Pin}!pin\+Toggler@{pin\+Toggler}}
+\subsubsection[{\texorpdfstring{get\+Pin(const size\+\_\+t L\+E\+D)}{getPin(const size_t LED)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int num\+Pins$>$ static int {\bf pin\+Toggler}$<$ num\+Pins $>$\+::get\+Pin (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t}]{L\+ED}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classpin_toggler_a07d46769a8b3fc20758bfb41b240179a}{}\label{classpin_toggler_a07d46769a8b3fc20758bfb41b240179a}
+
+
+Return the pin corresponding to a given L\+ED. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em L\+ED} & The zero reference L\+ED to get the pin of. The L\+ED number should correspond to the index of this pin in the array passed to \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pin number. N.\+B. If an error occurs the return value will be negative, according to the error codes in \hyperlink{classpin_toggler_a42ae0ac4f841dae592195f26bffb109e}{set\+Flash\+Rate}. 
+\end{DoxyReturn}
+\index{pin\+Toggler@{pin\+Toggler}!init@{init}}
+\index{init@{init}!pin\+Toggler@{pin\+Toggler}}
+\subsubsection[{\texorpdfstring{init(const uint8\+\_\+t $\ast$\+L\+E\+D\+\_\+\+Pins)}{init(const uint8_t *LED_Pins)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int num\+Pins$>$ static int {\bf pin\+Toggler}$<$ num\+Pins $>$\+::init (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{L\+E\+D\+\_\+\+Pins}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{}\label{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}
+
+
+Initiate the pins and T\+I\+M\+E\+R1. 
+
+Setup and start the I\+SR triggered by T\+I\+M\+E\+R1, and set T\+I\+M\+E\+R1 running. Also, set all input pins as outputs and set their output to L\+OW.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em L\+E\+D\+\_\+\+Pins} & Pointer to a $<$num\+Pins$>$ dimention array of pins to be controlled. The values in this array will be copied so it can be deleted from memory after this function call is complete.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & No error \\
+\hline
+{\em -\/1} & \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()} has been called already\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+Error code 
+\end{DoxyReturn}
+\index{pin\+Toggler@{pin\+Toggler}!set\+Flash\+Rate@{set\+Flash\+Rate}}
+\index{set\+Flash\+Rate@{set\+Flash\+Rate}!pin\+Toggler@{pin\+Toggler}}
+\subsubsection[{\texorpdfstring{set\+Flash\+Rate(const size\+\_\+t L\+E\+D, const F\+L\+A\+S\+H\+R\+A\+T\+E rate)}{setFlashRate(const size_t LED, const FLASHRATE rate)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$int num\+Pins$>$ static int {\bf pin\+Toggler}$<$ num\+Pins $>$\+::set\+Flash\+Rate (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t}]{L\+ED, }
+\item[{const {\bf F\+L\+A\+S\+H\+R\+A\+TE}}]{rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classpin_toggler_a42ae0ac4f841dae592195f26bffb109e}{}\label{classpin_toggler_a42ae0ac4f841dae592195f26bffb109e}
+
+
+Change the flash rate of an L\+ED managed by this routine. 
+
+This method sets the flash rate of one of the pins controlled by the \hyperlink{classpin_toggler}{pin\+Toggler} class. Pins are placed under control by passing them to \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()}, after which they are refered to by their zero-\/indexed position in the array passed to \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em L\+ED} & The zero reference L\+ED to set the flash rate of. The L\+ED number should correspond to the index of this pin in the array passed to \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()}. \\
+\hline
+{\em rate} & The rate at which to flash this L\+ED. Options are enumerated in \hyperlink{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943}{F\+L\+A\+S\+H\+R\+A\+TE}.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & No error \\
+\hline
+{\em -\/1} & \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()} has not been called. \\
+\hline
+{\em -\/2} & \hyperlink{classpin_toggler_aa58211817601d0e2dd413eb63e41f773}{init()} was called with a different value of num\+Pins \\
+\hline
+{\em -\/3} & The given pin does not exist\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+Error code 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pin_toggler_8h}{pin\+Toggler.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,77 @@
+\hypertarget{pin_toggler_8h}{}\section{pin\+Toggler.\+h File Reference}
+\label{pin_toggler_8h}\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}}
+
+
+Contains all the code for the arduino-\/pin-\/toggler library.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpin_toggler}{pin\+Toggler$<$ num\+Pins $>$}
+\begin{DoxyCompactList}\small\item\em Class for toggling pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pin_toggler_8h_a0fac869d83ac1a584d6c45cf609f5fe7}{P\+R\+E\+S\+C\+A\+L\+ER}~1024
+\begin{DoxyCompactList}\small\item\em The prescaler for T\+I\+M\+E\+R1. \end{DoxyCompactList}\item 
+\#define \hyperlink{pin_toggler_8h_a1097b75ec2a0f9ad2e6d4f6c4500d224}{F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ}~8
+\begin{DoxyCompactList}\small\item\em How often the I\+SR will trigger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+
+
+\subsection{Detailed Description}
+Contains all the code for the arduino-\/pin-\/toggler library. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ@{F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ}}
+\index{F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ@{F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}
+\subsubsection[{\texorpdfstring{F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ}{FLASH_FREQ_HZ}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ~8}\hypertarget{pin_toggler_8h_a1097b75ec2a0f9ad2e6d4f6c4500d224}{}\label{pin_toggler_8h_a1097b75ec2a0f9ad2e6d4f6c4500d224}
+
+
+How often the I\+SR will trigger. 
+
+This defines the max toggle rate. In combination with the \hyperlink{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943}{F\+L\+A\+S\+H\+R\+A\+TE} chosen with \hyperlink{classpin_toggler_a42ae0ac4f841dae592195f26bffb109e}{pin\+Toggler\+::set\+Flash\+Rate}, this determines the rate at which the pins will toggle. \index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!P\+R\+E\+S\+C\+A\+L\+ER@{P\+R\+E\+S\+C\+A\+L\+ER}}
+\index{P\+R\+E\+S\+C\+A\+L\+ER@{P\+R\+E\+S\+C\+A\+L\+ER}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+E\+S\+C\+A\+L\+ER}{PRESCALER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+E\+S\+C\+A\+L\+ER~1024}\hypertarget{pin_toggler_8h_a0fac869d83ac1a584d6c45cf609f5fe7}{}\label{pin_toggler_8h_a0fac869d83ac1a584d6c45cf609f5fe7}
+
+
+The prescaler for T\+I\+M\+E\+R1. 
+
+This value is used to calculate the correct value to start T\+I\+M\+E\+R1 on, given this prescaler factor.
+
+This does not need to be changed unless you need particularly fast flash rates.
+
+Specifically, if your application requires {\ttfamily 16000000 / P\+R\+E\+S\+C\+A\+L\+ER / F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ $>$= 65536} you will need to alter the prescaler value both here and where it is set in the private setup\+Singleton() method. 
+
+\subsection{Enumeration Type Documentation}
+\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!F\+L\+A\+S\+H\+R\+A\+TE@{F\+L\+A\+S\+H\+R\+A\+TE}}
+\index{F\+L\+A\+S\+H\+R\+A\+TE@{F\+L\+A\+S\+H\+R\+A\+TE}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}
+\subsubsection[{\texorpdfstring{F\+L\+A\+S\+H\+R\+A\+TE}{FLASHRATE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf F\+L\+A\+S\+H\+R\+A\+TE}}\hypertarget{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943}{}\label{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943}
+
+
+Flash rate options. 
+
+These rates are used as parameters to the set\+Flash\+Rate method.
+
+In combination with F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ, these set the flash rate of an L\+ED.
+
+O\+FF and ON allow you to disable flashing, leaving the L\+ED either on or off. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{ON@{ON}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!ON@{ON}}\item[{\em 
+ON\hypertarget{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943a977d478dacaae531f95695750d1e9d03}{}\label{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943a977d478dacaae531f95695750d1e9d03}
+}]Always on \index{O\+FF@{O\+FF}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!O\+FF@{O\+FF}}\item[{\em 
+O\+FF\hypertarget{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943aac132f2982b98bcaa3445e535a03ff75}{}\label{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943aac132f2982b98bcaa3445e535a03ff75}
+}]Always off \index{S\+L\+OW@{S\+L\+OW}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!S\+L\+OW@{S\+L\+OW}}\item[{\em 
+S\+L\+OW\hypertarget{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943ab27edad9d3e126dc8448b6030438adb6}{}\label{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943ab27edad9d3e126dc8448b6030438adb6}
+}]Flash at F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ / 8 \index{M\+E\+D\+I\+UM@{M\+E\+D\+I\+UM}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!M\+E\+D\+I\+UM@{M\+E\+D\+I\+UM}}\item[{\em 
+M\+E\+D\+I\+UM\hypertarget{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943a5340ec7ecef6cc3886684a3bd3450d64}{}\label{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943a5340ec7ecef6cc3886684a3bd3450d64}
+}]Flash at F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ / 2 \index{F\+A\+ST@{F\+A\+ST}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!F\+A\+ST@{F\+A\+ST}}\item[{\em 
+F\+A\+ST\hypertarget{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943af84c11ba888e499a8a282a3e6f5de7de}{}\label{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943af84c11ba888e499a8a282a3e6f5de7de}
+}]Flash at F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ / 4 \index{M\+AX@{M\+AX}!pin\+Toggler.\+h@{pin\+Toggler.\+h}}\index{pin\+Toggler.\+h@{pin\+Toggler.\+h}!M\+AX@{M\+AX}}\item[{\em 
+M\+AX\hypertarget{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943ad7e097bda6d981de2520f49fe74c25b7}{}\label{pin_toggler_8h_a8f10e927d4361fa9c8ecfc7a0b163943ad7e097bda6d981de2520f49fe74c25b7}
+}]Flash at F\+L\+A\+S\+H\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ \end{description}
+\end{Desc}

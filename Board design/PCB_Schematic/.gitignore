@@ -1,0 +1,10 @@
+!*.lib
+*.bak
+*-cache.lib
+*.kicad_pcb-bak
+~*.xlsx
+InputBuffers.xlsx
+TempCtrl-rescue.lib
+_autosave-BreakoutBoard.kicad_pcb
+arduino.bck
+arduino.dcm

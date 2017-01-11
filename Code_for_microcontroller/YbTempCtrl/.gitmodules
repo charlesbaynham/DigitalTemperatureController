@@ -1,0 +1,9 @@
+[submodule "CommandHandler"]
+	path = CommandHandler
+	url = T:/data/Yb+ Optical/git master repos/Microprocessor_SCPI_Command_Parser
+[submodule "Microprocessor_Debugging"]
+	path = Microprocessor_Debugging
+	url = T:\\data\\Yb+ Optical\\git master repos\\Microprocessor_Debugging
+[submodule "arduino-pin-toggler"]
+	path = arduino-pin-toggler
+	url = T:\\data\\Yb+ Optical\\git master repos\\arduino-pin-toggler

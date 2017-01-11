@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MAX3440E
+D ±15kV ESD-Protected, ±60V Fault-Protected, 10Mbps, Fail-Safe RS-485/J1708 Transceiver
+K RS485
+F http://datasheets.maximintegrated.com/en/ds/MAX3440E-MAX3444E.pdf
+$ENDCMP
+#
+#End Doc Library

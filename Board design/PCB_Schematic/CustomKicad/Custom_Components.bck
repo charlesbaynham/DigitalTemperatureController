@@ -1,0 +1,19 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ADuM7642
+D ADuM7642 6 channel digital isolator
+K isolator
+$ENDCMP
+#
+$CMP ADuM7643
+D ADuM7643 6 channel digital isolator
+K isolator
+$ENDCMP
+#
+$CMP ISO3088
+D Full isolated 10MBps Fail-Safe RS-485/J1708 Transceiver
+K RS485
+F http://www.ti.com/lit/ds/symlink/iso3080.pdf
+$ENDCMP
+#
+#End Doc Library

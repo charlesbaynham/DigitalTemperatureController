@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name Custom)(type KiCad)(uri "$(KIPRJMOD)\\CustomKicad\\Custom.pretty")(options "")(descr ""))
+  (lib (name Backplane)(type KiCad)(uri "$(KIPRJMOD)\\CustomKicad\\Backplane.pretty")(options "")(descr ""))
+)

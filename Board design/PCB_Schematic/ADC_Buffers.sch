@@ -1,0 +1,826 @@
+EESchema Schematic File Version 2
+LIBS:TempCtrl-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:max3440e
+LIBS:Custom_Components
+LIBS:TempCtrl-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 8268 11693 portrait
+encoding utf-8
+Sheet 4 9
+Title ""
+Date "23 oct 2015"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 4300 450  0    31   ~ 0
+4nF with 40kOhms gives low pass filter of omega_c ~ 1KHz
+$Comp
+L AD8639 U201
+U 1 1 562A5EED
+P 4950 1650
+F 0 "U201" H 4950 1800 60  0000 L CNN
+F 1 "AD8639" H 4950 1500 60  0000 L CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 4950 1650 60  0001 C CNN
+F 3 "" H 4950 1650 60  0000 C CNN
+	1    4950 1650
+	1    0    0    1   
+$EndComp
+$Comp
+L R R206
+U 1 1 562A5EF3
+P 4200 1550
+AR Path="/562A5EF3" Ref="R206"  Part="1" 
+AR Path="/562A57D5/562A5EF3" Ref="R206"  Part="1" 
+F 0 "R206" V 4280 1550 40  0000 C CNN
+F 1 "100k" V 4207 1551 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4130 1550 30  0001 C CNN
+F 3 "~" H 4200 1550 30  0000 C CNN
+	1    4200 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R205
+U 1 1 562A5EF9
+P 4850 800
+AR Path="/562A5EF9" Ref="R205"  Part="1" 
+AR Path="/562A57D5/562A5EF9" Ref="R205"  Part="1" 
+F 0 "R205" V 4930 800 40  0000 C CNN
+F 1 "40k" V 4857 801 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4780 800 30  0001 C CNN
+F 3 "~" H 4850 800 30  0000 C CNN
+	1    4850 800 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R207
+U 1 1 562A5EFF
+P 4200 1800
+AR Path="/562A5EFF" Ref="R207"  Part="1" 
+AR Path="/562A57D5/562A5EFF" Ref="R207"  Part="1" 
+F 0 "R207" V 4280 1800 40  0000 C CNN
+F 1 "100k" V 4207 1801 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4130 1800 30  0001 C CNN
+F 3 "~" H 4200 1800 30  0000 C CNN
+	1    4200 1800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R208
+U 1 1 562A5F05
+P 4200 2100
+AR Path="/562A5F05" Ref="R208"  Part="1" 
+AR Path="/562A57D5/562A5F05" Ref="R208"  Part="1" 
+F 0 "R208" V 4280 2100 40  0000 C CNN
+F 1 "40k" V 4207 2101 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4130 2100 30  0001 C CNN
+F 3 "~" H 4200 2100 30  0000 C CNN
+	1    4200 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C202
+U 1 1 562A5F0B
+P 4800 600
+AR Path="/562A5F0B" Ref="C202"  Part="1" 
+AR Path="/562A57D5/562A5F0B" Ref="C202"  Part="1" 
+F 0 "C202" H 4800 700 40  0000 L CNN
+F 1 "4.7n" H 4806 515 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4838 450 30  0001 C CNN
+F 3 "~" H 4800 600 60  0000 C CNN
+	1    4800 600 
+	0    -1   -1   0   
+$EndComp
+Text HLabel 3950 1800 0    60   Input ~ 0
+ADC1
+$Comp
+L AD8639 U201
+U 2 1 562A5F2F
+P 5100 4000
+F 0 "U201" H 5100 4150 60  0000 L CNN
+F 1 "AD8639" H 5100 3850 60  0000 L CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5100 4000 60  0001 C CNN
+F 3 "" H 5100 4000 60  0000 C CNN
+	2    5100 4000
+	1    0    0    1   
+$EndComp
+$Comp
+L R R210
+U 1 1 562A5F35
+P 4350 3900
+AR Path="/562A5F35" Ref="R210"  Part="1" 
+AR Path="/562A57D5/562A5F35" Ref="R210"  Part="1" 
+F 0 "R210" V 4430 3900 40  0000 C CNN
+F 1 "100k" V 4357 3901 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4280 3900 30  0001 C CNN
+F 3 "~" H 4350 3900 30  0000 C CNN
+	1    4350 3900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R209
+U 1 1 562A5F3B
+P 5000 3350
+AR Path="/562A5F3B" Ref="R209"  Part="1" 
+AR Path="/562A57D5/562A5F3B" Ref="R209"  Part="1" 
+F 0 "R209" V 5080 3350 40  0000 C CNN
+F 1 "40k" V 5007 3351 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4930 3350 30  0001 C CNN
+F 3 "~" H 5000 3350 30  0000 C CNN
+	1    5000 3350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R211
+U 1 1 562A5F41
+P 4350 4150
+AR Path="/562A5F41" Ref="R211"  Part="1" 
+AR Path="/562A57D5/562A5F41" Ref="R211"  Part="1" 
+F 0 "R211" V 4430 4150 40  0000 C CNN
+F 1 "100k" V 4357 4151 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4280 4150 30  0001 C CNN
+F 3 "~" H 4350 4150 30  0000 C CNN
+	1    4350 4150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R212
+U 1 1 562A5F47
+P 4350 4450
+AR Path="/562A5F47" Ref="R212"  Part="1" 
+AR Path="/562A57D5/562A5F47" Ref="R212"  Part="1" 
+F 0 "R212" V 4430 4450 40  0000 C CNN
+F 1 "40k" V 4357 4451 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4280 4450 30  0001 C CNN
+F 3 "~" H 4350 4450 30  0000 C CNN
+	1    4350 4450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C203
+U 1 1 562A5F4D
+P 4950 3050
+AR Path="/562A5F4D" Ref="C203"  Part="1" 
+AR Path="/562A57D5/562A5F4D" Ref="C203"  Part="1" 
+F 0 "C203" H 4950 3150 40  0000 L CNN
+F 1 "4.7n" H 4956 2965 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4988 2900 30  0001 C CNN
+F 3 "~" H 4950 3050 60  0000 C CNN
+	1    4950 3050
+	0    -1   -1   0   
+$EndComp
+Text HLabel 4100 4150 0    60   Input ~ 0
+ADC2
+$Comp
+L CP C205
+U 1 1 562A627A
+P 5050 2100
+F 0 "C205" H 5100 2200 50  0000 L CNN
+F 1 "10n" H 5100 2000 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5050 2100 60  0001 C CNN
+F 3 "~" H 5050 2100 60  0000 C CNN
+	1    5050 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CP C206
+U 1 1 562A6287
+P 5050 2400
+F 0 "C206" H 5100 2500 50  0000 L CNN
+F 1 "1u" H 5100 2300 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5050 2400 60  0001 C CNN
+F 3 "~" H 5050 2400 60  0000 C CNN
+	1    5050 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CP C201
+U 1 1 562A62B8
+P 5050 1050
+F 0 "C201" H 5100 1150 50  0000 L CNN
+F 1 "1u" H 5100 950 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5050 1050 60  0001 C CNN
+F 3 "~" H 5050 1050 60  0000 C CNN
+	1    5050 1050
+	0    1    1    0   
+$EndComp
+$Comp
+L CP C204
+U 1 1 562A62C5
+P 5050 1300
+F 0 "C204" H 5100 1400 50  0000 L CNN
+F 1 "10n" H 5100 1200 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5050 1300 60  0001 C CNN
+F 3 "~" H 5050 1300 60  0000 C CNN
+	1    5050 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L AD8639 U202
+U 1 1 562A679E
+P 5050 5950
+F 0 "U202" H 5050 6100 60  0000 L CNN
+F 1 "AD8639" H 5050 5800 60  0000 L CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5050 5950 60  0001 C CNN
+F 3 "" H 5050 5950 60  0000 C CNN
+	1    5050 5950
+	1    0    0    1   
+$EndComp
+$Comp
+L R R202
+U 1 1 562A67A4
+P 4300 5850
+AR Path="/562A67A4" Ref="R202"  Part="1" 
+AR Path="/562A57D5/562A67A4" Ref="R202"  Part="1" 
+F 0 "R202" V 4380 5850 40  0000 C CNN
+F 1 "100k" V 4307 5851 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4230 5850 30  0001 C CNN
+F 3 "~" H 4300 5850 30  0000 C CNN
+	1    4300 5850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R201
+U 1 1 562A67AA
+P 4950 5100
+AR Path="/562A67AA" Ref="R201"  Part="1" 
+AR Path="/562A57D5/562A67AA" Ref="R201"  Part="1" 
+F 0 "R201" V 5030 5100 40  0000 C CNN
+F 1 "40k" V 4957 5101 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4880 5100 30  0001 C CNN
+F 3 "~" H 4950 5100 30  0000 C CNN
+	1    4950 5100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R203
+U 1 1 562A67B0
+P 4300 6100
+AR Path="/562A67B0" Ref="R203"  Part="1" 
+AR Path="/562A57D5/562A67B0" Ref="R203"  Part="1" 
+F 0 "R203" V 4380 6100 40  0000 C CNN
+F 1 "100k" V 4307 6101 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4230 6100 30  0001 C CNN
+F 3 "~" H 4300 6100 30  0000 C CNN
+	1    4300 6100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R204
+U 1 1 562A67B6
+P 4300 6400
+AR Path="/562A67B6" Ref="R204"  Part="1" 
+AR Path="/562A57D5/562A67B6" Ref="R204"  Part="1" 
+F 0 "R204" V 4380 6400 40  0000 C CNN
+F 1 "40k" V 4307 6401 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4230 6400 30  0001 C CNN
+F 3 "~" H 4300 6400 30  0000 C CNN
+	1    4300 6400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C207
+U 1 1 562A67BC
+P 4900 4900
+AR Path="/562A67BC" Ref="C207"  Part="1" 
+AR Path="/562A57D5/562A67BC" Ref="C207"  Part="1" 
+F 0 "C207" H 4900 5000 40  0000 L CNN
+F 1 "4.7n" H 4906 4815 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4938 4750 30  0001 C CNN
+F 3 "~" H 4900 4900 60  0000 C CNN
+	1    4900 4900
+	0    -1   -1   0   
+$EndComp
+Text HLabel 4050 6100 0    60   Input ~ 0
+ADC3
+$Comp
+L AD8639 U202
+U 2 1 562A67DF
+P 5250 8200
+F 0 "U202" H 5250 8350 60  0000 L CNN
+F 1 "AD8639" H 5250 8050 60  0000 L CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5250 8200 60  0001 C CNN
+F 3 "" H 5250 8200 60  0000 C CNN
+	2    5250 8200
+	1    0    0    1   
+$EndComp
+$Comp
+L R R214
+U 1 1 562A67E5
+P 4500 8100
+AR Path="/562A67E5" Ref="R214"  Part="1" 
+AR Path="/562A57D5/562A67E5" Ref="R214"  Part="1" 
+F 0 "R214" V 4580 8100 40  0000 C CNN
+F 1 "100k" V 4507 8101 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4430 8100 30  0001 C CNN
+F 3 "~" H 4500 8100 30  0000 C CNN
+	1    4500 8100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R213
+U 1 1 562A67EB
+P 5150 7550
+AR Path="/562A67EB" Ref="R213"  Part="1" 
+AR Path="/562A57D5/562A67EB" Ref="R213"  Part="1" 
+F 0 "R213" V 5230 7550 40  0000 C CNN
+F 1 "40k" V 5157 7551 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5080 7550 30  0001 C CNN
+F 3 "~" H 5150 7550 30  0000 C CNN
+	1    5150 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R215
+U 1 1 562A67F1
+P 4500 8350
+AR Path="/562A67F1" Ref="R215"  Part="1" 
+AR Path="/562A57D5/562A67F1" Ref="R215"  Part="1" 
+F 0 "R215" V 4580 8350 40  0000 C CNN
+F 1 "100k" V 4507 8351 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4430 8350 30  0001 C CNN
+F 3 "~" H 4500 8350 30  0000 C CNN
+	1    4500 8350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R216
+U 1 1 562A67F7
+P 4500 8650
+AR Path="/562A67F7" Ref="R216"  Part="1" 
+AR Path="/562A57D5/562A67F7" Ref="R216"  Part="1" 
+F 0 "R216" V 4580 8650 40  0000 C CNN
+F 1 "40k" V 4507 8651 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4430 8650 30  0001 C CNN
+F 3 "~" H 4500 8650 30  0000 C CNN
+	1    4500 8650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C212
+U 1 1 562A67FD
+P 5100 7250
+AR Path="/562A67FD" Ref="C212"  Part="1" 
+AR Path="/562A57D5/562A67FD" Ref="C212"  Part="1" 
+F 0 "C212" H 5100 7350 40  0000 L CNN
+F 1 "4.7n" H 5106 7165 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5138 7100 30  0001 C CNN
+F 3 "~" H 5100 7250 60  0000 C CNN
+	1    5100 7250
+	0    -1   -1   0   
+$EndComp
+Text HLabel 4250 8350 0    60   Input ~ 0
+ADC4
+$Comp
+L CP C210
+U 1 1 562A681D
+P 5150 6400
+F 0 "C210" H 5200 6500 50  0000 L CNN
+F 1 "10n" H 5200 6300 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5150 6400 60  0001 C CNN
+F 3 "~" H 5150 6400 60  0000 C CNN
+	1    5150 6400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CP C211
+U 1 1 562A6823
+P 5150 6700
+F 0 "C211" H 5200 6800 50  0000 L CNN
+F 1 "1u" H 5200 6600 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5150 6700 60  0001 C CNN
+F 3 "~" H 5150 6700 60  0000 C CNN
+	1    5150 6700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CP C209
+U 1 1 562A6836
+P 5150 5350
+F 0 "C209" H 5200 5450 50  0000 L CNN
+F 1 "1u" H 5200 5250 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5150 5350 60  0001 C CNN
+F 3 "~" H 5150 5350 60  0000 C CNN
+	1    5150 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L CP C208
+U 1 1 562A683C
+P 5150 5600
+F 0 "C208" H 5200 5700 50  0000 L CNN
+F 1 "10n" H 5200 5500 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5150 5600 60  0001 C CNN
+F 3 "~" H 5150 5600 60  0000 C CNN
+	1    5150 5600
+	0    1    1    0   
+$EndComp
+$Comp
+L R R217
+U 1 1 562A6FCD
+P 6700 1650
+AR Path="/562A6FCD" Ref="R217"  Part="1" 
+AR Path="/562A57D5/562A6FCD" Ref="R217"  Part="1" 
+F 0 "R217" V 6780 1650 40  0000 C CNN
+F 1 "33R" V 6707 1651 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6630 1650 30  0001 C CNN
+F 3 "~" H 6700 1650 30  0000 C CNN
+	1    6700 1650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R218
+U 1 1 562A70FD
+P 6350 4000
+AR Path="/562A70FD" Ref="R218"  Part="1" 
+AR Path="/562A57D5/562A70FD" Ref="R218"  Part="1" 
+F 0 "R218" V 6430 4000 40  0000 C CNN
+F 1 "33R" V 6357 4001 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6280 4000 30  0001 C CNN
+F 3 "~" H 6350 4000 30  0000 C CNN
+	1    6350 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R219
+U 1 1 562A7111
+P 6650 5950
+AR Path="/562A7111" Ref="R219"  Part="1" 
+AR Path="/562A57D5/562A7111" Ref="R219"  Part="1" 
+F 0 "R219" V 6730 5950 40  0000 C CNN
+F 1 "33R" V 6657 5951 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6580 5950 30  0001 C CNN
+F 3 "~" H 6650 5950 30  0000 C CNN
+	1    6650 5950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R220
+U 1 1 562A7124
+P 6500 8200
+AR Path="/562A7124" Ref="R220"  Part="1" 
+AR Path="/562A57D5/562A7124" Ref="R220"  Part="1" 
+F 0 "R220" V 6580 8200 40  0000 C CNN
+F 1 "33R" V 6507 8201 40  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6430 8200 30  0001 C CNN
+F 3 "~" H 6500 8200 30  0000 C CNN
+	1    6500 8200
+	0    -1   -1   0   
+$EndComp
+Text Label 4100 4450 2    60   ~ 0
+2.5V_REF
+Text Label 3950 2100 2    60   ~ 0
+2.5V_REF
+Text Label 4050 6400 2    60   ~ 0
+2.5V_REF
+Text Label 4250 8650 2    60   ~ 0
+2.5V_REF
+$Comp
+L D_Schottky_x2_Serial_ACK D201
+U 1 1 564DD482
+P 6050 1650
+F 0 "D201" H 6100 1550 50  0000 C CNN
+F 1 "D_Schottky_x2_Serial_ACK" H 6050 1750 50  0000 C CNN
+F 2 "Custom:SOT-23-SDM40E20L" H 6050 1650 60  0001 C CNN
+F 3 "" H 6050 1650 60  0000 C CNN
+	1    6050 1650
+	0    1    -1   0   
+$EndComp
+$Comp
+L D_Schottky_x2_Serial_ACK D202
+U 1 1 564E1FBD
+P 5850 4000
+F 0 "D202" H 5900 3900 50  0000 C CNN
+F 1 "D_Schottky_x2_Serial_ACK" H 5850 4100 50  0000 C CNN
+F 2 "Custom:SOT-23-SDM40E20L" H 5850 4000 60  0001 C CNN
+F 3 "" H 5850 4000 60  0000 C CNN
+	1    5850 4000
+	0    1    -1   0   
+$EndComp
+$Comp
+L D_Schottky_x2_Serial_ACK D203
+U 1 1 564E2407
+P 6100 5950
+F 0 "D203" H 6150 5850 50  0000 C CNN
+F 1 "D_Schottky_x2_Serial_ACK" H 6100 6050 50  0000 C CNN
+F 2 "Custom:SOT-23-SDM40E20L" H 6100 5950 60  0001 C CNN
+F 3 "" H 6100 5950 60  0000 C CNN
+	1    6100 5950
+	0    1    -1   0   
+$EndComp
+$Comp
+L D_Schottky_x2_Serial_ACK D204
+U 1 1 564E2CD3
+P 6000 8200
+F 0 "D204" H 6050 8100 50  0000 C CNN
+F 1 "D_Schottky_x2_Serial_ACK" H 6000 8300 50  0000 C CNN
+F 2 "Custom:SOT-23-SDM40E20L" H 6000 8200 60  0001 C CNN
+F 3 "" H 6000 8200 60  0000 C CNN
+	1    6000 8200
+	0    1    -1   0   
+$EndComp
+Text HLabel 7000 5950 2    60   Input ~ 0
+ADC3_Rectified
+Text HLabel 6850 8200 2    60   Input ~ 0
+ADC4_Rectified
+Text HLabel 6700 4000 2    60   Input ~ 0
+ADC2_Rectified
+Text HLabel 7050 1650 2    60   Input ~ 0
+ADC1_Rectified
+Text Label 2400 4700 0    60   ~ 0
+2.5V_REF
+Text HLabel 1850 4700 0    60   Input ~ 0
+2.5V_REF_IN
+Text Label 3600 2700 2    60   ~ 0
+2.5V_REF
+$Comp
+L C_Small C10
+U 1 1 57252A77
+P 3600 2800
+F 0 "C10" H 3610 2870 50  0000 L CNN
+F 1 "100n" H 3610 2720 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3600 2800 60  0001 C CNN
+F 3 "" H 3600 2800 60  0000 C CNN
+	1    3600 2800
+	1    0    0    -1  
+$EndComp
+Text Label 3550 7100 2    60   ~ 0
+2.5V_REF
+$Comp
+L C_Small C6
+U 1 1 57252DCF
+P 3550 7200
+F 0 "C6" H 3560 7270 50  0000 L CNN
+F 1 "100n" H 3560 7120 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3550 7200 60  0001 C CNN
+F 3 "" H 3550 7200 60  0000 C CNN
+	1    3550 7200
+	1    0    0    -1  
+$EndComp
+Text HLabel 4850 1050 0    118  Input ~ 0
+-5V
+Text HLabel 4850 2400 0    118  Input ~ 0
++5V
+Text HLabel 6050 1350 0    118  Input ~ 0
++5V
+Text HLabel 4950 6700 0    118  Input ~ 0
++5V
+Text HLabel 6100 5550 1    118  Input ~ 0
++5V
+Text HLabel 6000 7900 1    118  Input ~ 0
++5V
+Text HLabel 5850 3700 1    118  Input ~ 0
++5V
+Text HLabel 4950 5350 0    118  Input ~ 0
+-5V
+Text HLabel 6000 8500 3    118  Input ~ 0
+GND
+Text HLabel 6100 6250 3    118  Input ~ 0
+GND
+Text HLabel 5850 4300 3    118  Input ~ 0
+GND
+Text HLabel 6050 1950 3    118  Input ~ 0
+GND
+Text HLabel 6550 2350 3    39   Input ~ 0
+GND
+Text HLabel 5250 1050 2    39   Input ~ 0
+GND
+Wire Wire Line
+	4600 1550 4350 1550
+Wire Wire Line
+	4600 600  4600 1550
+Connection ~ 4600 800 
+Wire Wire Line
+	5000 600  5100 700 
+Wire Wire Line
+	5100 700  5100 800 
+Wire Wire Line
+	5100 800  5500 1000
+Wire Wire Line
+	4600 1750 4450 1750
+Wire Wire Line
+	4450 1750 4450 2100
+Connection ~ 4450 1800
+Wire Wire Line
+	4750 3900 4500 3900
+Wire Wire Line
+	4750 3050 4750 3900
+Connection ~ 4750 3100
+Wire Wire Line
+	5100 3050 5250 3050
+Wire Wire Line
+	5450 3350 5450 4000
+Wire Wire Line
+	4750 4100 4600 4100
+Wire Wire Line
+	4600 4100 4600 4450
+Connection ~ 4600 4150
+Wire Wire Line
+	4850 1050 4850 1350
+Connection ~ 4850 2100
+Connection ~ 4850 1050
+Wire Wire Line
+	5500 1000 5500 1650
+Wire Wire Line
+	5300 1650 6550 1650
+Connection ~ 4850 2400
+Connection ~ 4850 1300
+Wire Wire Line
+	4700 5850 4450 5850
+Wire Wire Line
+	4700 4900 4700 5850
+Connection ~ 4700 5100
+Wire Wire Line
+	5100 4900 5200 5000
+Wire Wire Line
+	5200 5000 5200 5100
+Wire Wire Line
+	5200 5100 5600 5300
+Wire Wire Line
+	4700 6050 4550 6050
+Wire Wire Line
+	4550 6050 4550 6400
+Connection ~ 4550 6100
+Wire Wire Line
+	4900 8100 4650 8100
+Wire Wire Line
+	4900 7250 4900 8100
+Connection ~ 4900 7550
+Wire Wire Line
+	5250 7250 5400 7250
+Wire Wire Line
+	5400 7250 5400 7550
+Wire Wire Line
+	5300 7550 5600 7550
+Wire Wire Line
+	5600 7550 5600 8200
+Wire Wire Line
+	4900 8300 4750 8300
+Wire Wire Line
+	4750 8300 4750 8650
+Connection ~ 4750 8350
+Wire Wire Line
+	4950 5350 4950 5650
+Wire Wire Line
+	4950 6250 4950 6700
+Connection ~ 4950 6400
+Connection ~ 4950 5350
+Wire Wire Line
+	5600 5300 5600 5950
+Wire Wire Line
+	5400 5950 6500 5950
+Connection ~ 4950 6700
+Connection ~ 4950 5600
+Connection ~ 5500 1650
+Wire Wire Line
+	5600 8200 6350 8200
+Connection ~ 5600 8200
+Connection ~ 5600 5950
+Wire Wire Line
+	5450 4000 6200 4000
+Connection ~ 5450 4000
+Wire Wire Line
+	6850 1650 7050 1650
+Connection ~ 5850 1650
+Wire Wire Line
+	6500 4000 6700 4000
+Wire Wire Line
+	6800 5950 7000 5950
+Wire Wire Line
+	6650 8200 6850 8200
+Connection ~ 5650 4000
+Connection ~ 5900 5950
+Connection ~ 5800 8200
+Wire Wire Line
+	4200 3900 4100 3900
+Wire Wire Line
+	4100 4150 4200 4150
+Wire Wire Line
+	4200 4450 4100 4450
+Wire Wire Line
+	4600 4450 4500 4450
+Wire Wire Line
+	4500 4150 4600 4150
+Wire Wire Line
+	4850 3350 4750 3350
+Wire Wire Line
+	5150 3350 5450 3350
+Wire Wire Line
+	4750 3050 4800 3050
+Wire Wire Line
+	5250 3050 5250 3350
+Connection ~ 5250 3350
+Wire Wire Line
+	3950 1800 4050 1800
+Wire Wire Line
+	3950 2100 4050 2100
+Wire Wire Line
+	4450 2100 4350 2100
+Wire Wire Line
+	4350 1800 4450 1800
+Wire Wire Line
+	5000 600  4950 600 
+Wire Wire Line
+	4600 600  4650 600 
+Wire Wire Line
+	4700 800  4600 800 
+Wire Wire Line
+	5100 800  5000 800 
+Connection ~ 5100 800 
+Wire Wire Line
+	4800 5100 4700 5100
+Wire Wire Line
+	4700 4900 4750 4900
+Wire Wire Line
+	5050 4900 5100 4900
+Wire Wire Line
+	5200 5100 5100 5100
+Connection ~ 5200 5100
+Wire Wire Line
+	4450 6100 4550 6100
+Wire Wire Line
+	4150 6100 4050 6100
+Wire Wire Line
+	4050 6400 4150 6400
+Wire Wire Line
+	4550 6400 4450 6400
+Wire Wire Line
+	4250 8350 4350 8350
+Wire Wire Line
+	4350 8650 4250 8650
+Wire Wire Line
+	4750 8650 4650 8650
+Wire Wire Line
+	4750 8350 4650 8350
+Connection ~ 5400 7550
+Wire Wire Line
+	5000 7550 4900 7550
+Wire Wire Line
+	4900 7250 4950 7250
+Wire Wire Line
+	6100 5650 6100 5550
+Wire Wire Line
+	1850 4700 2400 4700
+Connection ~ 4750 3350
+Wire Wire Line
+	4850 1950 4850 2400
+Text HLabel 5250 1300 2    39   Input ~ 0
+GND
+Text HLabel 5250 2100 2    39   Input ~ 0
+GND
+Text HLabel 5250 2400 2    39   Input ~ 0
+GND
+Text HLabel 4100 3900 0    39   Input ~ 0
+GND
+Text HLabel 3600 2900 3    39   Input ~ 0
+GND
+Text HLabel 4050 1550 0    39   Input ~ 0
+GND
+Text HLabel 4150 5850 0    39   Input ~ 0
+GND
+Text HLabel 5350 5350 2    39   Input ~ 0
+GND
+Text HLabel 5350 5600 2    39   Input ~ 0
+GND
+Text HLabel 5350 6400 2    39   Input ~ 0
+GND
+Text HLabel 5350 6700 2    39   Input ~ 0
+GND
+Text HLabel 4350 8100 0    39   Input ~ 0
+GND
+Text HLabel 3550 7300 3    39   Input ~ 0
+GND
+$EndSCHEMATC
