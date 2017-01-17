@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"30-24112016-078297";"";
+"REFERENCE";"20817443";"";
+"TraceParts.PartTitle";"for VME";"";
+"TraceParts.InstanceId";"30-24112016-078297BTVABEKSNMRLVHOJ49GWCXU1F";"";
+"DESIGN";"non shielded, trapezoide, plastic, type 1, grey";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"Pentair/Schroff";"";
+"TraceParts.PartVersion";"1.0.0";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"SCHROFF:/F_SCHROFF/30-24112016-078297";"";
