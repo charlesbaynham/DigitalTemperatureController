@@ -211,6 +211,8 @@ namespace YbCtrl {
 
 	ErrorChannelReturn V4_ADC_ChannelPair::getReading(double &readingOutput)
 	{
+		ErrorChannelReturn returnErrorStatus = ErrorChannelReturn::NO_ERROR;
+
 		CONSOLE_LOG_LN(F("V4_ADC_ChannelPair::getReading()"))
 
 		// A reading is ready!
@@ -253,12 +255,8 @@ namespace YbCtrl {
 
 		// Does the status byte indicate that hit the PGA limits?
 		if (statusADC & PGAD_ALM) {
-			// Output 0 arbitarily: we will mark this as invalid
-			readingOutput = 0;
-
-			// Do not alter the _lastReading
 			
-			// Decrease the PGA gain to fix this
+			// Decrease the PGA gain to fix this for the next run
 			if (_PGA_gain > 0)
 				_PGA_gain--;
 
@@ -266,7 +264,7 @@ namespace YbCtrl {
 			CONSOLE_LOG_LN(_PGA_gain, HEX);
 
 			// Mark this result as invalid
-			return ErrorChannelReturn::OUT_OF_RANGE;
+			returnErrorStatus = ErrorChannelReturn::OUT_OF_RANGE;
 		}
 		
 		// Scale to correct -1 -> +1
@@ -331,9 +329,9 @@ namespace YbCtrl {
 						CONSOLE_LOG_LN(_PGA_gain, HEX);
 
 						_PGA_gain = 0;
-						readingOutput = 0;
+						readingOutput = _lastReading;
 
-						return ErrorChannelReturn::PGA_ERROR;
+						returnErrorStatus = ErrorChannelReturn::PGA_ERROR;
 
 		}
 
@@ -343,7 +341,7 @@ namespace YbCtrl {
 		CONSOLE_LOG(F("V4_ADC_ChannelPair::Output: "));
 		CONSOLE_LOG_LN(readingOutput);
 
-		return ErrorChannelReturn::NO_ERROR;
+		return returnErrorStatus;
 	}
 
 	void V4_ADC_ChannelPair::getRegisters() {

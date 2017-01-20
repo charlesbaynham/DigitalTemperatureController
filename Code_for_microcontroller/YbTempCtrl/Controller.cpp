@@ -83,7 +83,7 @@ namespace YbCtrl {
 		_ctrlChannel = 0;
 		_algorithm = 0;
 	}
-
+	
 	// Do a loop cycle
 	int Controller::doLoop() {
 
@@ -119,6 +119,8 @@ namespace YbCtrl {
 				return -1;
 			}
 			
+			// Yes, there is a reading in progress and it was initiated by this object. 
+			
 			debugPrintHeader();
 			CONSOLE_LOG_LN(F("Reading already in progress"));
 
@@ -133,23 +135,36 @@ namespace YbCtrl {
 				ErrorChannelReturn result = _errorChannel->getReading(errorSig);
 
 				// Check there wasn't an error
-				if (ErrorChannelReturn::NO_ERROR != result) {
-					// Oh no, there was
-					CONSOLE_LOG_LN(F("Error returned by getReading()"));
+				switch (result) {
 
-					return -2;
+					case ErrorChannelReturn::NO_ERROR :
+						// Yay, no error
+						break;
+
+					case ErrorChannelReturn::OUT_OF_RANGE : 
+						// The PGA railed! This will be fixed by the ErrorChannel on the next run if possible.
+						// For now, use the rail value that has been returned and stored in errorSig as if it were true
+						CONSOLE_LOG_LN(F("getReading() reports railed PGA"));
+						break;
+
+					default:
+						// Oh no, an unexpected error! Do nothing this cycle
+						CONSOLE_LOG(F("Error returned by getReading(): "));
+						CONSOLE_LOG_LN(int(result));
+
+						return -2;
 				}
 
 				debugPrintHeader();
-				CONSOLE_LOG(F("Error is "));
-				CONSOLE_LOG_LN(errorSig);
+				CONSOLE_LOG(F("Error sig = "));
+				CONSOLE_LOG_LN(errorSig, 5);
 
 				// Calculate the new control signal
 				double signal = _algorithm->output(errorSig);
 
 				debugPrintHeader();
 				CONSOLE_LOG(F("New Ctrl calculated as "));
-				CONSOLE_LOG_LN(signal);
+				CONSOLE_LOG_LN(signal, 5);
 
 				// Output the new value of the control signal
 				_ctrlChannel->setCtrl(signal);
