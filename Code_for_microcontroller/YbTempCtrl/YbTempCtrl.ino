@@ -159,6 +159,8 @@ static ErrorChanIdx stringToADCChannel(const char str[]);
 static CtrlChanIdx stringToOPAChannel(const char str[]);
 static inline bool isBipolar(const CtrlChanIdx chan);
 
+const size_t numLEDs = 2;
+
 // This method is the only place where the use of "malloc" and "new" is allowed
 // No memory is "free"ed so there is no possiblilty of fragmentation. 
 // Checks for success are strictly adhered to to prevent undetected out of memory errors
@@ -181,8 +183,8 @@ void setup()
 	CONSOLE_LOG_LN(F("setup::Setup Started"));
 
 	// Init LED output pins
-	uint8_t ledPins[2] = { LED_1 , LED_2 };
-	pinToggler<2>::init(ledPins);
+	uint8_t ledPins[numLEDs] = { LED_1 , LED_2 };
+	pinToggler<numLEDs>::init(ledPins);
 	// They start off, so leave them there
 
 	CONSOLE_LOG_LN(F("setup::LED setup complete"));
@@ -351,27 +353,52 @@ void loop()
 
 	// Every led_check_cycles cycles, check the LEDs
 	if (count++ >= led_check_cycles) {
+
+		// Reset the led cycle counter
+		count = 0;
 		
-		// There are only 2 LEDs, so only output statuses for the first two active Controllers
-		size_t ledIdx = 0;
-		const size_t numLEDs = 2;
+		// The `controllers` array can contain several Controllers, potentially one for each output channel.
+		// Since there are only two LEDs, we can't in general display status LEDs for all of them, although 
+		// 99% of the use cases for this device will involve a maximum of two Controllers. 
+		// 
+		// The Controller 
+		// creation code puts the Controllers into the array in a sensible order, prioritising the first 2 slots. 
+		// Here I decided to have the LEDs represent the Controllers stored only in the first two slots of the 
+		// array. The points at which we create the Controllers
+		
+		// There are only 2 LEDs, so only output statuses for the first two active Controllers (void voltageLock(...))
+		// will make sure that they are put in the right place. 
+		// 
+		// For reference, this place will be:
+		// 
+		// Output channel		LED
+		// 				1		1
+		// 				2		1
+		// 				3		2
+		// 				4		2
+		//				BPA		1
+		//				BPB		2
+		//				
+		// In the event of a clash, e.g. channels 1 and 2 are locked at the same time, the second one to be started will put 
+		// assigned to the other LED. If this is not possble (e.g. channels 1 and 3 are locked, then 2 is started) then no
+		// LED will be assigned
 
-		for (size_t i = 0; i < (sizeof(controllers) / sizeof(*controllers)); i++) {
+		// Loop over the two LED channels
+		for (size_t i = 0; i < numLEDs; i++) { 
 
-			// Check if we've used up all the LEDs
-			if (ledIdx >= numLEDs) {
-				CONSOLE_LOG_LN(F("All LEDs used"));
-				break;
-			}
+			// If we're not out of bounds of the array...
+			// ...and there is a Controller assigned to this slot
+			const size_t arrayLen = sizeof(controllers) / sizeof(*controllers);
+			if (i < arrayLen && controllers[i]) {
 
-			if (controllers[i]) {
+				// Get distance from the set points and active / deactivate the LED accordingly
 
 				CONSOLE_LOG(F("*** Checking LED status for Controller "));
 				CONSOLE_LOG(i);
 				CONSOLE_LOG(F(", for LED "));
-				CONSOLE_LOG(ledIdx);
+				CONSOLE_LOG(i);
 				CONSOLE_LOG(F(", on pin "));
-				CONSOLE_LOG_LN(pinToggler<2>::getPin(ledIdx));
+				CONSOLE_LOG_LN(pinToggler<numLEDs>::getPin(i));
 
 				double errorSig = controllers[i].getErrorInterface()->recallError();
 				double setPoint = controllers[i].getAlgorithm()->getSetpoint();
@@ -395,39 +422,24 @@ void loop()
 				 */
 
 				if (error > led_thresholds[0]) {
-					pinToggler<2>::setFlashRate(ledIdx, FAST);
+					pinToggler<numLEDs>::setFlashRate(i, FAST);
 				}
 				else if (error > led_thresholds[1]) {
-					pinToggler<2>::setFlashRate(ledIdx, SLOW);
+					pinToggler<numLEDs>::setFlashRate(i, SLOW);
 				}
 				else {
-					pinToggler<2>::setFlashRate(ledIdx, ON);
+					pinToggler<numLEDs>::setFlashRate(i, ON);
 				}
-
-				// Increment the ledIdx since this LED is now in use
-				ledIdx++;
 			}
 			else {
 
 				CONSOLE_LOG(F("*** Controller "));
 				CONSOLE_LOG(i);
 				CONSOLE_LOG_LN(F(" is inactive"));
+
+				pinToggler<numLEDs>::setFlashRate(i, OFF);
 			}
 		} // end loop over Controllers
-
-		// If there are spare LEDs, turn them off
-		for (int j = ledIdx; j < numLEDs; j++) {
-			CONSOLE_LOG(F("LED "));
-			CONSOLE_LOG(j);
-			CONSOLE_LOG(F(" on pin "));
-			CONSOLE_LOG(pinToggler<2>::getPin(j));
-			CONSOLE_LOG_LN(F(" is unneeded: disabling"));
-
-			pinToggler<2>::setFlashRate(j, OFF);
-		}
-
-		// Reset the led cycle counter
-		count = 0;
 	}
 }
 
@@ -525,7 +537,8 @@ void measureError(const ParameterLookup& params) {
 
 	// Search the Controllers for this channel to see if it's under control already
 	bool isControlled = false;
-	for (int i = 0; i < 2; i++) {
+	const size_t arrayLen = sizeof(controllers) / sizeof(*controllers);
+	for (int i = 0; i < arrayLen; i++) {
 		if (controllers[i].getErrorInterface() == theChannel) {
 			isControlled = true;
 			break;
@@ -1006,8 +1019,8 @@ void voltageLock(const ParameterLookup& params) {
 
 	// The requested channel and any conflicting channels are now not under control
 
-	// Find the first empty slot in the `controllers` vector
-	const int controllerIdx = findFirstFreeController();
+	// Find the slot to store this Controller in
+	const int controllerIdx = findSlotForController(outputChannel);
 
 	// Check that we found a slot
 	if (controllerIdx == -1) {
@@ -1275,28 +1288,103 @@ CtrlChanIdx stringToOPAChannel(const char str[]) {
 	return CtrlChanIdx::NOT_FOUND;
 }
 
-// Returns the index of the first Controller in the `controllers` vector which is not currently active
+// Returns the index of the slot for the next Controller, according to the
+// rules shown in this comment
 // N.B. This function accesses the global `controllers` vector so is not properly encapsulated
-static int findFirstFreeController() {
-	
-	int out = -1;
+// 
+// " // The `controllers` array can contain several Controllers, potentially one for each output channel.
+		// Since there are only two LEDs, we can't in general display status LEDs for all of them, although 
+		// 99% of the use cases for this device will involve a maximum of two Controllers. 
+		// 
+		// The Controller 
+		// creation code puts the Controllers into the array in a sensible order, prioritising the first 2 slots. 
+		// Here I decided to have the LEDs represent the Controllers stored only in the first two slots of the 
+		// array. The points at which we create the Controllers
+		
+		// There are only 2 LEDs, so only output statuses for the first two active Controllers (void voltageLock(...))
+		// will make sure that they are put in the right place. 
+		// 
+		// For reference, this place will be:
+		// 
+		// Output channel		LED
+		// 				1		1
+		// 				2		1
+		// 				3		2
+		// 				4		2
+		//				BPA		1
+		//				BPB		2
+		//				
+		// In the event of a clash, e.g. channels 1 and 2 are locked at the same time, the second one to be started will put 
+		// assigned to the other LED. If this is not possble (e.g. channels 1 and 3 are locked, then 2 is started) then no
+		// LED will be assigned
+//	"
+static int findSlotForController(const CtrlChanIdx outputChannel) {
+
+	int preferredSlot;
 
 	const size_t arrayLen = sizeof(controllers) / sizeof(*controllers);
 
-	CONSOLE_LOG(F("findFirstFreeController with array size = "));
+	CONSOLE_LOG(F("findSlotForController with array size = "));
 	CONSOLE_LOG_LN(arrayLen);
 
-	for (int i = 0; i < arrayLen; i++) {
+	// Figure out which slot we'd like to put this Controller into, if it's free
+#ifdef FOUR_CHANNEL_BOARD
+	switch (outputChannel) {
+		case CtrlChanIdx::CHAN_1 	:
+		case CtrlChanIdx::CHAN_2 	:
+		case CtrlChanIdx::CHAN_BP_12 	:
+
+			preferredSlot = 0;
+			break;
+
+		case CtrlChanIdx::CHAN_3 	:
+		case CtrlChanIdx::CHAN_4 	:
+		case CtrlChanIdx::CHAN_BP_34 	:
+
+			preferredSlot = 1;
+			break;
+	}
+#else
+	switch (outputChannel) {
+		case CtrlChanIdx::CHAN_1 	:
+		case CtrlChanIdx::CHAN_BP 	:
+
+			preferredSlot = 0;
+			break;
+
+		case CtrlChanIdx::CHAN_2 	:
+
+			preferredSlot = 1;
+			break;
+
+		default:
+
+			// Error!
+			return -1;
+	}
+#endif
+
+	// If the slot is available, use it
+	if (preferredSlot < arrayLen && !controllers[preferredSlot])
+		return preferredSlot;
+
+	// If not, check the other one
+	const int otherSlot = (preferredSlot == 0 ? 1 : 0);
+	if (otherSlot < arrayLen && !controllers[otherSlot])
+		return otherSlot;	
+
+	// If both the above fail, then just put the Controller in the next free slot
+	for (size_t i = 0; i < arrayLen; i++) {
 		if (!controllers[i]) { // is controller invalid?
 			
-			// If so, we found a slot
-
-			out = i;
-			break;
+			// We found a slot
+			return i;
 		}
 	}
 
-	return out;
+	// Somehow we managed not to find a single slot! 
+	// Return an error
+	return -1;
 }
 
 // Close the controller directly managing a channel if it exists

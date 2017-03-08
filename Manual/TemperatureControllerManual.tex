@@ -189,7 +189,7 @@ The RJ45 connector accepts standard Ethernet-style cat5 cable. This contains 4 t
 
 There are two switches present on the board:
 
-The vertical switch, {\tt COMMS\_DISABLE} can be used to disable / enable updating of the controller via USE connection. When this is set to disabled, all functions that alter the state of the controller will be prohibited (monitoring commands still work). When set to enabled, the controller functions as normal. This is intended to prevent accidental pertubation of a system under control. 
+The vertical switch, {\tt COMMS\_DISABLE} can be used to disable / enable updating of the controller via USB connection. When this is set to disabled, all functions that alter the state of the controller will be prohibited (monitoring commands still work). When set to enabled, the controller functions as normal. This is intended to prevent accidental pertubation of a system under control. 
 
 The horizontal, momentary switch {\tt RESET} causes a complete system reset.\footnote{Pressing this switch is actually not strictly equivalent to a power cycle as it does not reset the ADC. However, in the initial setup section of the software the ADS is reset via its SPI interface, so these two methods should give identical results.}
 
@@ -199,7 +199,25 @@ The horizontal, momentary switch {\tt RESET} causes a complete system reset.\foo
 
 The two front-mounted LEDs indicate the status of the lock(s) in progress. The LEDs are unlit if the device is currently outputting a constant voltage. If attempting to perform a lock, the two LEDs display the current distance from the setpoint of the lock controlling their respective control channels. A solid light means that the error signal is less than \SI{0.01}{\volt}, a slow flash means between  \SI{0.01}{\volt} and  \SI{0.1}{\volt} and a quick flash means greater than  \SI{0.1}{\volt}. These threshold values are defaults but can be altered over the serial connection (see Appendix~\ref{chap:available_commands} for a full listing of available commands). 
 
-Locks are indexed in the order that they are started. 
+Locks are indexed as follows:
+
+\begin{table}[h!]
+	
+	\centering
+
+	\begin{tabular}{ll}
+	\toprule
+	\textbf{LED} 	& \textbf{Output channel} 		\\ \midrule
+	1		&	1					\\
+			& 	2					\\
+			& 	BPA					\\ \midrule
+	2		& 	3					\\
+			& 	4					\\
+			& 	BPB					\\ \bottomrule
+	\end{tabular}
+	\caption{LED assignments}
+	\label{tab:led_assignments}
+\end{table}
 
 \section{USB}
 
