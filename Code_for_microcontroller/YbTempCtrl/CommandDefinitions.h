@@ -118,44 +118,44 @@ template <size_t size>
 CommandHandlerReturn registerCommands(CommandHandler<size> * h) {
 	// N.B. commands are not case sensitive
 
-	h->registerCommand("*TST", 0, *testComms);
-	h->registerCommand("*TST?", 0, *testCommsQ);
-	h->registerCommand("*RST", 0, *resetDevice);
-	h->registerCommand("*IDN", 0, *identity);
-	h->registerCommand("*IDN?", 0, *identity);
-	h->registerCommand("*VER", 0, *version);
-	h->registerCommand("*VER?", 0, *version);
-	h->registerCommand("*MEM", 0, *availableMemory);
-	h->registerCommand("*MEM?", 0, *availableMemory);
+	h->registerCommand(COMMANDHANDLER_HASH("*TST"), 0, *testComms);
+	h->registerCommand(COMMANDHANDLER_HASH("*TST?"), 0, *testCommsQ);
+	h->registerCommand(COMMANDHANDLER_HASH("*RST"), 0, *resetDevice);
+	h->registerCommand(COMMANDHANDLER_HASH("*IDN"), 0, *identity);
+	h->registerCommand(COMMANDHANDLER_HASH("*IDN?"), 0, *identity);
+	h->registerCommand(COMMANDHANDLER_HASH("*VER"), 0, *version);
+	h->registerCommand(COMMANDHANDLER_HASH("*VER?"), 0, *version);
+	h->registerCommand(COMMANDHANDLER_HASH("*MEM"), 0, *availableMemory);
+	h->registerCommand(COMMANDHANDLER_HASH("*MEM?"), 0, *availableMemory);
 
-	h->registerCommand("STOR", -1, *storeCommand);
-	h->registerCommand("RETR", 0, *retreiveCommand);
-	h->registerCommand("RETR?", 0, *retreiveCommand);
-	h->registerCommand("WIPE", 0, *wipeCommand);
+	h->registerCommand(COMMANDHANDLER_HASH("STOR"), -1, *storeCommand);
+	h->registerCommand(COMMANDHANDLER_HASH("RETR"), 0, *retreiveCommand);
+	h->registerCommand(COMMANDHANDLER_HASH("RETR?"), 0, *retreiveCommand);
+	h->registerCommand(COMMANDHANDLER_HASH("WIPE"), 0, *wipeCommand);
 
-	h->registerCommand("ERRO", 1, *measureError);
-	h->registerCommand("ERRO?", 1, *measureError);
+	h->registerCommand(COMMANDHANDLER_HASH("ERRO"), 1, *measureError);
+	h->registerCommand(COMMANDHANDLER_HASH("ERRO?"), 1, *measureError);
 
-	h->registerCommand("CONT", 2, *setControlSignal);
-	h->registerCommand("CONT?", 1, *getControlSignal);
+	h->registerCommand(COMMANDHANDLER_HASH("CONT"), 2, *setControlSignal);
+	h->registerCommand(COMMANDHANDLER_HASH("CONT?"), 1, *getControlSignal);
 
-	h->registerCommand("CURR", 2, *setCurrentLimit);
-	h->registerCommand("CURR?", 1, *getCurrentLimit);
+	h->registerCommand(COMMANDHANDLER_HASH("CURR"), 2, *setCurrentLimit);
+	h->registerCommand(COMMANDHANDLER_HASH("CURR?"), 1, *getCurrentLimit);
 
-	h->registerCommand("THER?", 1, *getThermalState);
+	h->registerCommand(COMMANDHANDLER_HASH("THER?"), 1, *getThermalState);
 
-	h->registerCommand("THRE", 2, *setThresholds);
-	h->registerCommand("THRE?", 0, *getThresholds);
+	h->registerCommand(COMMANDHANDLER_HASH("THRE"), 2, *setThresholds);
+	h->registerCommand(COMMANDHANDLER_HASH("THRE?"), 0, *getThresholds);
 
-	h->registerCommand("LIMI", 3, *setControlLimits);
-	h->registerCommand("LIMI?", 1, *getControlLimits);
+	h->registerCommand(COMMANDHANDLER_HASH("LIMI"), 3, *setControlLimits);
+	h->registerCommand(COMMANDHANDLER_HASH("LIMI?"), 1, *getControlLimits);
 
-	h->registerCommand("SETP", 2, *setSetpoint);
-	h->registerCommand("SETP?", 1, *getSetpoint);
+	h->registerCommand(COMMANDHANDLER_HASH("SETP"), 2, *setSetpoint);
+	h->registerCommand(COMMANDHANDLER_HASH("SETP?"), 1, *getSetpoint);
 
-	h->registerCommand("LOCK", 7, *voltageLock);
+	h->registerCommand(COMMANDHANDLER_HASH("LOCK"), 7, *voltageLock);
 
-	CommandHandlerReturn lastReturn = h->registerCommand("VOLT", 2, *constVoltage);
+	CommandHandlerReturn lastReturn = h->registerCommand(COMMANDHANDLER_HASH("VOLT"), 2, *constVoltage);
 
 	return lastReturn;
 }
