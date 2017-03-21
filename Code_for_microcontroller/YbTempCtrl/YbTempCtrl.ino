@@ -647,7 +647,7 @@ void measureError(const ParameterLookup& params) {
 		result = theChannel->getReading(reading);
 	}
 
-	if (result != ErrorChannelReturn::NO_ERROR) {
+	if (result != ErrorChannelReturn::NO_ERROR && result != ErrorChannelReturn::OUT_OF_RANGE) {
 		Serial.print(F("getReading / recallError failed: "));
 		reportErrorError(result);
 		return;
@@ -655,6 +655,11 @@ void measureError(const ParameterLookup& params) {
 
 	// Convert -1 -> +1 reading into voltage
 	double voltage = levelToErrorVoltage(reading, voltageToBeDoubled(channelNum));
+
+	// If the reading hit the rails, prepend a '>' or a '<' depending
+	if (result == ErrorChannelReturn::OUT_OF_RANGE) {
+		Serial.print(voltage > 0 ? '>' : '<');
+	}
 
 	// Report the voltage
 	Serial.println(voltage, FLT_PRINT_PRECISION); // 6 s.f.
