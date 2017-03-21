@@ -13,7 +13,8 @@
 #include "compileTimeCRC32.h"
 #include "Microprocessor_Debugging\debugging_disable.h"
 
-#define COMMAND_SIZE_MAX 150 // num chars
+#define COMMAND_SIZE_MAX 150 // num chars to reserve in memory for buffer
+#define EEPROM_SIZE_MAX 256 // Max space used in EEPROM
 
 // To disable EEPROM features, set this flag:
 // #define EEPROM_DISABLED
@@ -37,6 +38,7 @@ enum class CommandHandlerReturn {
 	OUT_OF_MEM,
 	BUFFER_FULL,
 	COMMAND_TOO_LONG,
+	EEPROM_FULL,
 	UNKNOWN_ERROR
 };
 
@@ -456,18 +458,11 @@ public:
 	// This command should not include newlines: it will be copied verbatim into the
 	// buffer and then executed as a normal command would be
 	// Multiple commands can be seperated by ';' chars
-	// Max length is COMMAND_SIZE_MAX - 2 (1 char to append a newline, 1 for the null term)
+	// Max length is EEPROM_SIZE_MAX - 2 (1 char to append a newline, 1 for the null term)
 	// Returns false on fail
 	CommandHandlerReturn storeStartupCommand(const String& command)
 	{
-
-		// Check that the string is small enough to fit into the buffer, including null char
-		if (command.length() > COMMAND_SIZE_MAX - 2) {
-			CONSOLE_LOG_LN(F("CommandHandler::Command too long for EEPROM"));
-			return CommandHandlerReturn::COMMAND_TOO_LONG;
-		}
-
-		// Store it
+		// Call the c str version of this command
 		return storeStartupCommand(command.c_str());
 	}
 
@@ -475,22 +470,36 @@ public:
 	// This command should not include newlines: it will be copied verbatim into the
 	// buffer and then executed as a normal command would be
 	// Multiple commands can be seperated by ';' chars
-	// Max length is COMMAND_SIZE_MAX - 2 (1 char to append a newline, 1 for the null term)
+	// Max length is EEPROM_SIZE_MAX - 2 (1 char to append a newline, 1 for the null term)
 	// Returns CommandHandlerReturn to indicate error status
-	CommandHandlerReturn storeStartupCommand(const char* command)
+	CommandHandlerReturn storeStartupCommand(const char* command, bool append = false)
 	{
-		if (strlen(command) > COMMAND_SIZE_MAX - 2)
-			return CommandHandlerReturn::COMMAND_TOO_LONG;
+		int commandIdx = 0;
+		int eeprom_ptr = 0;
+
+		// If we're appending to the EEPROM command, find the end of the current one
+		if (append) {
+			while (eeprom_ptr < EEPROM_SIZE_MAX - 2) {
+				
+				if (EEPROM.read(EEPROM_STORED_COMMAND_LOCATION + eeprom_ptr) == '\0') {
+					break;
+				}
+
+				eeprom_ptr++;
+			}
+		}
+
+		const int availableSpace = EEPROM_SIZE_MAX - 2 - eeprom_ptr;
+
+		if (strlen(command) > availableSpace)
+			return CommandHandlerReturn::EEPROM_FULL;
 
 		// Store a flag indicating that a command exists
 		const bool trueFlag = true;
 		EEPROM.update(EEPROM_STORED_COMMAND_FLAG_LOCATION, trueFlag);
 
 		// Loop through the command and store it
-		int commandIdx = 0;
-		int eeprom_ptr = 0;
-
-		while (command[commandIdx] != '\0' && eeprom_ptr < COMMAND_SIZE_MAX - 2) {
+		while (command[commandIdx] != '\0' && eeprom_ptr < EEPROM_SIZE_MAX - 2) {
 
 			char toBeStored;
 
@@ -546,7 +555,7 @@ public:
 	}
 
 	// Return any stored startup command by copying into buf.
-	// buf must point to a buffer of at least COMMAND_SIZE_MAX chars
+	// buf must point to a buffer of at least EEPROM_SIZE_MAX chars
 	void getStartupCommand(char * buf)
 	{
 		CONSOLE_LOG_LN(F("CommandHandler::getStartupCommand(char*)"))
@@ -573,7 +582,7 @@ public:
 			int EEPROM_idx = EEPROM_STORED_COMMAND_LOCATION;
 
 			// At most, go to the end of the buffer - 1, to leave space for a null terminator
-			while (bufIdx < COMMAND_SIZE_MAX - 1)
+			while (bufIdx < EEPROM_SIZE_MAX - 1)
 			{
 				char c;
 				EEPROM.get(EEPROM_idx, c);
@@ -641,7 +650,7 @@ public:
 			char c;
 			
 			// If we've read the max possible number of chars, stop here
-			if (numCharsRead >= COMMAND_SIZE_MAX-2) {
+			if (numCharsRead >= EEPROM_SIZE_MAX) {
 				
 				CONSOLE_LOG_LN(F("CommandHandler::Stored command unterminated!"));
 
@@ -664,6 +673,8 @@ public:
 				CONSOLE_LOG(F("CommandHandler::Stored command ends at "));
 				CONSOLE_LOG_LN(EEPROM_idx);
 
+				// Queue a newline then stop
+				addCommandChar('\n');
 				break;
 			}
 
