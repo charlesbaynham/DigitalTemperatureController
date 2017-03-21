@@ -87,6 +87,7 @@ public:
 
 	// Get parameter indexed. Parameter 0 is the command itself
 	// Paremeter -1 returns the entire string
+	// Paremeter -2 returns all the parameters
 	// Requesting a non-existent parameter will return a NULL ptr
 	const char * operator [] (int idx) const
 	{
@@ -101,6 +102,16 @@ public:
 
 			return _theCommand;
 
+		} else if (idx == -2) {
+			// The user wants all the parameters
+			// Find a pointer to the first param then restore all the spaces and return it
+			
+			char* ptr = getParamPtr(1);
+			
+			restoreSpaces();
+
+			return ptr;
+
 		} else {
 			// The user wants a particular parameter. Ensure the string si setup correctly, 
 			// then loop through to return a pointer to the start of the appropriate param
@@ -108,47 +119,7 @@ public:
 			if (!_stringHasNULLS)
 				subSpacesForNULL();
 
-				// `_theCommand` ends at `_endOfString`, so don't go past this
-
-			CONSOLE_LOG(F("ParameterLookup::Looking for param "));
-			CONSOLE_LOG_LN(idx);
-
-			char * paramPtr = _theCommand;
-			int count = idx;
-
-			while (paramPtr < _endOfString) {
-
-				if (count == 0 && *paramPtr) {
-					// We found a non null char after passing the required 
-					// number of nulls, so return a pointer to it
-
-					CONSOLE_LOG(F("ParameterLookup::Returning ptr to pos "));
-					CONSOLE_LOG(paramPtr - _theCommand);
-					CONSOLE_LOG(F(", containing command: "));
-					CONSOLE_LOG_LN(paramPtr);
-
-					return paramPtr;
-				}
-
-				if ('\0' == *paramPtr && // We found a null...
-										 // ... and the previous char wasn't a null
-					paramPtr > _theCommand && '\0' != *(paramPtr - 1)) {
-					// Decrement the count, as we've passed a delimiter
-					count--;
-
-					CONSOLE_LOG(F("ParameterLookup::Break found at pos "));
-					CONSOLE_LOG_LN(paramPtr - _theCommand);
-				}
-
-				// Next char
-				paramPtr++;
-			}
-
-			CONSOLE_LOG_LN(F("ParameterLookup::Not found"));
-
-			// We got to the end without finding the requested param number
-			// return a Null ptr
-			return 0;
+			return getParamPtr(idx);
 		}
 	}
 
@@ -194,6 +165,62 @@ public:
 	}
 
 private:
+
+	/**
+	 * @brief      Gets a pointer to the start of a given parameter
+	 *
+	 *             This function requires that the command `_theCommand` is
+	 *             formatted with NULLs. If it isn't, this function will format
+	 *             it.
+	 *
+	 * @param[in]  idx   The parameter index
+	 *
+	 * @return     The parameter pointer.
+	 */
+	char * getParamPtr(int idx) {
+		
+		if (!_stringHasNULLS)
+			subSpacesForNULL();
+
+		CONSOLE_LOG(F("ParameterLookup::Looking for param "));
+		CONSOLE_LOG_LN(idx);
+
+		char * paramPtr = _theCommand;
+		int count = idx;
+
+		// `_theCommand` ends at `_endOfString`, so don't go past this
+		while (paramPtr < _endOfString) {
+
+			if (count == 0 && *paramPtr) {
+				// We found a non null char after passing the required 
+				// number of nulls, so return a pointer to it
+
+				CONSOLE_LOG(F("ParameterLookup::Returning ptr to pos "));
+				CONSOLE_LOG(paramPtr - _theCommand);
+				CONSOLE_LOG(F(", containing command: "));
+				CONSOLE_LOG_LN(paramPtr);
+
+				return paramPtr;
+			}
+
+			if ('\0' == *paramPtr && // We found a null...
+									 // ... and the previous char wasn't a null
+				paramPtr > _theCommand && '\0' != *(paramPtr - 1)) {
+				// Decrement the count, as we've passed a delimiter
+				count--;
+
+				CONSOLE_LOG(F("ParameterLookup::Break found at pos "));
+				CONSOLE_LOG_LN(paramPtr - _theCommand);
+			}
+
+			// Next char
+			paramPtr++;
+		}
+
+		// We hit the end of the string. Return a NULL pointer
+		return 0;
+	}
+
 
 	// Loop through _theCommand counting params and subbing out
 	// spaces or tabs for NULLs
@@ -672,9 +699,7 @@ public:
 
 				CONSOLE_LOG(F("CommandHandler::Stored command ends at "));
 				CONSOLE_LOG_LN(EEPROM_idx);
-
-				// Queue a newline then stop
-				addCommandChar('\n');
+				
 				break;
 			}
 
