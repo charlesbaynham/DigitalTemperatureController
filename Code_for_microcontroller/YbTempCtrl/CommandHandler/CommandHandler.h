@@ -13,7 +13,7 @@
 #include "compileTimeCRC32.h"
 #include "Microprocessor_Debugging\debugging_disable.h"
 
-#define COMMAND_SIZE_MAX 128 // num chars
+#define COMMAND_SIZE_MAX 150 // num chars
 
 // To disable EEPROM features, set this flag:
 // #define EEPROM_DISABLED
@@ -42,130 +42,112 @@ enum class CommandHandlerReturn {
 
 //////////////////////  PARAMETER LOOKUP  //////////////////////
 
-// This class handles the lookup of parameters from an internal string
-// It stores an internal pointer to a string which will be invalidated
-// and should not be used by other code after passing to this object.
+// This class handles the lookup of parameters from an internal string It stores
+// an internal pointer to a string which will be invalidated and should not be
+// used by other code after passing to this object.
+//
+// Index it (e.g. "lookup[0]") to get a parameter out, starting with 0 being the
+// command itself.
+//
+// The special index e.g. "lookup[-1]" returns the whole command string, with
+// spaces seperating parameters.
+//
+// Implementation --------------
+//
+// This object is implemented entirely on the stack. Namely, it splits
+// `_theCommand` into several strings, so the whole thing contains several NULL
+// chars delimiting each parameter.
+//
+// After the Constuctor is called, `_theCommand` would be as shown for the
+// command "HELO 1 2 3.3" :
+//
+// "HELO[0x00]1[0x00]2[0x00]3.3[0x00]"
 // 
-// Index it (e.g. "lookup[0]") to get a parameter out, starting with 0
-// being the command itself. 
+// The private member char* _endOfString would point to the final NULL char. 
 //
-// This object is implemented entirely on the stack. Because of this, it must 
-// use some odd internal conventions. Namely, it terminates `_theCommand` 
-// with ETX (0x03) chars instead of NULL chars. This is because `_theCommand` 
-// contains several NULL chars delimiting each parameter.
-//
-// After the Constuctor is called, `_theCommand` would be as shown
-// for the command "HELO 1 2 3.3" :
-//
-// "HELO[0x00]1[0x00]2[0x00]3.3[0x00][0x03]"
-//
-// Thus pointers can be passed to the beginning of each required parameter
-// and they form valid c strings for other functions to use.
-//
-// The flip-side is that _theCommand should not be handled using normal c string
-// manipulation commands unless you're being very careful
-
+// Thus pointers can be passed to the beginning of each required parameter and
+// they form valid c strings for other functions to use.
 class ParameterLookup {
 
 public:
 
 	// Constuctor.
-	// Replace spaces in commandStr with NULL and terminate the whole lot with
-	// a [0x03] char.
-	// The buffer pointed to by commandStr must be at least COMMAND_SIZE_MAX+1 in length
+	// Replace spaces in commandStr with NULL
+	// The buffer pointed to by commandStr must be at least COMMAND_SIZE_MAX in length
 	ParameterLookup(char * commandStr) :
-		_theCommand(commandStr)
+		_theCommand(commandStr), _stringHasNULLS(false)
 	{
 		CONSOLE_LOG(F("ParameterLookup::Constuctor with command: "));
 		CONSOLE_LOG_LN(commandStr);
 
-		// Loop through _theCommand counting params and subbing out
-		// spaces or tabs for NULLs
-		char * loop = _theCommand;
-		_size = 1;
-
-		while (*loop) {
-
-			if (' ' == *loop || '\t' == *loop) {
-
-				CONSOLE_LOG(F("ParameterLookup::Replacing char '"));
-				CONSOLE_LOG(*loop);
-				CONSOLE_LOG(F("' at pos "));
-				CONSOLE_LOG(loop - _theCommand);
-				CONSOLE_LOG_LN(F(" with \\0"));
-
-				// Replace spaces with NULL chars
-				*loop = '\0';
-
-				// If the preceeding char wasn't also a space,
-				// increment the param count
-				if (loop > _theCommand && // Don't look too far back!
-					'\0' != *(loop - sizeof(char))) {
-					_size++;
-				}
-			}
-
-			loop++;
-		}
-
-		// We looped to the last char which is a NULL.
-		// Leave it as a NULL and make the next char a [0x03] too
-		loop++;
-		*loop = 0x03;
-
-		CONSOLE_LOG(F("ParameterLookup::[0x03] stored at pos "));
-		CONSOLE_LOG_LN(loop - _theCommand);
-
+		subSpacesForNULL();
 	}
 
 	// Get parameter indexed. Parameter 0 is the command itself
+	// Paremeter -1 returns the entire string
 	// Requesting a non-existent parameter will return a NULL ptr
 	const char * operator [] (int idx) const
 	{
 
-		// The string is setup as described in "CommandHandler.h", so now all we need
-		// to do is get and return a pointer to the start of the requested param
-		// `_theCommand` is terminated by a [0x03] char, so don't go past this
+		if (idx == -1) {
+			// The user wants the whole string.
+			// OK, replace all the NULLs with spaces and then return a pointer
+			// to the start of the string
+			
+			if (_stringHasNULLS) 
+				restoreSpaces();
 
-		CONSOLE_LOG(F("ParameterLookup::Looking for param "));
-		CONSOLE_LOG_LN(idx);
+			return _theCommand;
 
-		char * paramPtr = _theCommand;
-		int count = idx;
+		} else {
+			// The user wants a particular parameter. Ensure the string si setup correctly, 
+			// then loop through to return a pointer to the start of the appropriate param
+			
+			if (!_stringHasNULLS)
+				subSpacesForNULL();
 
-		while (0x03 != *paramPtr) {
+				// `_theCommand` ends at `_endOfString`, so don't go past this
 
-			if (count == 0 && *paramPtr) {
-				// We found a non null char after passing the required 
-				// number of nulls, so return a pointer to it
+			CONSOLE_LOG(F("ParameterLookup::Looking for param "));
+			CONSOLE_LOG_LN(idx);
 
-				CONSOLE_LOG(F("ParameterLookup::Returning ptr to pos "));
-				CONSOLE_LOG(paramPtr - _theCommand);
-				CONSOLE_LOG(F(", containing command: "));
-				CONSOLE_LOG_LN(paramPtr);
+			char * paramPtr = _theCommand;
+			int count = idx;
 
-				return paramPtr;
+			while (paramPtr < _endOfString) {
+
+				if (count == 0 && *paramPtr) {
+					// We found a non null char after passing the required 
+					// number of nulls, so return a pointer to it
+
+					CONSOLE_LOG(F("ParameterLookup::Returning ptr to pos "));
+					CONSOLE_LOG(paramPtr - _theCommand);
+					CONSOLE_LOG(F(", containing command: "));
+					CONSOLE_LOG_LN(paramPtr);
+
+					return paramPtr;
+				}
+
+				if ('\0' == *paramPtr && // We found a null...
+										 // ... and the previous char wasn't a null
+					paramPtr > _theCommand && '\0' != *(paramPtr - 1)) {
+					// Decrement the count, as we've passed a delimiter
+					count--;
+
+					CONSOLE_LOG(F("ParameterLookup::Break found at pos "));
+					CONSOLE_LOG_LN(paramPtr - _theCommand);
+				}
+
+				// Next char
+				paramPtr++;
 			}
 
-			if ('\0' == *paramPtr && // We found a null...
-									 // ... and the previous char wasn't a null
-				paramPtr > _theCommand && '\0' != *(paramPtr - 1)) {
-				// Decrement the count, as we've passed a delimiter
-				count--;
+			CONSOLE_LOG_LN(F("ParameterLookup::Not found"));
 
-				CONSOLE_LOG(F("ParameterLookup::Break found at pos "));
-				CONSOLE_LOG_LN(paramPtr - _theCommand);
-			}
-
-			// Next char
-			paramPtr++;
+			// We got to the end without finding the requested param number
+			// return a Null ptr
+			return 0;
 		}
-
-		CONSOLE_LOG_LN(F("ParameterLookup::Not found"));
-
-		// We got to the end without finding the requested param number
-		// return a Null ptr
-		return 0;
 	}
 
 	// Number of stored params, including the command itself
@@ -211,8 +193,77 @@ public:
 
 private:
 
+	// Loop through _theCommand counting params and subbing out
+	// spaces or tabs for NULLs
+	void subSpacesForNULL() {
+
+		char * loop = _theCommand;
+		_size = 1;
+
+		while (*loop) {
+
+			if (' ' == *loop || '\t' == *loop) {
+
+				CONSOLE_LOG(F("ParameterLookup::Replacing char '"));
+				CONSOLE_LOG(*loop);
+				CONSOLE_LOG(F("' at pos "));
+				CONSOLE_LOG(loop - _theCommand);
+				CONSOLE_LOG_LN(F(" with \\0"));
+
+				// Replace spaces with NULL chars
+				*loop = '\0';
+
+				// If the preceeding char wasn't also a space,
+				// increment the param count
+				if (loop > _theCommand && // Don't look too far back!
+					'\0' != *(loop - sizeof(char))) {
+					_size++;
+				}
+			}
+
+			loop++;
+		}
+
+		// We looped to the last char which is a NULL.
+		// Leave it as a NULL and store a pointer to it
+		_endOfString =  loop;
+
+		_stringHasNULLS = true;
+
+		CONSOLE_LOG(F("ParameterLookup::_theCommand ends at pos "));
+		CONSOLE_LOG_LN(_endOfString);
+	}
+
+	// Undo the work done by subSpacesForNULL()
+	void restoreSpaces() {
+
+		char * loop = _theCommand;
+
+		while (loop < _endOfString) {
+
+			if ('\0' == *loop) {
+
+				CONSOLE_LOG(F("ParameterLookup::Replacing char at pos "));
+				CONSOLE_LOG(loop - _theCommand);
+				CONSOLE_LOG_LN(F(" with \\s"));
+
+				// Replace NULL with space
+				*loop = ' ';
+			}
+
+			loop++;
+		}
+
+		// Mark this as done
+		_stringHasNULLS = false;
+	}
+
 	// Pointer to the whole command
 	char * _theCommand;
+	
+	// Internal params	
+	char * _endOfString;
+	bool _stringHasNULLS;
 	unsigned int _size;
 
 };
@@ -251,7 +302,7 @@ private:
 public:
 
 	// Constuctor
-	// Initialise private members and queue any stored command in the EEPROM
+	// Initialise private members
 	CommandHandler() :
 		_lookupList(), // Not needed, but just to be explicit
 		_command_too_long(false),
