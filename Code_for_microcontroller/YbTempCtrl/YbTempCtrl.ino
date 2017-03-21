@@ -54,8 +54,8 @@ using namespace YbCtrl;
 #include "Microprocessor_debugging\debugging_init.h"
 #include "Microprocessor_debugging\debugging_disable.h"
 
-// Command handler object, can hold 29 commands
-CommandHandler<29> handler;
+// Command handler object, can hold 30 commands
+CommandHandler<30> handler;
 // Declare functions for all the SCPI commands
 #include "CommandDefinitions.h"
 
@@ -123,6 +123,14 @@ enum class CtrlChanIdx {
 };
 #endif
 
+// DFU mode magic variable
+// This variable is not initialised to zero. Therefore we can write to it before a watchdog 
+// reset and it won't get overridden, so we can send information from instance to instance. 
+// I'll use this to send a "magic key" which, if it is set, means that I'm requesting a bootloader reset
+const uint16_t magic_bootloader_key = 0x586c;
+uint16_t boot_key __attribute__ ((section (".noinit")));
+unsigned int num_resets __attribute__ ((section (".noinit")));
+
 // Reserve space for things
 //
 // 1) Controllers (not pointers, this reserves space on the stack)
@@ -166,6 +174,31 @@ const size_t numLEDs = 2;
 // Checks for success are strictly adhered to to prevent undetected out of memory errors
 void setup()
 {
+	// Check for DFU mode:
+	// Is the magic key present?
+	if (boot_key == magic_bootloader_key) {
+
+		// boot_key was marked with the magic key:
+		// This means that DFU mode is requested
+		
+		// We will do 10x resets max
+		if (num_resets == 10)
+		{
+			// Remove the magic key if we've already reset 10x
+			// This stops us from rebooting again
+			boot_key = 0;
+
+		} else {
+			
+			// More resets requested. Increment the number of resets (this is preserved from reset to reset)
+			// and then jump back to the bootloader
+			num_resets++;
+			
+			// Do a watchdog reset to get back to the bootloader
+			doWatchdogReset();
+		}
+	}
+
 	// Start the watchdog timer with a 2s timeout
 #ifndef DEBUGGING_ENABLED
 	startWatchdog();
@@ -476,10 +509,39 @@ void resetDevice(const ParameterLookup&) {
 
 	if (isSerialControlDisabled()) return;
 
-	// To do a proper reset, we set the watchdog to its shortest timeout and then wait for the reset to happen
 	Serial.println(F("Resetting..."));
 	Serial.flush();
 	
+	doWatchdogReset();
+}
+
+/**
+ * @brief      Launch DFU mode
+ *
+ *             Reset the Arduino to its bootloader
+ *
+ * @param[in]  params  The parameters
+ */
+void DFU_Mode(const ParameterLookup& params) {
+
+	if (isSerialControlDisabled()) return;
+
+	Serial.println(F("DFU Mode..."));
+	Serial.flush();
+
+	// Mark the boot key with the magic variable
+	boot_key = magic_bootloader_key;
+
+	// Restart the reset counter
+	num_resets = 0;
+
+	// Initiate a watchdog reset
+	doWatchdogReset();
+}
+
+// To do a proper reset, we set the watchdog to its shortest timeout and then wait for the reset to happen
+void doWatchdogReset() {
+
 	// Clear MCU Status Register. 
 	MCUSR = 0;
 

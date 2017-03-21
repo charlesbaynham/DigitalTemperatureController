@@ -26,6 +26,7 @@
 | *IDN(?) | Identify                                                                                                                                                                 | 0                                                                                           | "ARDUINO PID"                                                                                      | 
 | *VER(?) | Output version string                                                                                                                                                    | 0                                                                                           | e.g. "v4.1"                                                                                        | 
 | *RST    | Reset the device (N.B. does not clear EEPROM)                                                                                                                            | 0                                                                                           | -                                                                                                  | 
+| *DFU    | Puts the device into DFU mode (does 10x resets, expecting code upload)                                                                                                   | 0                                                                                           | -                                                                                                  | 
 | STOR    | Store a command in EEPROM to be executed on startup                                                                                                                      | "command to be called on startup"                                                           | "Done"                                                                                             | 
 |         |                                                                                                                                                                          | Multiple commands can be stored by separating them with a ';'                               | "#StoreCommand error: command too long"                                                            | 
 | APPE    | Append a command to EEPROM to be executed on startup                                                                                                                     | "command to be called on startup"                                                           | "Done"                                                                                             | 
@@ -69,6 +70,7 @@
 commandFunction testComms;
 commandFunction testCommsQ;
 commandFunction resetDevice;
+commandFunction DFU_Mode;
 commandFunction identity;
 commandFunction version;
 commandFunction availableMemory;
@@ -124,6 +126,7 @@ CommandHandlerReturn registerCommands(CommandHandler<size> * h) {
 	h->registerCommand(COMMANDHANDLER_HASH("*TST"), 0, *testComms);
 	h->registerCommand(COMMANDHANDLER_HASH("*TST?"), 0, *testCommsQ);
 	h->registerCommand(COMMANDHANDLER_HASH("*RST"), 0, *resetDevice);
+	h->registerCommand(COMMANDHANDLER_HASH("*DFU"), 0, *DFU_Mode);
 	h->registerCommand(COMMANDHANDLER_HASH("*IDN"), 0, *identity);
 	h->registerCommand(COMMANDHANDLER_HASH("*IDN?"), 0, *identity);
 	h->registerCommand(COMMANDHANDLER_HASH("*VER"), 0, *version);
