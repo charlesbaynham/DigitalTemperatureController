@@ -54,8 +54,8 @@ using namespace YbCtrl;
 #include "Microprocessor_debugging\debugging_init.h"
 #include "Microprocessor_debugging\debugging_disable.h"
 
-// Command handler object, can hold 28 commands
-CommandHandler<28> handler;
+// Command handler object, can hold 29 commands
+CommandHandler<29> handler;
 // Declare functions for all the SCPI commands
 #include "CommandDefinitions.h"
 
@@ -1148,54 +1148,43 @@ void storeCommand(const ParameterLookup& params) {
 
 	if (isSerialControlDisabled()) return;
 
-	char command[COMMAND_SIZE_MAX];
-	int commandIdx = 0;
+	auto r = handler.storeStartupCommand(params[-1], false);
 
-	// Loop over params and copy into buffer
-	for (int i = 1; i < params.size(); i++) {
-
-		const char* thisParam = params[i];
-		int thisParamIdx = 0;
-
-		// If it's not the first param, add a space
-		if (i != 1 && commandIdx < COMMAND_SIZE_MAX-1) {
-			command[commandIdx++] = ' ';
-		}
-
-		// Loop until end of this param
-		while (thisParam[thisParamIdx] != '\0') {
-
-			// Leave space for a newline and a NULL
-			if (commandIdx >= COMMAND_SIZE_MAX - 2) {
-				// If we got to the end of the buffer without finishing our command, 
-				// exit without storing a command
-				Serial.println(F("Overflow"));
-				return;
-			}
-
-			// Add this char to the command string to be stored
-			command[commandIdx++] = thisParam[thisParamIdx++];
-		}
-	}
-
-	// Add a null char (the newline is handled by storeStartupCommand)
-	command[commandIdx++] = '\0';
-
-	// Store in EEPROM
-	CommandHandlerReturn res = handler.storeStartupCommand(command);
-	if (CommandHandlerReturn::NO_ERROR == res) {
+	if (CommandHandlerReturn::NO_ERROR == r) {
 		Serial.println(F("Done"));
+	} else {
+		Serial.print(F("Error "));
+		Serial.println(int(r));
 	}
-	else {
-		Serial.print(F("Failed with CommandHandlerReturn code: "));
-		Serial.println((int)res);
+}
+
+void appendCommand(const ParameterLookup& params) {
+
+	if (isSerialControlDisabled()) return;
+
+	auto r = handler.storeStartupCommand(params[-1], true);
+
+	if (CommandHandlerReturn::NO_ERROR == r) {
+		Serial.println(F("Done"));
+	} else {
+		Serial.print(F("Error "));
+		Serial.println(int(r));
 	}
 }
 
 void retreiveCommand(const ParameterLookup&) {
 
-	char command[COMMAND_SIZE_MAX];
+	char * command;
 
+	// Assign space for the command
+	command = (char*)malloc( sizeof(char) * EEPROM_SIZE_MAX );
+
+	if (command == 0) {
+		Serial.println(F("Error: out of mem"));
+		return;
+	}
+
+	// Load the command into the newly created buffer
 	handler.getStartupCommand(command);
 
 	if (command[0] == '\0') {
@@ -1207,6 +1196,9 @@ void retreiveCommand(const ParameterLookup&) {
 		// Hopefully this doesn't come back to bite me. 
 		Serial.print(command);
 	}
+
+	// Free the buffer
+	free(command);
 }
 
 void wipeCommand(const ParameterLookup&) {

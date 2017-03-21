@@ -28,6 +28,8 @@
 | *RST    | Reset the device (N.B. does not clear EEPROM)                                                                                                                            | 0                                                                                           | -                                                                                                  | 
 | STOR    | Store a command in EEPROM to be executed on startup                                                                                                                      | "command to be called on startup"                                                           | "Done"                                                                                             | 
 |         |                                                                                                                                                                          | Multiple commands can be stored by separating them with a ';'                               | "#StoreCommand error: command too long"                                                            | 
+| APPE    | Append a command to EEPROM to be executed on startup                                                                                                                     | "command to be called on startup"                                                           | "Done"                                                                                             | 
+|         |                                                                                                                                                                          | Multiple commands can be stored by separating them with a ';'                               | "#StoreCommand error: command too long"                                                            | 
 | RETR    | Retrieve any stored commands from EEPROM                                                                                                                                 | 0                                                                                           | Stored command or "None"                                                                           | 
 | WIPE    | Erase any stored commands in EEPROM                                                                                                                                      | 0                                                                                           | "Done"                                                                                             | 
 | ERRO(?) | Query the error signal on given channel.                                                                                                                                 | [channel = 1t,2t,1v,2v] for signals 1 or 2 from thermistor input or voltage input           | Error signal float                                                                                 | 
@@ -72,6 +74,7 @@ commandFunction version;
 commandFunction availableMemory;
 
 commandFunction storeCommand;
+commandFunction appendCommand;
 commandFunction retreiveCommand;
 commandFunction wipeCommand;
 
@@ -129,6 +132,7 @@ CommandHandlerReturn registerCommands(CommandHandler<size> * h) {
 	h->registerCommand(COMMANDHANDLER_HASH("*MEM?"), 0, *availableMemory);
 
 	h->registerCommand(COMMANDHANDLER_HASH("STOR"), -1, *storeCommand);
+	h->registerCommand(COMMANDHANDLER_HASH("APPE"), -1, *appendCommand);
 	h->registerCommand(COMMANDHANDLER_HASH("RETR"), 0, *retreiveCommand);
 	h->registerCommand(COMMANDHANDLER_HASH("RETR?"), 0, *retreiveCommand);
 	h->registerCommand(COMMANDHANDLER_HASH("WIPE"), 0, *wipeCommand);
