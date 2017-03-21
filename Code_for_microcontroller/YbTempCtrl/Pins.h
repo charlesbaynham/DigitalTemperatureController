@@ -7,5 +7,5 @@
  */
 
 // Uncomment the appropriate line below:
-// #include "Pins_4chan.h"
-#include "Pins_2chan.h"
+#include "Pins_4chan.h"
+// #include "Pins_2chan.h"
