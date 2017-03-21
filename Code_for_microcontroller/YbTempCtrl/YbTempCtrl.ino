@@ -1329,14 +1329,14 @@ CtrlChanIdx stringToOPAChannel(const char str[]) {
 	const char options[6][4] = { "1", "2", "3", "4", "BPA", "BPB" };
 	const size_t numOptions = 6;
 #else
-	const char options[3][3] = { "1", "2", "BP" };
+	const char options[3][4] = { "1", "2", "BPA" };
 	const size_t numOptions = 3;
-
 #endif
 
 	// Loop through strings and compare
 	for (size_t i = 0; i < numOptions; i++) {
 		if (0 == strcasecmp(str, options[i])) {
+			// This cast requires that the enum class CtrlChanIdx is in the same order as the arrays hard-coded here
 			return CtrlChanIdx(i);
 		}
 	}
@@ -1469,7 +1469,7 @@ static void channelNotRecognised(const char channel[]) {
 	Serial.print(F(" Error: output channel "));
 	Serial.print(channel);
 #ifndef FOUR_CHANNEL_BOARD
-	Serial.println(F(" not recognised. Options are 1, 2, BP"));
+	Serial.println(F(" not recognised. Options are 1, 2, BPA"));
 #else
 	Serial.println(F(" not recognised. Options are 1, 2, BPA, 3, 4, BPB"));
 #endif
