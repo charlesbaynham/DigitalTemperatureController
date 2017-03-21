@@ -1,6 +1,8 @@
 /** @file
  * Contains all the code for the Arduino CommandHandler library
  * 
+ * Space requirements: 6 bytes + 8 per command + buffer size
+ * 
  * @todo Write the CommandHandler documentation
  */
 
@@ -8,6 +10,7 @@
 
 #include <Arduino.h>
 
+#include "compileTimeCRC32.h"
 #include "Microprocessor_Debugging\debugging_disable.h"
 
 #define COMMAND_SIZE_MAX 128 // num chars
@@ -270,9 +273,15 @@ public:
 		CONSOLE_LOG_LN(F("Execute command"));
 
 		// Return error code if no command waiting
-		if (!_bufferFull) {
+		if (!commandWaiting()) {
 			CONSOLE_LOG_LN(F("No command error"));
 			error = CommandHandlerReturn::NO_COMMAND_WAITING;
+		}
+
+		// Return error code if command over-ran
+		if (_command_too_long) {
+			CONSOLE_LOG_LN(F("Overflow error"));
+			error = CommandHandlerReturn::COMMAND_TOO_LONG;
 		}
 
 		CONSOLE_LOG(F("Command is: "));
@@ -285,26 +294,43 @@ public:
 			error = CommandHandlerReturn::EMPTY_COMMAND_STRING;
 		}
 
-		// Constuct a parameter lookup object from the command string
-		// This invalidates the string for future use
-		CONSOLE_LOG_LN(F("Creating ParameterLookup object..."));
-		ParameterLookup lookupObj = ParameterLookup(_inputBuffer);
+		// If no errors so far, continue
+		if (error == CommandHandlerReturn::NO_ERROR) {
 
-		CONSOLE_LOG_LN(F("Running callStoredCommand..."));
-		CommandHandlerReturn found = _lookupList.callStoredCommand(lookupObj);
+			// Constuct a parameter lookup object from the command string
+			// This invalidates the string for future use
+			CONSOLE_LOG_LN(F("Creating ParameterLookup object..."));
+			ParameterLookup lookupObj = ParameterLookup(_inputBuffer);
+
+			CONSOLE_LOG_LN(F("Running callStoredCommand..."));
+			error = _lookupList.callStoredCommand(lookupObj);
+
+		}
 
 		// Mark buffer as ready again
-		_bufferFull = false;
-		_inputBuffer[0] = '\0';
-		_bufferLength = 0;
+		clearBuffer();
 
-		return found;
+		return error;
+	}
+	
+	// Register a command
+	// This version is deprecated because it involves storing the strings in memory
+	// for its calling which defeats the point of hashes!
+	CommandHandlerReturn registerCommand(const char* command, int num_of_parameters,
+		commandFunction* pointer_to_function) __attribute__((deprecated)) {
+
+		return _lookupList.registerCommand(command, num_of_parameters,
+			pointer_to_function);
 	}
 
 	// Register a command
-	CommandHandlerReturn registerCommand(const char* command, int num_of_parameters,
+	// Use this version instead. To calculate the hash, use COMMANDHANDLER_HASH(cmd)
+	// e.g.
+	// 		registerCommand(COMMANDHANDLER_HASH("*idn"), 0, &identityFunc);
+	CommandHandlerReturn registerCommand(uint32_t hash, int num_of_parameters,
 		commandFunction* pointer_to_function) {
-		return _lookupList.registerCommand(command, num_of_parameters,
+
+		return _lookupList.registerCommand(hash, num_of_parameters,
 			pointer_to_function);
 	}
 
@@ -324,18 +350,10 @@ public:
 			CONSOLE_LOG(F("Newline received. Command: "));
 			CONSOLE_LOG_LN(_inputBuffer);
 
-			// Should we ignore this command?
-			if (_command_too_long) {
-				// Reset the `_command_too_long` flag
-				_command_too_long = false;
-
-				CONSOLE_LOG_LN(F("Ignoring command since too long"));
-
-				return CommandHandlerReturn::COMMAND_TOO_LONG;
-			}
-
-			// If not, we are already null terminated so mark the string as ready
+			// We are already null terminated so mark the string as ready
 			_bufferFull = true;
+
+			// _command_too_long will be detected by executeCommand if it is set
 		}
 		// if c is a carridge return, ignore it
 		else if (c == '\r') {
@@ -344,7 +362,7 @@ public:
 		}
 		// else c is a normal char, so add it to the buffer
 		else {
-			if (_command_too_long || _bufferLength >= COMMAND_SIZE_MAX)
+			if (_command_too_long || _bufferLength >= COMMAND_SIZE_MAX-1)
 			{
 				// Command was too long! Set the `_command_too_long` flag to chuck away all subsequent chars until next newline
 				CONSOLE_LOG_LN(F("ERROR: command too long!"));
@@ -361,6 +379,7 @@ public:
 
 				_bufferLength++;
 
+				// Ensure that the buffer always contains valid c str
 				_inputBuffer[_bufferLength] = '\0';
 
 				CONSOLE_LOG(F("Char received: '"));
@@ -386,7 +405,7 @@ public:
 	// This command should not include newlines: it will be copied verbatim into the
 	// buffer and then executed as a normal command would be
 	// Multiple commands can be seperated by ';' chars
-	// Max length is COMMAND_LENGTH_MAX - 2 (1 char to append a newline, 1 for the null term)
+	// Max length is COMMAND_SIZE_MAX - 2 (1 char to append a newline, 1 for the null term)
 	// Returns false on fail
 	CommandHandlerReturn storeStartupCommand(const String& command)
 	{
@@ -405,10 +424,12 @@ public:
 	// This command should not include newlines: it will be copied verbatim into the
 	// buffer and then executed as a normal command would be
 	// Multiple commands can be seperated by ';' chars
-	// Max length is COMMAND_LENGTH_MAX - 2 (1 char to append a newline, 1 for the null term)
-	// Returns false on fail
+	// Max length is COMMAND_SIZE_MAX - 2 (1 char to append a newline, 1 for the null term)
+	// Returns CommandHandlerReturn to indicate error status
 	CommandHandlerReturn storeStartupCommand(const char* command)
 	{
+		if (strlen(command) > COMMAND_SIZE_MAX - 2)
+			return CommandHandlerReturn::COMMAND_TOO_LONG;
 
 		// Store a flag indicating that a command exists
 		const bool trueFlag = true;
@@ -479,13 +500,13 @@ public:
 	{
 		CONSOLE_LOG_LN(F("CommandHandler::getStartupCommand(char*)"))
 
-			// Index of location in buffer
-			int bufIdx = 0; // Start at start of buffer
+		// Index of location in buffer
+		int bufIdx = 0; // Start at start of buffer
 
-							// There should be a bool stored in EEPROM_STORED_COMMAND_FLAG_LOCATION if this program has run before
-							// It will tell us if there's a command to be read or not
-							// Read it as a byte though, since the memory location will be 0xFF if it has never been written to
-							// We only want to use it if it's exactly a bool
+		// There should be a bool stored in EEPROM_STORED_COMMAND_FLAG_LOCATION if this program has run before
+		// It will tell us if there's a command to be read or not
+		// Read it as a byte though, since the memory location will be 0xFF if it has never been written to
+		// We only want to use it if it's exactly a bool
 		char fromEEPROM;
 		EEPROM.get(EEPROM_STORED_COMMAND_FLAG_LOCATION, fromEEPROM);
 
@@ -558,13 +579,26 @@ public:
 		// Command is waiting, so queue it one char at a time
 		// If we reach a newline, commandWaiting() will flag "true": execute the command
 		// If we reach a NULL, end
+		// If we've read COMMAND_SIZE_MAX - 2 bytes from EEPROM, stop and add a newline + NULL
 		
 		// Index of location in EEPROM
 		int EEPROM_idx = EEPROM_STORED_COMMAND_LOCATION;
+		int numCharsRead = 0;
 		CommandHandlerReturn result = CommandHandlerReturn::NO_ERROR;
 		while (true) {
 
 			char c;
+			
+			// If we've read the max possible number of chars, stop here
+			if (numCharsRead >= COMMAND_SIZE_MAX-2) {
+				
+				CONSOLE_LOG_LN(F("CommandHandler::Stored command unterminated!"));
+
+				// Queue a newline then stop
+				addCommandChar('\n');
+				break;
+			}
+
 			EEPROM.get(EEPROM_idx, c);
 
 			CONSOLE_LOG(F("CommandHandler::Read from EEPROM ("));
@@ -582,7 +616,7 @@ public:
 				break;
 			}
 
-			// If any preceding commands have failed, stop executing here
+			// If no preceding commands have failed, execute if ready
 			if (CommandHandlerReturn::NO_ERROR == result) {
 
 				CONSOLE_LOG(F("CommandHandler::executeStartupCommands: Queueing "));
@@ -598,6 +632,7 @@ public:
 			}
 
 			EEPROM_idx++;
+			numCharsRead++;
 		}
 
 		return result;
@@ -606,6 +641,15 @@ public:
 #endif
 
 private:
+
+	void clearBuffer() {
+		// Mark buffer as ready again
+		_bufferFull = false;
+		_command_too_long = false;
+		_inputBuffer[0] = '\0';
+		_bufferLength = 0;
+	}
+
 	// An object for handling the matching of commands -> functions
 	CommandLookup _lookupList;
 
@@ -646,8 +690,18 @@ private:
 			_commandsIdx(0)
 		{}
 
-		// Add a new command to the list
+		// Add a new command to the list, calculating its hash at runtime (deprecated)
 		CommandHandlerReturn registerCommand(const char* command, int num_of_parameters,
+			commandFunction* pointer_to_function) {
+			
+			// Get hash of command
+			const long keyHash = crc32b(command);
+
+			return registerCommand(keyHash, num_of_parameters, pointer_to_function);
+		}
+
+		// Add a new command to the list
+		CommandHandlerReturn registerCommand(long keyHash, int num_of_parameters,
 			commandFunction* pointer_to_function)
 		{
 			if (_commandsIdx >= array_size) {
@@ -657,9 +711,6 @@ private:
 
 			// Set up a struct containing the number of params and a pointer to the function
 			dataStruct d;
-
-			// Get hash of command
-			long keyHash = djbHash(command);
 
 			// Save params
 			d.hash = keyHash;
@@ -680,7 +731,7 @@ private:
 			CONSOLE_LOG_LN(params.size());
 
 			// Get hash of command requested
-			const unsigned long reqHash = djbHash(params[0]);
+			const unsigned long reqHash = crc32b(params[0]);
 
 			int foundIdx = -1;
 
@@ -724,20 +775,35 @@ private:
 		dataStruct _commands[array_size];
 		unsigned int _commandsIdx;
 
-		// Hash string (case insensitive)
-		// Uses	the djb2 algorithm by Dan Bernstein
-		// See http://www.cse.yorku.ca/~oz/hash.html
-		static unsigned long djbHash(const char *str)
-		{
-			unsigned long hash = 5381;
-			int c;
+		// ----------------------------- crc32b --------------------------------
+		// (case insensitive)
+		/* This is the basic CRC-32 calculation with some optimization but no
+		table lookup. The the byte reversal is avoided by shifting the crc reg
+		right instead of left and by using a reversed 32-bit word to represent
+		the polynomial.
+		   When compiled to Cyclops with GCC, this function executes in 8 + 72n
+		instructions, where n is the number of bytes in the input message. It
+		should be doable in 4 + 61n instructions.
+		   If the inner loop is strung out (approx. 5*8 = 40 instructions),
+		it would take about 6 + 46n instructions. */
+		static uint32_t crc32b(const char *str) {
+		   int i, j;
+		   uint32_t byte, crc, mask;
 
-			while (c = tolower(*str++)) {
-				hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-			}
-
-			return hash;
+		   i = 0;
+		   crc = 0xFFFFFFFF;
+		   while (str[i] != 0) {
+		      byte = tolower(str[i]);            // Get next byte.
+		      crc = crc ^ byte;
+		      for (j = 7; j >= 0; j--) {    // Do eight times.
+		         mask = -(crc & 1);
+		         crc = (crc >> 1) ^ (0xEDB88320 & mask);
+		      }
+		      i = i + 1;
+		   }
+		   return ~crc;
 		}
+   
 	};
 };
 

@@ -1158,7 +1158,7 @@ void storeCommand(const ParameterLookup& params) {
 		int thisParamIdx = 0;
 
 		// If it's not the first param, add a space
-		if (i != 1) {
+		if (i != 1 && commandIdx < COMMAND_SIZE_MAX-1) {
 			command[commandIdx++] = ' ';
 		}
 
@@ -1167,6 +1167,8 @@ void storeCommand(const ParameterLookup& params) {
 
 			// Leave space for a newline and a NULL
 			if (commandIdx >= COMMAND_SIZE_MAX - 2) {
+				// If we got to the end of the buffer without finishing our command, 
+				// exit without storing a command
 				Serial.println(F("Overflow"));
 				return;
 			}
