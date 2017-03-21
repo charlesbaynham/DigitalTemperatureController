@@ -1148,7 +1148,7 @@ void storeCommand(const ParameterLookup& params) {
 
 	if (isSerialControlDisabled()) return;
 
-	auto r = handler.storeStartupCommand(params[-1], false);
+	auto r = handler.storeStartupCommand(params[-2], false);
 
 	if (CommandHandlerReturn::NO_ERROR == r) {
 		Serial.println(F("Done"));
@@ -1162,7 +1162,7 @@ void appendCommand(const ParameterLookup& params) {
 
 	if (isSerialControlDisabled()) return;
 
-	auto r = handler.storeStartupCommand(params[-1], true);
+	auto r = handler.storeStartupCommand(params[-2], true);
 
 	if (CommandHandlerReturn::NO_ERROR == r) {
 		Serial.println(F("Done"));
@@ -1341,7 +1341,7 @@ static int findSlotForController(const CtrlChanIdx outputChannel) {
 #else
 	switch (outputChannel) {
 		case CtrlChanIdx::CHAN_1 	:
-		case CtrlChanIdx::CHAN_BP 	:
+		case CtrlChanIdx::CHAN_BP_12 	:
 
 			preferredSlot = 0;
 			break;
@@ -1558,20 +1558,26 @@ inline void checkOutOfMem() {
 // Read the supply voltage and set the OPA's maximum voltage accordingly
 double calculateOPAMaxVoltage() {
 
-	pinMode(INPUT, DIVIDED_SUPPLY_VOLTAGE);
+	double voltage;
 
-	// Take 20 readings and average
-	const int n = 20;
-	int level = 0;
+	if (DIVIDED_SUPPLY_VOLTAGE == 0xFF) {
+		voltage = FALLBACK_SUPPLY_VOLTAGE;
+	} else {
 
-	for (int i = 0; i < n; i++) {
-		wdt_reset();
-		delay(2);
-		level += analogRead(DIVIDED_SUPPLY_VOLTAGE);
+		pinMode(INPUT, DIVIDED_SUPPLY_VOLTAGE);
+
+		// Take 20 readings and average
+		const int n = 20;
+		int level = 0;
+
+		for (int i = 0; i < n; i++) {
+			wdt_reset();
+			delay(2);
+			level += analogRead(DIVIDED_SUPPLY_VOLTAGE);
+		}
+
+		voltage = double(level) / double(n) * (5.0 / 1024.0) * DIVIDED_SUPPLY_FACTOR;
 	}
-
-	// Convert to voltage
-	const double voltage = double(level) / double(n) * (5.0 / 1024.0) * DIVIDED_SUPPLY_FACTOR;
 
 	// Make sure it's 0.3V away from the rail
 	const double maxOPAOutput = voltage - 0.3;
@@ -1586,6 +1592,11 @@ double calculateOPAMaxVoltage() {
 
 // Check if serial control is disabled
 bool isSerialControlDisabled() {
+
+	// Fallback for this pin not being present
+	if (DISABLE_SERIAL_CTRL == 0xFF)
+		return false;
+
 	pinMode(INPUT, DISABLE_SERIAL_CTRL);
 
 	// Read the voltage on DISABLE_SERIAL_CTRL. This must be analog since this pin
