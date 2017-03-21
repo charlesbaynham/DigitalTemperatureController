@@ -851,7 +851,7 @@ void getSetpoint(const ParameterLookup& params) {
 	}
 
 	double currentSP = targetController->getAlgorithm()->getSetpoint();
-	double currentSP_V = levelToErrorVoltage(currentSP, isBipolar(channelNum));
+	double currentSP_V = levelToErrorVoltage(currentSP, false);
 
 	// Report
 	Serial.println(currentSP_V, FLT_PRINT_PRECISION);
