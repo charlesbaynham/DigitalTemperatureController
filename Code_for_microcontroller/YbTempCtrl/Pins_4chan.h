@@ -77,3 +77,4 @@ const uint8_t LED_2 = A4;					/*!< ATMega pin for LED 2, Arduino labelling */
 const uint8_t DISABLE_SERIAL_CTRL = A6; 	/*!< ATMega pin for disabling serial control: 0 or 5V */
 const uint8_t DIVIDED_SUPPLY_VOLTAGE = A7; 	/*!< ATMega pin for reading supply voltage: analog voltage */
 const double DIVIDED_SUPPLY_FACTOR = 11.0;	/*!< Factor by which the supply voltage has been divided  */
+const double FALLBACK_SUPPLY_VOLTAGE = 15;	/*!< Assumed supply voltage if DIVIDED_SUPPLY_VOLTAGE pin is not present */

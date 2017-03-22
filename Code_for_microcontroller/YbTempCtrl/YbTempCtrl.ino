@@ -941,7 +941,9 @@ void setSetpoint(const ParameterLookup& params) {
 	}
 
 	double newSP = atof(params[2]);
-	double newSP_F = errorVoltageToLevel(newSP, isBipolar(channelNum));
+	double newSP_F = errorVoltageToLevel(newSP, false); 
+
+	#pragma message ("Fix the hardcoded non-bipolar inputs")
 
 	// Retrive associated controller from the appropriate output channel object
 	Controller * targetController = ctrlChannels[(int)channelNum]->getContainingController();
