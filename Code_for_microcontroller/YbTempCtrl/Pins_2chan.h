@@ -54,7 +54,7 @@ const uint8_t VLIM_CHAN_2 	= 2;			/*!< DAC channel for second OPA's Vlim input *
 extern double MAX_VOLTAGE;					/*!< Maximum voltage for the OPAs to output. Calculated in setup() */
 const double MAX_INITIAL_CURRENT = 2.0;		/*!< Maximum current that the OPAs will be limited to on startup */
 const double OPA_R1	= 40.2;					/*!< OPA gain resistor 1 */
-const double OPA_R2	= 240.2;					/*!< OPA gain resistor 2 */
+const double OPA_R2	= 200.2;					/*!< OPA gain resistor 2 */
 const double OPA_GAIN = 
 			(OPA_R1 + OPA_R2) / OPA_R1;		/*!< DAC -> OPA gain, set by on-board resistors. */
 
