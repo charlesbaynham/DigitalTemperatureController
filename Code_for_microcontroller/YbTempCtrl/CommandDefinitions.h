@@ -25,6 +25,7 @@
 | *TST?   | Test comms                                                                                                                                                               | 0                                                                                           | "Query received"                                                                                   | 
 | *IDN(?) | Identify                                                                                                                                                                 | 0                                                                                           | "ARDUINO PID"                                                                                      | 
 | *VER(?) | Output version string                                                                                                                                                    | 0                                                                                           | e.g. "v4.1"                                                                                        | 
+| *GIT(?) | Output git version string                                                                                                                                                | 0                                                                                           | e.g. "5a21cb0"                                                                                     | 
 | *RST    | Reset the device (N.B. does not clear EEPROM)                                                                                                                            | 0                                                                                           | -                                                                                                  | 
 | *DFU    | Puts the device into DFU mode (does 10x resets, expecting code upload)                                                                                                   | 0                                                                                           | -                                                                                                  | 
 | STOR    | Store a command in EEPROM to be executed on startup                                                                                                                      | "command to be called on startup"                                                           | "Done"                                                                                             | 
@@ -73,6 +74,7 @@ commandFunction resetDevice;
 commandFunction DFU_Mode;
 commandFunction identity;
 commandFunction version;
+commandFunction gitVersion;
 commandFunction availableMemory;
 
 commandFunction storeCommand;
@@ -131,6 +133,8 @@ CommandHandlerReturn registerCommands(CommandHandler<size> * h) {
 	h->registerCommand(COMMANDHANDLER_HASH("*IDN?"), 0, *identity);
 	h->registerCommand(COMMANDHANDLER_HASH("*VER"), 0, *version);
 	h->registerCommand(COMMANDHANDLER_HASH("*VER?"), 0, *version);
+	h->registerCommand(COMMANDHANDLER_HASH("*GIT"), 0, *gitVersion);
+	h->registerCommand(COMMANDHANDLER_HASH("*GIT?"), 0, *gitVersion);
 	h->registerCommand(COMMANDHANDLER_HASH("*MEM"), 0, *availableMemory);
 	h->registerCommand(COMMANDHANDLER_HASH("*MEM?"), 0, *availableMemory);
 

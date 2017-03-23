@@ -1,0 +1,15 @@
+#!/bin/sh
+
+version_str=`git rev-parse --short HEAD`
+top_level_dir=$(git rev-parse --show-toplevel)
+filename=Code_for_microcontroller/YbTempCtrl/latest_hash.h
+
+echo Writing latest version value = $version_str
+echo to "$top_level_dir/$filename"
+
+echo \#define LATEST_HASH \""$version_str"\" > "$top_level_dir/$filename"
+
+echo Marking file as unchanged so git ignores it
+git update-index --assume-unchanged "$top_level_dir/$filename"
+
+exit 0

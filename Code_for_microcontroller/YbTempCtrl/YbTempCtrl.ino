@@ -50,12 +50,15 @@ using namespace YbCtrl;
 // Macros for the watchdog timer
 #include <avr/wdt.h>
 
+// Header containing the latest GIT hash
+#include "latest_hash.h"
+
 // Convenience macros for debugging
 #include "Microprocessor_debugging\debugging_init.h"
 #include "Microprocessor_debugging\debugging_disable.h"
 
 // Command handler object, can hold 30 commands
-CommandHandler<30> handler;
+CommandHandler<32> handler;
 // Declare functions for all the SCPI commands
 #include "CommandDefinitions.h"
 
@@ -578,13 +581,19 @@ void doWatchdogReset() {
 // Return the identity string
 // Expects 0 params
 void identity(const ParameterLookup&) {
-	Serial.println(IDENTIFIER);
+	Serial.println(F(IDENTIFIER));
 }
 
 // Return the version string
 // Expects 0 params
 void version(const ParameterLookup&) {
-	Serial.println(REV_VERSION);
+	Serial.println(F(REV_VERSION));
+}
+
+// Return the git version string
+// Expects 0 params
+void gitVersion(const ParameterLookup&) {
+	Serial.println(F(LATEST_HASH));
 }
 
 // Query the error signal on given channel.
