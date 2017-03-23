@@ -37,15 +37,15 @@ const uint8_t ADC_TESTER = 7;
 
 // DAC pins
 const uint8_t DAC_CS 			= 10;		/*!< Chip select pin of the DAC on the ATMega */
-const uint8_t OPA_ES1 			= A0;		/*!< E/S pin for first OPA */
-const uint8_t OPA_ES2 			= A1;		/*!< E/S pin for second OPA */
+const uint8_t OPA_ES1 			= A1;		/*!< E/S pin for first OPA */
+const uint8_t OPA_ES2 			= A0;		/*!< E/S pin for second OPA */
 const bool OPA_1_IS_548			= true;		/*!< Is OPA 1 an OPA548 (instead of an OPA549)? */
 const bool OPA_2_IS_548			= true;		/*!< Is OPA 2 an OPA548 (instead of an OPA549)? */
 
 // 2nd DAC pins
 const uint8_t DAC_CS_Alt 		= 9;		/*!< Chip select pin of the DAC on the ATMega */
-const uint8_t OPA_ES3 			= 7;		/*!< E/S pin for first OPA */
-const uint8_t OPA_ES4 			= 8;		/*!< E/S pin for second OPA */
+const uint8_t OPA_ES3 			= 8;		/*!< E/S pin for first OPA */
+const uint8_t OPA_ES4 			= 7;		/*!< E/S pin for second OPA */
 const bool OPA_3_IS_548			= true;		/*!< Is OPA 1 an OPA548 (instead of an OPA549)? */
 const bool OPA_4_IS_548			= true;		/*!< Is OPA 2 an OPA548 (instead of an OPA549)? */
 
