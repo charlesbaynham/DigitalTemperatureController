@@ -169,6 +169,9 @@ static inline bool isBipolar(const CtrlChanIdx chan);
 
 const size_t numLEDs = 2;
 
+// If this variable is true, serial control will be enabled regardless of the switch position
+bool _forceSerialEnabled = true;
+
 // This method is the only place where the use of "malloc" and "new" is allowed
 // No memory is "free"ed so there is no possiblilty of fragmentation. 
 // Checks for success are strictly adhered to to prevent undetected out of memory errors
@@ -337,6 +340,9 @@ void setup()
 		Serial.print(F("Error in startup commands, CommandHandlerReturn code "));
 		Serial.println((int)out);
 	}
+
+	// Allow for serial disabling
+	_forceSerialEnabled = false;
 
 #ifdef DEBUGGING_ENABLED
 	delay(1000);
@@ -1664,6 +1670,10 @@ bool isSerialControlDisabled() {
 
 	// Fallback for this pin not being present
 	if (DISABLE_SERIAL_CTRL == 0xFF)
+		return false;
+
+	// Allow override
+	if (_forceSerialEnabled)
 		return false;
 
 	pinMode(INPUT, DISABLE_SERIAL_CTRL);
