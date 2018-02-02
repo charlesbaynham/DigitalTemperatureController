@@ -1,6 +1,6 @@
 \documentclass[11pt]{report}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
 %\geometry{landscape}                % Activate for for rotated page geometry
 %\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 
@@ -11,7 +11,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{amssymb}
-\usepackage{todonotes}
+\usepackage[disable]{todonotes}
 \usepackage{epstopdf}
 \usepackage{hyperref}
 \usepackage{wrapfig}
@@ -672,6 +672,8 @@ The commands recognised by the controller are defined in the file \path{./Code_f
 
 This documentation is reproduced here for convenience. The following is automatically generated from the code's markup, so please excuse any odd formatting. All parameters should be separated by spaces. All commands must be followed by a newline (ASCII 10) character. 
 
+\def\Hypertarget{{}}
+\renewcommand{\Hypertarget}[1]{}
 \input{../Code_for_microcontroller/YbTempCtrl/doc/latex/_command_definitions_8h.tex}
 
 \chapter{Full Doxygen documentation} % (fold)
@@ -679,9 +681,9 @@ This documentation is reproduced here for convenience. The following is automati
 
 The following pages are the full documentation of the code, produced automatically by Doxygen. Doxygen is a code commenting system that allows you to write structured comments throughout your code which can later be extracted into a code reference.
 
-To get the latest version of this reference, incorperating any changes, you need to install Doxygen, run the Doxywizard, load the file \path{./Code_for_microcontroller/YbTempCtrl/Doxyfile} and click ``Run doxygen''. This will produce HTML and \LaTeX{} output. 
+To get the latest version of this reference, incorporating any changes, you need to install Doxygen, run the Doxywizard, load the file \path{./Code_for_microcontroller/YbTempCtrl/Doxyfile} and click ``Run doxygen''. This will produce HTML and \LaTeX{} output. 
 
-It will also generate a file called \path{make.bat} in \path{./Code_for_microcontroller/YbTempCtrl/doc/latex/make.bat}. Execute this file to produce the updated \LaTeX{} code reference. To incorperate this into the manual you are currently reading, just recompile the latex from \path{./Manual/TemperatureControllerManual.tex}. 
+It will also generate a file called \path{make.bat} in \path{./Code_for_microcontroller/YbTempCtrl/doc/latex/make.bat}. Execute this file to produce the updated \LaTeX{} code reference. To incorporate this into the manual you are currently reading, just recompile the latex from \path{./Manual/TemperatureControllerManual.tex}. 
 
 \includepdf[pages={-}]{../Code_for_microcontroller/YbTempCtrl/doc/latex/refman.pdf}
 
