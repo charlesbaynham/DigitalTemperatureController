@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:TempCtrl-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,7 +31,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:max3440e
 LIBS:Custom_Components
-LIBS:TempCtrl-cache
+LIBS:switches
 EELAYER 25 0
 EELAYER END
 $Descr A4 8268 11693 portrait
