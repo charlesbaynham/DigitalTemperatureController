@@ -1,0 +1,5 @@
+When setting up the microprocessor for the first time, use fuse settings:
+
+low_fuses=0xff
+high_fuses=0xde
+extended_fuses=0x05

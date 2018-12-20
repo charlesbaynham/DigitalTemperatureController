@@ -344,9 +344,20 @@ The procedure for setting up a board is therefore as follows:
 
 	\item Solder the OPA drivers you chose to the board if using the single channel board. The dual channel board comes pre-populated. 
 
-	\item Using Atmel Studio and an AVRISP mkII programmer, connect to the ISCP header on the board and upload the Optiboot boot-loader file \path{./Code for Microcontroller/optiboot_xplained328p.hex}. This step only has to be performed once per microprocessor. 
+	\item Using Atmel Studio and an AVRISP mkII programmer, connect to the ISCP header on the board and 
 
-	The board must be powered via the barrel-jack connector during this step. 
+	\begin{enumerate}
+		\item Set the fuses to:
+		\begin{verbatim}
+			low_fuses=0xff
+			high_fuses=0xde
+			extended_fuses=0x05
+		\end{verbatim}
+			
+		\item Upload the Optiboot boot-loader file \path{./Code for Microcontroller/optiboot_xplained328p.hex} to the flash memory. 
+	\end{enumerate}
+	These steps only have to be performed once per microprocessor. The board must be powered during this step. 
+	
 	\item Using the Arduino IDE, compile and upload the code to the device. After this is done, remember to re-enable flashing using the {\tt FLASH\_DISABLE} jumper. 
 	
 \end{enumerate}
