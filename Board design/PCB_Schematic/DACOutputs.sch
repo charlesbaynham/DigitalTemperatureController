@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:TempCtrl-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 7
+Sheet 6 7
 Title ""
 Date ""
 Rev ""
@@ -534,19 +534,6 @@ F 3 "" H 3500 4700 60  0000 C CNN
 	1    3500 4700
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:Earth_Clean #PWR079
-U 1 1 5724EA8B
-P 9100 1450
-AR Path="/563BA3F1/5724EA8B" Ref="#PWR079"  Part="1" 
-AR Path="/57D1B66D/5724EA8B" Ref="#PWR099"  Part="1" 
-F 0 "#PWR099" H 9350 1450 50  0001 C CNN
-F 1 "Earth_Clean" H 9400 1300 50  0001 C CNN
-F 2 "" H 9100 1400 60  0000 C CNN
-F 3 "" H 9100 1400 60  0000 C CNN
-	1    9100 1450
-	-1   0    0    1   
-$EndComp
 Text Notes 5250 2800 0    60   ~ 0
 The DAC can output 0 -> 2.5V\nThe amplifiers double this to 0 -> 5V
 $Comp
@@ -635,6 +622,17 @@ Wire Wire Line
 	3650 2950 3650 3100
 Wire Wire Line
 	4800 3900 5100 3900
-NoConn ~ 9100 3500
-NoConn ~ 9100 2900
+$Comp
+L power:Earth_Clean #PWR079
+U 1 1 5724EA8B
+P 9100 1450
+AR Path="/563BA3F1/5724EA8B" Ref="#PWR079"  Part="1" 
+AR Path="/57D1B66D/5724EA8B" Ref="#PWR099"  Part="1" 
+F 0 "#PWR099" H 9350 1450 50  0001 C CNN
+F 1 "Earth_Clean" H 9400 1300 50  0001 C CNN
+F 2 "" H 9100 1400 60  0000 C CNN
+F 3 "" H 9100 1400 60  0000 C CNN
+	1    9100 1450
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:TempCtrl-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -18,7 +18,9 @@ $Comp
 L MCU_Microchip_ATmega:ATmega328P-AU IC1
 U 1 1 56BA55CF
 P 1900 3900
-F 0 "IC1" H 1150 5150 40  0000 L BNN
+AR Path="/56BA55CF" Ref="IC1"  Part="1" 
+AR Path="/57222EA2/56BA55CF" Ref="IC1"  Part="1" 
+F 0 "IC1" H 1100 4150 40  0000 L BNN
 F 1 "ATMEGA328P-A" H 2300 2500 40  0000 L BNN
 F 2 "Housings_QFP:LQFP-32_7x7mm_Pitch0.8mm" H 1900 3900 30  0000 C CIN
 F 3 "" H 1900 3900 60  0000 C CNN
@@ -300,7 +302,7 @@ Text Label 2500 6750 2    60   ~ 0
 D13/SCLK
 Text Label 2500 6850 2    60   ~ 0
 ~RESET
-Text Notes 1500 2500 0    60   ~ 0
+Text Notes 800  3550 0    60   ~ 0
 ATMEGA328P
 Text Notes 8000 2000 0    60   ~ 0
 USB interface
