@@ -1,4 +1,4 @@
-update=17/04/2019 17:31:29
+update=17/04/2019 17:53:05
 version=1
 last_client=kicad
 [cvpcb]
@@ -24,7 +24,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=
+LastNetListRead=TempCtrl.net
 CopperLayerCount=4
 BoardThickness=1.6
 AllowMicroVias=0
@@ -66,7 +66,7 @@ OthersTextUpright=1
 SolderMaskClearance=0
 SolderMaskMinWidth=0
 SolderPasteClearance=0
-SolderPasteRatio=-0
+SolderPasteRatio=0
 [pcbnew/Netclasses]
 [pcbnew/Netclasses/1]
 Name=100Ohm
