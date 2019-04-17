@@ -1,6 +1,38 @@
-EESchema Schematic File Version 4
-LIBS:TempCtrl-cache
-EELAYER 26 0
+EESchema Schematic File Version 2
+LIBS:TempCtrl-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:max3440e
+LIBS:Custom_Components
+LIBS:switches
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -15,7 +47,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATmega:ATmega328P-AU IC1
+L ATMEGA328P-AU IC1
 U 1 1 56BA55CF
 P 1900 3900
 F 0 "IC1" H 1150 5150 40  0000 L BNN
@@ -26,73 +58,73 @@ F 3 "" H 1900 3900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP_Small C31
+L CP_Small C31
 U 1 1 56BA55DD
-P 700 2800
-F 0 "C31" H 710 2870 50  0000 L CNN
-F 1 "100n" H 710 2720 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 700 2800 60  0001 C CNN
-F 3 "" H 700 2800 60  0000 C CNN
-	1    700  2800
+P 700 3500
+F 0 "C31" H 710 3570 50  0000 L CNN
+F 1 "100n" H 710 3420 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 700 3500 60  0001 C CNN
+F 3 "" H 700 3500 60  0000 C CNN
+	1    700  3500
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small R20
+L R_Small R20
 U 1 1 56BA55EB
-P 3200 4100
-F 0 "R20" H 3230 4120 50  0000 L CNN
-F 1 "1k" H 3230 4060 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" H 3200 4100 60  0001 C CNN
-F 3 "" H 3200 4100 60  0000 C CNN
-	1    3200 4100
+P 3600 4150
+F 0 "R20" H 3630 4170 50  0000 L CNN
+F 1 "1k" H 3630 4110 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 3600 4150 60  0001 C CNN
+F 3 "" H 3600 4150 60  0000 C CNN
+	1    3600 4150
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP_Small C29
+L CP_Small C29
 U 1 1 56BA55F2
-P 1650 2100
-F 0 "C29" H 1660 2170 50  0000 L CNN
-F 1 "100n" H 1660 2020 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1650 2100 60  0001 C CNN
-F 3 "" H 1650 2100 60  0000 C CNN
-	1    1650 2100
+P 750 2900
+F 0 "C29" H 760 2970 50  0000 L CNN
+F 1 "100n" H 760 2820 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 750 2900 60  0001 C CNN
+F 3 "" H 750 2900 60  0000 C CNN
+	1    750  2900
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP_Small C28
+L CP_Small C28
 U 1 1 56BA55F9
-P 1400 2100
-F 0 "C28" H 1410 2170 50  0000 L CNN
-F 1 "1u" H 1410 2020 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1400 2100 60  0001 C CNN
-F 3 "" H 1400 2100 60  0000 C CNN
-	1    1400 2100
+P 500 2900
+F 0 "C28" H 510 2970 50  0000 L CNN
+F 1 "1u" H 510 2820 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 500 2900 60  0001 C CNN
+F 3 "" H 500 2900 60  0000 C CNN
+	1    500  2900
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small R_Ser1
+L R_Small R_Ser1
 U 1 1 56BA5600
-P 3000 4400
-F 0 "R_Ser1" H 3030 4420 50  0000 L CNN
-F 1 "1k" H 3030 4360 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" H 3000 4400 60  0001 C CNN
-F 3 "" H 3000 4400 60  0000 C CNN
-	1    3000 4400
+P 3400 4400
+F 0 "R_Ser1" H 3430 4420 50  0000 L CNN
+F 1 "1k" H 3430 4360 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 3400 4400 60  0001 C CNN
+F 3 "" H 3400 4400 60  0000 C CNN
+	1    3400 4400
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R_Small R_Ser2
+L R_Small R_Ser2
 U 1 1 56BA5607
-P 3000 4500
-F 0 "R_Ser2" H 3030 4520 50  0000 L CNN
-F 1 "1k" H 3030 4460 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" H 3000 4500 60  0001 C CNN
-F 3 "" H 3000 4500 60  0000 C CNN
-	1    3000 4500
+P 3400 4500
+F 0 "R_Ser2" H 3430 4520 50  0000 L CNN
+F 1 "1k" H 3430 4460 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 3400 4500 60  0001 C CNN
+F 3 "" H 3400 4500 60  0000 C CNN
+	1    3400 4500
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:LED D5
+L LED D5
 U 1 1 56BA560E
 P 4200 5650
 F 0 "D5" H 4200 5750 50  0000 C CNN
@@ -103,7 +135,7 @@ F 3 "" H 4200 5650 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R_Small R21
+L R_Small R21
 U 1 1 56BA5615
 P 4200 5400
 F 0 "R21" H 4230 5420 50  0000 L CNN
@@ -113,56 +145,56 @@ F 3 "" H 4200 5400 60  0000 C CNN
 	1    4200 5400
 	1    0    0    -1  
 $EndComp
-Text Label 2500 4400 0    60   ~ 0
+Text Label 2900 4400 0    60   ~ 0
 D0/RX
-Text Label 2500 4500 0    60   ~ 0
+Text Label 2900 4500 0    60   ~ 0
 D1/TX
-Text Label 2500 4600 0    60   ~ 0
+Text Label 2900 4600 0    60   ~ 0
 D2
-Text Label 2500 4700 0    60   ~ 0
+Text Label 2900 4700 0    60   ~ 0
 D3
-Text Label 2500 4800 0    60   ~ 0
+Text Label 2900 4800 0    60   ~ 0
 D4
-Text Label 2500 4900 0    60   ~ 0
+Text Label 2900 4900 0    60   ~ 0
 D5
-Text Label 2500 5000 0    60   ~ 0
+Text Label 2900 5000 0    60   ~ 0
 D6
-Text Label 2500 5100 0    60   ~ 0
+Text Label 2900 5100 0    60   ~ 0
 D7
-Text Label 2500 3600 0    60   ~ 0
+Text Label 2900 3650 0    60   ~ 0
 A0
-Text Label 2500 3700 0    60   ~ 0
+Text Label 2900 3750 0    60   ~ 0
 A1
-Text Label 2500 3800 0    60   ~ 0
+Text Label 2900 3850 0    60   ~ 0
 A2
-Text Label 2500 3900 0    60   ~ 0
+Text Label 2900 3950 0    60   ~ 0
 A3
-Text Label 2500 4000 0    60   ~ 0
+Text Label 2900 4050 0    60   ~ 0
 A4
-Text Label 2500 4100 0    60   ~ 0
+Text Label 2900 4150 0    60   ~ 0
 A5
-Text Label 1300 2900 2    60   ~ 0
+Text Label 1000 4150 2    60   ~ 0
 A6
-Text Label 1300 3000 2    60   ~ 0
+Text Label 1000 4250 2    60   ~ 0
 A7
-Text Label 2500 4200 0    60   ~ 0
+Text Label 2900 4250 0    60   ~ 0
 ~RESET
-Text Label 2500 2700 0    60   ~ 0
+Text Label 2900 2800 0    60   ~ 0
 D8
-Text Label 2500 2800 0    60   ~ 0
+Text Label 2900 2900 0    60   ~ 0
 D9
-Text Label 2500 2900 0    60   ~ 0
+Text Label 2900 3000 0    60   ~ 0
 D10
-Text Label 2500 3000 0    60   ~ 0
+Text Label 2900 3100 0    60   ~ 0
 D11/MOSI
-Text Label 2500 3100 0    60   ~ 0
+Text Label 2900 3200 0    60   ~ 0
 D12/MISO
-Text Label 2500 3200 0    60   ~ 0
+Text Label 2900 3300 0    60   ~ 0
 D13/SCLK
 Text Label 4200 5300 1    60   ~ 0
 D13/SCLK
 $Comp
-L Custom_Components:FT232RL U12
+L FT232RL U12
 U 1 1 56BA5634
 P 8350 3350
 F 0 "U12" H 7600 4550 60  0000 C CNN
@@ -172,23 +204,23 @@ F 3 "" H 8350 3350 60  0000 C CNN
 	1    8350 3350
 	-1   0    0    -1  
 $EndComp
-Text Label 3250 4400 0    60   ~ 0
+Text Label 3650 4400 0    60   ~ 0
 RX
-Text Label 3250 4500 0    60   ~ 0
+Text Label 3650 4500 0    60   ~ 0
 TX
 $Comp
-L Device:C C33
+L C C33
 U 1 1 56BA563F
-P 3900 3850
-F 0 "C33" H 3925 3950 50  0000 L CNN
-F 1 "100n" H 3925 3750 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3938 3700 30  0001 C CNN
-F 3 "" H 3900 3850 60  0000 C CNN
-	1    3900 3850
+P 4300 3900
+F 0 "C33" H 4325 4000 50  0000 L CNN
+F 1 "100n" H 4325 3800 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4338 3750 30  0001 C CNN
+F 3 "" H 4300 3900 60  0000 C CNN
+	1    4300 3900
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:LED D3
+L LED D3
 U 1 1 56BA5647
 P 6550 5250
 F 0 "D3" H 6550 5350 50  0000 C CNN
@@ -199,7 +231,7 @@ F 3 "" H 6550 5250 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small R22
+L R_Small R22
 U 1 1 56BA564E
 P 6550 5500
 F 0 "R22" H 6580 5520 50  0000 L CNN
@@ -210,7 +242,7 @@ F 3 "" H 6550 5500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:LED D4
+L LED D4
 U 1 1 56BA5655
 P 6850 5250
 F 0 "D4" H 6850 5350 50  0000 C CNN
@@ -221,7 +253,7 @@ F 3 "" H 6850 5250 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small R23
+L R_Small R23
 U 1 1 56BA565C
 P 6850 5500
 F 0 "R23" H 6880 5520 50  0000 L CNN
@@ -232,7 +264,7 @@ F 3 "" H 6850 5500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP_Small C34
+L CP_Small C34
 U 1 1 56BA5663
 P 9450 4350
 F 0 "C34" H 9460 4420 50  0000 L CNN
@@ -243,7 +275,7 @@ F 3 "" H 9450 4350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:USB_OTG P4
+L USB_OTG P4
 U 1 1 56BA5671
 P 1350 6950
 F 0 "P4" H 1400 7400 50  0000 C CNN
@@ -266,10 +298,10 @@ NoConn ~ 7250 4250
 NoConn ~ 9450 3800
 NoConn ~ 9450 3650
 NoConn ~ 9450 3350
-Text Label 1350 2000 2    60   ~ 0
+Text Label 450  2800 2    60   ~ 0
 5V
 $Comp
-L Connector_Generic:Conn_02x03_Odd_Even P5
+L Conn_02x03_Odd_Even P5
 U 1 1 56BA568C
 P 2700 6750
 F 0 "P5" H 2700 6950 50  0000 C CNN
@@ -284,7 +316,7 @@ Text Label 3000 6500 0    60   ~ 0
 Text Label 3000 6750 0    60   ~ 0
 D11/MOSI
 $Comp
-L power:GND #PWR056
+L GND #PWR056
 U 1 1 56BA5695
 P 3000 7000
 F 0 "#PWR056" H 3000 6750 50  0001 C CNN
@@ -318,7 +350,7 @@ Text Label 1050 6850 2    60   ~ 0
 USB_D-
 Text Notes 800  6100 0    60   ~ 0
 USB connector
-Text Label 3200 4000 0    60   ~ 0
+Text Label 3600 4050 0    60   ~ 0
 5V
 Text Label 9450 2300 0    60   ~ 0
 USB_5V
@@ -326,9 +358,9 @@ Text Label 9450 4100 0    60   ~ 0
 USB_3V3
 Text Label 8350 4850 2    60   ~ 0
 USB_GND
-Text Label 700  2900 3    60   ~ 0
+Text Label 700  3600 3    60   ~ 0
 GND
-Text Label 1900 5400 3    60   ~ 0
+Text Label 750  5000 2    60   ~ 0
 GND
 Text Label 4200 5800 3    60   ~ 0
 GND
@@ -336,7 +368,7 @@ Text Label 1250 6450 2    60   ~ 0
 USB_GND
 Text Label 9450 4450 3    60   ~ 0
 USB_GND
-Text Label 1550 2400 2    60   ~ 0
+Text Label 650  3200 2    60   ~ 0
 GND
 Text Label 10850 6300 0    60   ~ 0
 GND
@@ -447,42 +479,51 @@ Text Label 4350 1650 0    60   ~ 0
 Text Label 4150 1950 2    60   ~ 0
 GND
 Wire Wire Line
-	2500 3300 3100 3300
+	2900 3400 3500 3400
 Wire Wire Line
-	2500 3400 3100 3400
+	2900 3500 3500 3500
 Wire Wire Line
-	700  2700 1300 2700
+	700  3400 1000 3400
 Wire Wire Line
-	2500 4200 3200 4200
+	750  5000 1000 5000
 Wire Wire Line
-	1350 2000 1400 2000
-Connection ~ 1400 2000
-Connection ~ 1650 2000
+	1000 4900 1000 5100
+Connection ~ 1000 5000
 Wire Wire Line
-	1400 2250 1550 2250
+	2900 4250 4000 4250
+Connection ~ 3600 4250
 Wire Wire Line
-	1650 2250 1650 2200
+	450  2800 1000 2800
 Wire Wire Line
-	1400 2250 1400 2200
-Connection ~ 1550 2250
+	1000 2800 1000 3100
+Connection ~ 1000 2900
+Connection ~ 500  2800
+Connection ~ 750  2800
 Wire Wire Line
-	2500 4400 2900 4400
+	500  3050 750  3050
 Wire Wire Line
-	2900 4500 2500 4500
+	750  3050 750  3000
 Wire Wire Line
-	3100 4400 3250 4400
+	500  3050 500  3000
+Connection ~ 650  3050
 Wire Wire Line
-	3250 4500 3100 4500
+	2900 4400 3300 4400
 Wire Wire Line
-	3500 3850 3750 3850
+	3300 4500 2900 4500
 Wire Wire Line
-	9450 2300 9450 2450
+	3500 4400 3650 4400
+Wire Wire Line
+	3650 4500 3500 4500
+Wire Wire Line
+	3900 3900 4150 3900
+Wire Wire Line
+	9450 2300 9450 2600
 Connection ~ 9450 2450
 Wire Wire Line
 	7250 3800 6850 3800
 Connection ~ 9450 4250
 Wire Wire Line
-	8050 4750 8200 4750
+	8050 4750 8650 4750
 Wire Wire Line
 	8350 4750 8350 4850
 Connection ~ 8350 4750
@@ -501,7 +542,7 @@ Wire Wire Line
 Wire Wire Line
 	6550 5600 6550 5650
 Wire Wire Line
-	6550 5650 6700 5650
+	6550 5650 6850 5650
 Wire Wire Line
 	6700 5650 6700 5800
 Wire Wire Line
@@ -510,7 +551,7 @@ Connection ~ 6700 5650
 Wire Wire Line
 	9450 4250 9450 4100
 Wire Wire Line
-	1550 2250 1550 2400
+	650  3050 650  3200
 Wire Wire Line
 	10400 3600 10850 3600
 Wire Wire Line
@@ -566,7 +607,7 @@ Wire Wire Line
 Wire Wire Line
 	4350 1800 4400 1800
 Wire Wire Line
-	4400 1900 4400 1950
+	4400 1900 4400 2000
 Wire Wire Line
 	4150 1950 4400 1950
 Connection ~ 4400 1950
@@ -575,7 +616,7 @@ TX
 Text Label 4200 2200 2    60   ~ 0
 RX
 $Comp
-L Custom_Components:ISO7242 U11
+L ISO7242 U11
 U 1 1 56C0BAFB
 P 5100 2200
 F 0 "U11" H 5200 2850 60  0000 L CNN
@@ -607,7 +648,7 @@ Wire Wire Line
 Wire Wire Line
 	6100 1800 5800 1800
 Wire Wire Line
-	5800 1900 5800 1950
+	5800 1900 5800 2000
 Text Label 6100 1950 0    60   ~ 0
 USB_GND
 Wire Wire Line
@@ -625,14 +666,14 @@ Wire Wire Line
 Text Label 5950 2300 0    60   ~ 0
 USB_RESET_IN
 Wire Wire Line
-	3500 3850 3500 4200
-Connection ~ 3500 4200
-Text Label 4400 3850 0    60   ~ 0
+	3900 3900 3900 4250
+Connection ~ 3900 4250
+Text Label 4800 3900 0    60   ~ 0
 USB_RESET_OUT
 Wire Wire Line
 	4200 2200 4400 2200
 Wire Wire Line
-	4050 3850 4400 3850
+	4450 3900 4800 3900
 Wire Wire Line
 	5800 2300 6850 2300
 Wire Wire Line
@@ -644,95 +685,96 @@ ISO_OUTPUT
 Wire Wire Line
 	10400 3450 10850 3450
 Wire Wire Line
-	3350 3550 3150 3550
+	3750 3650 3500 3650
 Wire Wire Line
-	3100 3550 3100 3400
+	3500 3650 3500 3500
 Wire Wire Line
-	3100 3300 3100 3150
+	3500 3400 3500 3250
 Wire Wire Line
-	3100 3150 3200 3150
+	3500 3250 3750 3250
 $Comp
-L Device:C_Small C30
+L C_Small C30
 U 1 1 572B777C
-P 3200 3050
-F 0 "C30" H 3210 3120 50  0000 L CNN
-F 1 "8p" H 3210 2970 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3200 3050 60  0001 C CNN
-F 3 "" H 3200 3050 60  0000 C CNN
-	1    3200 3050
+P 3600 3150
+F 0 "C30" H 3610 3220 50  0000 L CNN
+F 1 "8p" H 3610 3070 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3600 3150 60  0001 C CNN
+F 3 "" H 3600 3150 60  0000 C CNN
+	1    3600 3150
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C32
+L C_Small C32
 U 1 1 572B7860
-P 3150 3650
-F 0 "C32" H 3160 3720 50  0000 L CNN
-F 1 "8p" H 3160 3570 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3150 3650 60  0001 C CNN
-F 3 "" H 3150 3650 60  0000 C CNN
-	1    3150 3650
+P 3550 3750
+F 0 "C32" H 3560 3820 50  0000 L CNN
+F 1 "8p" H 3560 3670 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3550 3750 60  0001 C CNN
+F 3 "" H 3550 3750 60  0000 C CNN
+	1    3550 3750
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR057
+L GND #PWR057
 U 1 1 572B78C7
-P 3150 3750
-F 0 "#PWR057" H 3150 3500 50  0001 C CNN
-F 1 "GND" H 3150 3600 50  0000 C CNN
-F 2 "" H 3150 3750 60  0000 C CNN
-F 3 "" H 3150 3750 60  0000 C CNN
-	1    3150 3750
+P 3550 3850
+F 0 "#PWR057" H 3550 3600 50  0001 C CNN
+F 1 "GND" H 3550 3700 50  0000 C CNN
+F 2 "" H 3550 3850 60  0000 C CNN
+F 3 "" H 3550 3850 60  0000 C CNN
+	1    3550 3850
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR058
+L GND #PWR058
 U 1 1 572B7917
-P 3200 2950
-F 0 "#PWR058" H 3200 2700 50  0001 C CNN
-F 1 "GND" H 3200 2800 50  0000 C CNN
-F 2 "" H 3200 2950 60  0000 C CNN
-F 3 "" H 3200 2950 60  0000 C CNN
-	1    3200 2950
+P 3600 3050
+F 0 "#PWR058" H 3600 2800 50  0001 C CNN
+F 1 "GND" H 3600 2900 50  0000 C CNN
+F 2 "" H 3600 3050 60  0000 C CNN
+F 3 "" H 3600 3050 60  0000 C CNN
+	1    3600 3050
 	-1   0    0    1   
 $EndComp
-Connection ~ 3150 3550
+Connection ~ 3600 3250
+Connection ~ 3550 3650
 $Comp
-L Device:Crystal_GND3 X1
+L Crystal_GND3 X1
 U 1 1 572B9603
-P 3350 3350
-F 0 "X1" H 3250 3500 50  0000 C CNN
-F 1 "TSX-3225  X1E0000210013" V 3450 3450 50  0000 L CNN
-F 2 "Crystals:crystal_FA238-TSX3225" H 3350 3350 60  0001 C CNN
-F 3 "" H 3350 3350 60  0000 C CNN
-	1    3350 3350
+P 3750 3450
+F 0 "X1" H 3650 3600 50  0000 C CNN
+F 1 "TSX-3225  X1E0000210013" H 3250 3700 50  0000 L CNN
+F 2 "Crystals:crystal_FA238-TSX3225" H 3750 3450 60  0001 C CNN
+F 3 "" H 3750 3450 60  0000 C CNN
+	1    3750 3450
 	0    1    1    0   
 $EndComp
 $Comp
-L Switch:SW_SPDT SW2
+L SW_SPDT SW2
 U 1 1 5726CFAD
-P 3800 4200
-F 0 "SW2" H 3600 4350 50  0000 C CNN
-F 1 "SWITCH_INV" H 3650 4050 50  0000 C CNN
-F 2 "Custom:Toggle_Switch_819-9385" H 3800 4200 60  0001 C CNN
-F 3 "" H 3800 4200 60  0000 C CNN
-	1    3800 4200
+P 4200 4250
+F 0 "SW2" H 4000 4400 50  0000 C CNN
+F 1 "SWITCH_INV" H 4050 4100 50  0000 C CNN
+F 2 "Custom:Toggle_Switch_819-9385" H 4200 4250 60  0001 C CNN
+F 3 "" H 4200 4250 60  0000 C CNN
+	1    4200 4250
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR059
+L GND #PWR059
 U 1 1 5726D0AE
-P 4000 4300
-F 0 "#PWR059" H 4000 4050 50  0001 C CNN
-F 1 "GND" H 4000 4150 50  0000 C CNN
-F 2 "" H 4000 4300 60  0000 C CNN
-F 3 "" H 4000 4300 60  0000 C CNN
-	1    4000 4300
+P 4400 4350
+F 0 "#PWR059" H 4400 4100 50  0001 C CNN
+F 1 "GND" H 4400 4200 50  0000 C CNN
+F 2 "" H 4400 4350 60  0000 C CNN
+F 3 "" H 4400 4350 60  0000 C CNN
+	1    4400 4350
 	1    0    0    -1  
 $EndComp
-NoConn ~ 4000 4100
+NoConn ~ 4400 4150
 NoConn ~ 4400 2700
 $Comp
-L power:PWR_FLAG #FLG060
+L PWR_FLAG #FLG060
 U 1 1 57AB052A
 P 1350 6400
 F 0 "#FLG060" H 1350 6495 50  0001 C CNN
@@ -743,15 +785,15 @@ F 3 "" H 1350 6400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1350 6400 1350 6450
+	1350 6400 1350 6550
 Wire Wire Line
-	1250 6450 1350 6450
+	1250 6450 1450 6450
 Connection ~ 1350 6450
 Wire Wire Line
 	1450 6450 1450 6550
 NoConn ~ 1050 6750
 $Comp
-L power:PWR_FLAG #FLG061
+L PWR_FLAG #FLG061
 U 1 1 5B99C40B
 P 900 7250
 F 0 "#FLG061" H 900 7345 50  0001 C CNN
@@ -766,49 +808,8 @@ Wire Wire Line
 Wire Wire Line
 	900  7150 1050 7150
 Wire Wire Line
-	3350 3150 3350 3200
+	3750 3250 3750 3300
 Wire Wire Line
-	3350 3500 3350 3550
-NoConn ~ 3150 3350
-Wire Wire Line
-	3200 4200 3500 4200
-Wire Wire Line
-	1400 2000 1650 2000
-Wire Wire Line
-	1650 2000 1900 2000
-Wire Wire Line
-	1550 2250 1650 2250
-Wire Wire Line
-	9450 2450 9450 2600
-Wire Wire Line
-	8350 4750 8500 4750
-Wire Wire Line
-	8200 4750 8350 4750
-Wire Wire Line
-	8500 4750 8650 4750
-Wire Wire Line
-	6700 5650 6850 5650
-Wire Wire Line
-	4400 1950 4400 2000
-Wire Wire Line
-	5800 1950 5800 2000
-Wire Wire Line
-	3500 4200 3600 4200
-Wire Wire Line
-	3200 3150 3350 3150
-Wire Wire Line
-	3150 3550 3100 3550
-Wire Wire Line
-	1350 6450 1350 6550
-Wire Wire Line
-	1350 6450 1450 6450
-Connection ~ 3200 3150
-Connection ~ 3200 4200
-Wire Wire Line
-	1900 2000 1900 2400
-Wire Wire Line
-	1900 2000 2000 2000
-Wire Wire Line
-	2000 2000 2000 2400
-Connection ~ 1900 2000
+	3750 3600 3750 3650
+NoConn ~ 3550 3450
 $EndSCHEMATC

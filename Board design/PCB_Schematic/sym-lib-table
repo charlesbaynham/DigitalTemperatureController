@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name max3440e)(type Legacy)(uri ${KIPRJMOD}/CustomKicad/max3440e.lib)(options "")(descr ""))
+  (lib (name Custom_Components)(type Legacy)(uri ${KIPRJMOD}/CustomKicad/Custom_Components.lib)(options "")(descr ""))
+)

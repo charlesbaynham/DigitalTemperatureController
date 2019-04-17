@@ -1,6 +1,38 @@
-EESchema Schematic File Version 4
-LIBS:TempCtrl-cache
-EELAYER 26 0
+EESchema Schematic File Version 2
+LIBS:TempCtrl-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:max3440e
+LIBS:Custom_Components
+LIBS:switches
+EELAYER 25 0
 EELAYER END
 $Descr A4 8268 11693 portrait
 encoding utf-8
@@ -17,7 +49,7 @@ $EndDescr
 Wire Wire Line
 	4100 2150 4100 2650
 $Comp
-L Device:CP C35
+L CP C35
 U 1 1 562A7928
 P 3900 2250
 F 0 "C35" H 3950 2350 40  0000 L CNN
@@ -28,7 +60,7 @@ F 3 "~" H 3900 2250 300 0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Device:CP C37
+L CP C37
 U 1 1 562A7935
 P 3900 2500
 F 0 "C37" H 3950 2600 40  0000 L CNN
@@ -39,7 +71,7 @@ F 3 "~" H 3900 2500 300 0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Custom_Components:ADS1262 U13
+L ADS1262 U13
 U 1 1 562A73A3
 P 4300 3950
 F 0 "U13" H 4300 4050 70  0000 C CNN
@@ -57,7 +89,7 @@ Connection ~ 3700 2350
 Wire Wire Line
 	4600 2150 4600 2650
 $Comp
-L Device:CP C36
+L CP C36
 U 1 1 562A7BF6
 P 4800 2250
 F 0 "C36" H 4850 2350 40  0000 L CNN
@@ -68,7 +100,7 @@ F 3 "~" H 4800 2250 300 0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:CP C38
+L CP C38
 U 1 1 562A7BFC
 P 4800 2500
 F 0 "C38" H 4850 2600 40  0000 L CNN
@@ -84,7 +116,7 @@ Wire Wire Line
 	5000 2250 5000 2500
 Connection ~ 5000 2350
 $Comp
-L Device:C C39
+L C C39
 U 1 1 562A7C4B
 P 2500 4400
 F 0 "C39" H 2500 4500 40  0000 L CNN
@@ -97,7 +129,7 @@ $EndComp
 Wire Wire Line
 	3350 4550 2500 4550
 $Comp
-L Device:C C40
+L C C40
 U 1 1 562A7D5E
 P 3100 4900
 F 0 "C40" H 3100 5000 40  0000 L CNN
@@ -108,7 +140,7 @@ F 3 "~" H 3100 4900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C41
+L C C41
 U 1 1 562A7D7E
 P 3350 5100
 F 0 "C41" H 3350 5200 40  0000 L CNN
