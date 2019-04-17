@@ -48,3 +48,16 @@ Manual
 ------
 
 You should go read it now. It's in `./Manual`. 
+
+Initial setup
+-------------
+
+The microcontroller needs to be flashed using Atmel Studio and an ISP programmer. You should either:
+
+1. Set the fuses as described in `fuse_settings.txt`
+2. Flash the bootloader saved as `optiboot_atmega328_custom_NANO.hex`
+3. Use the Arduino IDE to compile and upload the latest version of the code
+
+OR
+
+1. Flash the complete production `.elf` file stored in `.\Code_for_microcontroller` using Atmel Studio, making sure to select "Flash", "Fuses" and "Verify Device ID" in Atmel Studio. This will give you whatever version of the code was stored in this `.elf` file, you can then update it using the Arduino IDE if you want to make changes. 
