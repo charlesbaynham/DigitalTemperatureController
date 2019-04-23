@@ -49,7 +49,7 @@ AR Path="/5653042F/55CA0E6E" Ref="R_gain1"  Part="1"
 AR Path="/56541853/55CA0E6E" Ref="R_gain2"  Part="1" 
 F 0 "R_gain2" V 8880 4000 40  0000 C CNN
 F 1 "24K" V 8807 4001 40  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 8730 4000 30  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8730 4000 30  0000 C CNN
 F 3 "~" H 8800 4000 30  0000 C CNN
 	1    8800 4000
 	0    -1   -1   0   

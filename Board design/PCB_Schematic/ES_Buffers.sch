@@ -37,7 +37,7 @@ AR Path="/5CC83A15" Ref="R?"  Part="1"
 AR Path="/5CC68713/5CC83A15" Ref="R11"  Part="1" 
 F 0 "R11" V 4854 2350 50  0000 C CNN
 F 1 "R_Small" V 4945 2350 50  0000 C CNN
-F 2 "" H 5050 2350 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5050 2350 50  0001 C CNN
 F 3 "~" H 5050 2350 50  0001 C CNN
 	1    5050 2350
 	0    1    1    0   
@@ -65,7 +65,7 @@ AR Path="/5CC83A23" Ref="U?"  Part="2"
 AR Path="/5CC68713/5CC83A23" Ref="U18"  Part="2" 
 F 0 "U18" H 4900 3167 50  0000 C CNN
 F 1 "74LS125" H 4900 3076 50  0000 C CNN
-F 2 "" H 4900 2850 50  0001 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 2850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 4900 2850 50  0001 C CNN
 	2    4900 2850
 	1    0    0    -1  
@@ -93,7 +93,7 @@ AR Path="/5CC83A32" Ref="R?"  Part="1"
 AR Path="/5CC68713/5CC83A32" Ref="R40"  Part="1" 
 F 0 "R40" V 4854 3250 50  0000 C CNN
 F 1 "R_Small" V 4945 3250 50  0000 C CNN
-F 2 "" H 5050 3250 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5050 3250 50  0001 C CNN
 F 3 "~" H 5050 3250 50  0001 C CNN
 	1    5050 3250
 	0    1    1    0   
@@ -123,7 +123,7 @@ AR Path="/5CC83A40" Ref="U?"  Part="3"
 AR Path="/5CC68713/5CC83A40" Ref="U18"  Part="3" 
 F 0 "U18" H 4900 4067 50  0000 C CNN
 F 1 "74LS125" H 4900 3976 50  0000 C CNN
-F 2 "" H 4900 3750 50  0001 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 3750 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 4900 3750 50  0001 C CNN
 	3    4900 3750
 	1    0    0    -1  
@@ -151,7 +151,7 @@ AR Path="/5CC83A4F" Ref="R?"  Part="1"
 AR Path="/5CC68713/5CC83A4F" Ref="R41"  Part="1" 
 F 0 "R41" V 4854 4150 50  0000 C CNN
 F 1 "R_Small" V 4945 4150 50  0000 C CNN
-F 2 "" H 5050 4150 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5050 4150 50  0001 C CNN
 F 3 "~" H 5050 4150 50  0001 C CNN
 	1    5050 4150
 	0    1    1    0   
@@ -181,7 +181,7 @@ AR Path="/5CC83A5D" Ref="U?"  Part="4"
 AR Path="/5CC68713/5CC83A5D" Ref="U18"  Part="4" 
 F 0 "U18" H 4900 4967 50  0000 C CNN
 F 1 "74LS125" H 4900 4876 50  0000 C CNN
-F 2 "" H 4900 4650 50  0001 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 4650 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 4900 4650 50  0001 C CNN
 	4    4900 4650
 	1    0    0    -1  
@@ -209,7 +209,7 @@ AR Path="/5CC83A6C" Ref="R?"  Part="1"
 AR Path="/5CC68713/5CC83A6C" Ref="R42"  Part="1" 
 F 0 "R42" V 4854 5050 50  0000 C CNN
 F 1 "R_Small" V 4945 5050 50  0000 C CNN
-F 2 "" H 5050 5050 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5050 5050 50  0001 C CNN
 F 3 "~" H 5050 5050 50  0001 C CNN
 	1    5050 5050
 	0    1    1    0   
@@ -239,7 +239,7 @@ AR Path="/5CC83A80" Ref="U?"  Part="5"
 AR Path="/5CC68713/5CC83A80" Ref="U18"  Part="5" 
 F 0 "U18" H 7050 5617 50  0000 C CNN
 F 1 "74LS125" H 7050 5526 50  0000 C CNN
-F 2 "" H 7050 5300 50  0001 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 7050 5300 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 7050 5300 50  0001 C CNN
 	5    7050 5300
 	1    0    0    -1  
@@ -254,7 +254,7 @@ AR Path="/5CC83A7A" Ref="U?"  Part="1"
 AR Path="/5CC68713/5CC83A7A" Ref="U18"  Part="1" 
 F 0 "U18" H 4900 2267 50  0000 C CNN
 F 1 "74LS125" H 4900 2176 50  0000 C CNN
-F 2 "" H 4900 1950 50  0001 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 1950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 4900 1950 50  0001 C CNN
 	1    4900 1950
 	1    0    0    -1  
