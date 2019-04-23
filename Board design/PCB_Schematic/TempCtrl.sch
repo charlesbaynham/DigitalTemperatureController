@@ -738,9 +738,9 @@ RS485_R
 Text Label 6550 2950 0    60   ~ 0
 RS485_RE
 Text Label 5350 2550 2    60   ~ 0
-ES2_IN
+ES3_IN
 Text Label 5350 2450 2    60   ~ 0
-ES1_IN
+ES4_IN
 Text Label 5350 3350 2    60   ~ 0
 ARD_RST
 Text Label 6550 3750 0    60   ~ 0
@@ -1632,7 +1632,7 @@ $EndComp
 Text Label 6550 3350 0    60   ~ 0
 DAC_CS2
 Text Label 6550 3150 0    60   ~ 0
-ES4_IN
+ES1_IN
 $Comp
 L Connector_Generic:Conn_02x04_Odd_Even P1
 U 1 1 57C0CF99
@@ -2657,21 +2657,21 @@ F8 "ES4_OUT" I R 1800 12600 60
 F9 "ES4_IN" I L 850 12600 60 
 $EndSheet
 Text Label 1800 12150 0    60   ~ 0
-ES1_OUT
-Text Label 1800 12300 0    60   ~ 0
-ES2_OUT
-Text Label 1800 12450 0    60   ~ 0
-ES3_OUT
-Text Label 1800 12600 0    60   ~ 0
 ES4_OUT
+Text Label 1800 12300 0    60   ~ 0
+ES3_OUT
+Text Label 1800 12450 0    60   ~ 0
+ES2_OUT
+Text Label 1800 12600 0    60   ~ 0
+ES1_OUT
 Text Label 850  12150 2    60   ~ 0
-ES1_IN
-Text Label 850  12300 2    60   ~ 0
-ES2_IN
-Text Label 850  12450 2    60   ~ 0
-ES3_IN
-Text Label 850  12600 2    60   ~ 0
 ES4_IN
-Text Label 6550 3250 0    60   ~ 0
+Text Label 850  12300 2    60   ~ 0
 ES3_IN
+Text Label 850  12450 2    60   ~ 0
+ES2_IN
+Text Label 850  12600 2    60   ~ 0
+ES1_IN
+Text Label 6550 3250 0    60   ~ 0
+ES2_IN
 $EndSCHEMATC
