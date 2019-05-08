@@ -22,7 +22,7 @@ namespace YbCtrl {
 		OUT_OF_MEMORY			/*!< Out of memory */
 	};
 
-	// Forward delcaration of Controller so that we can use pointers to it
+	// Forward declaration of Controller so that we can use pointers to it
 	class Controller;
 
 	/**
