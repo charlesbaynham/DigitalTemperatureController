@@ -5,7 +5,7 @@
 -																	-
 -		Version:													-
 -*/
-#define REV_VERSION "v4.3"									
+#define REV_VERSION "v4.3_DEV"									
 #define IDENTIFIER "ARDUINO PID"
 /*																	-
 -		Controller to manage up to two processes, correcting them	-

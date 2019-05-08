@@ -72,20 +72,6 @@ namespace YbCtrl {
 		return sendDACOut(v_set, V_LIM_Channel, _DAC_CS);
 	}
 
-	// Check for overheat
-	// Returns error code
-	CtrlChannelReturn V4_OPA_OutputChannel::isOverheated(bool& state) {
-		CONSOLE_LOG_LN(F("V4_OPA_OutputChannel::isOverheated(ref)"));
-		
-		if (_lastCtrl == -1) {
-			state = false;
-		} else {
-			state = ! digitalRead(_OPA_ES);
-		}
-
-		return CtrlChannelReturn::NO_ERROR;
-	}
-
 	// Channel here can be 00, 01, 10 or 11
 	// Val is in volts, 0 -> +2.5
 	CtrlChannelReturn V4_OPA_OutputChannel::sendDACOut(double val, uint8_t channel, uint8_t CS) {

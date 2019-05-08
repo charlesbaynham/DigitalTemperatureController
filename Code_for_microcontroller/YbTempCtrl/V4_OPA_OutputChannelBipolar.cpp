@@ -60,9 +60,11 @@ namespace YbCtrl {
 	// Enable OPA output
 	void V4_OPA_OutputChannelBipolar::enableOutput() {
 		
-		// Float both E/S pins
-		pinMode(_OPA_ES, INPUT);
-		pinMode(_OPA_ESAlt, INPUT);
+		// Disable the hardware buffers, floating both E/S pins
+		pinMode(_OPA_ES, OUTPUT);
+		pinMode(_OPA_ESAlt, OUTPUT);
+		digitalWrite(_OPA_ES, HIGH);
+		digitalWrite(_OPA_ESAlt, HIGH);
 
 		CONSOLE_LOG_LN("V4_OPA_OutputChannelBipolar::Enabled output on pins ");
 		CONSOLE_LOG(_OPA_ES);
@@ -77,30 +79,16 @@ namespace YbCtrl {
 		setOPAVoltage(0, _channelVPlus);
 		setOPAVoltage(0, _channelVPlusAlt);
 
-		// Ground both E/S pins
+		// Enable the hardware buffers, driving the E/S pins to low (because the
+		// buffer's inputs are tied to GND)
 		pinMode(_OPA_ES, OUTPUT);
-		digitalWrite(_OPA_ES, LOW);
-
 		pinMode(_OPA_ESAlt, OUTPUT);
+		digitalWrite(_OPA_ES, LOW);
 		digitalWrite(_OPA_ESAlt, LOW);
 
 		CONSOLE_LOG("V4_OPA_OutputChannelBipolar::Disabled output on pins ");
 		CONSOLE_LOG(_OPA_ES);
 		CONSOLE_LOG(F(" and "));
 		CONSOLE_LOG_LN(_OPA_ESAlt);
-	}
-
-	// Check for overheat
-	// Returns error code
-	CtrlChannelReturn V4_OPA_OutputChannelBipolar::isOverheated(bool& state) {
-		CONSOLE_LOG_LN(F("V4_OPA_OutputChannelBipolar::isOverheated(ref)"));
-		
-		if (_lastCtrl == 0) {
-			state = false;
-		} else {
-			state = ! ( digitalRead(_OPA_ES) && digitalRead(_OPA_ESAlt) );
-		}
-
-		return CtrlChannelReturn::NO_ERROR;
 	}
 }

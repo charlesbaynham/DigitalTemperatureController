@@ -57,8 +57,11 @@ namespace YbCtrl {
 		}
 
 		// Check for overheat
+		// This isn't implemented because the hardware now can't measure this
 		// Returns error code
-		virtual CtrlChannelReturn isOverheated(bool& state);
+		virtual CtrlChannelReturn isOverheated(bool& state) override {
+			return CtrlChannelReturn::NOT_IMPLEMENTED;
+		}
 
 		// Writes to the control signal. Values from -1 to 1
 		virtual void writeCtrl(double val) override {
@@ -95,8 +98,9 @@ namespace YbCtrl {
 		 * @brief      Enable OPA output
 		 */
 		virtual void enableOutput() {
-			// Float the E/S pin
-			pinMode(_OPA_ES, INPUT);
+			// Disable the hardware buffer, floating the E/S pin
+			pinMode(_OPA_ES, OUTPUT);
+			digitalWrite(_OPA_ES, HIGH);
 
 			CONSOLE_LOG_LN(F("V4_OPA_OutputChannel::Enabled output"));
 		}
@@ -106,7 +110,8 @@ namespace YbCtrl {
 		 * @brief      Disable OPA output
 		 */
 		virtual void disableOutput() {
-			// Ground the E/S pin
+			// Enable the hardware buffer, driving the E/S pin to low (because the
+			// buffer's input is tied to GND)
 			pinMode(_OPA_ES, OUTPUT);
 			digitalWrite(_OPA_ES, LOW);
 

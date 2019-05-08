@@ -33,8 +33,11 @@ namespace YbCtrl {
 		virtual void disableOutput() override;
 
 		// Check for overheat
+		// This isn't implemented because the hardware now can't measure this
 		// Returns error code
-		virtual CtrlChannelReturn isOverheated(bool& state) override;
+		virtual CtrlChannelReturn isOverheated(bool& state) override {
+			return CtrlChannelReturn::NOT_IMPLEMENTED;
+		}
 
 		V4_OPA_OutputChannelBipolar(uint8_t channelVPlus, uint8_t channelVLim, uint8_t OPA_ES, bool smallerOPA, uint8_t DAC_CS_pin,
 									uint8_t channelVPlusAlt, uint8_t channelVLimAlt, uint8_t OPA_ESAlt, bool smallerOPAAlt, uint8_t DAC_CS_pinAlt) :
