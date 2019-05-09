@@ -24,14 +24,14 @@ F 0 "U17" H 3400 4600 50  0000 C CNN
 F 1 "DAC8564" H 3850 4600 50  0000 L CNN
 F 2 "Housings_SSOP:TSSOP-16_4.4x5mm_Pitch0.65mm" H 3700 3900 50  0001 C CNN
 F 3 "" H 3700 3900 50  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3700 3900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4200 4100 4200 4150
-Wire Wire Line
-	4300 4150 4200 4150
-Connection ~ 4200 4150
 $Comp
 L Custom_Components:AD8639 U14
 U 2 1 563BB10B
@@ -42,6 +42,11 @@ F 0 "U16" H 9200 3350 60  0000 L CNN
 F 1 "AD8639" H 9200 3050 60  0000 L CNN
 F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 9200 3200 60  0001 C CNN
 F 3 "" H 9200 3200 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	2    9200 3200
 	1    0    0    1   
 $EndComp
@@ -54,7 +59,12 @@ AR Path="/57D1B66D/563BB1A3" Ref="R36"  Part="1"
 F 0 "R36" V 8630 3100 50  0000 C CNN
 F 1 "10k" V 8550 3100 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8480 3100 30  0001 C CNN
-F 3 "" H 8550 3100 30  0000 C CNN
+F 3 "~" H 8550 3100 30  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8550 3100
 	0    1    1    0   
 $EndComp
@@ -67,31 +77,15 @@ AR Path="/57D1B66D/563BB2B2" Ref="R35"  Part="1"
 F 0 "R35" V 9230 2400 50  0000 C CNN
 F 1 "10k" V 9150 2400 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9080 2400 30  0001 C CNN
-F 3 "" H 9150 2400 30  0000 C CNN
+F 3 "~" H 9150 2400 30  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9150 2400
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	8700 3100 8750 3100
-Wire Wire Line
-	8750 2400 9000 2400
-Wire Wire Line
-	8750 2400 8750 2700
-Connection ~ 8750 3100
-Wire Wire Line
-	9300 2400 9850 2400
-Wire Wire Line
-	9850 2400 9850 2700
-Wire Wire Line
-	9850 3200 9550 3200
-Text Label 4200 3600 0    60   ~ 0
-DAC_OUT_B
-Text Label 4200 3700 0    60   ~ 0
-DAC_OUT_A
-Text Label 4200 3500 0    60   ~ 0
-DAC_OUT_C
-Text Label 4200 3400 0    60   ~ 0
-DAC_OUT_D
 $Comp
 L Device:C C44
 U 1 1 563BCE68
@@ -102,17 +96,14 @@ F 0 "C51" H 9175 2800 50  0000 L CNN
 F 1 "15p" H 9175 2600 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 9188 2550 30  0001 C CNN
 F 3 "" H 9150 2700 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9150 2700
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	9000 2700 8750 2700
-Connection ~ 8750 2700
-Wire Wire Line
-	9300 2700 9850 2700
-Connection ~ 9850 2700
-Text Label 8850 3300 2    60   ~ 0
-DAC_OUT_B
 $Comp
 L Custom_Components:AD8639 U14
 U 1 1 563BD520
@@ -123,6 +114,11 @@ F 0 "U16" H 9200 1900 60  0000 L CNN
 F 1 "AD8639" H 9200 1600 60  0000 L CNN
 F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 9200 1750 60  0001 C CNN
 F 3 "" H 9200 1750 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9200 1750
 	1    0    0    1   
 $EndComp
@@ -135,7 +131,12 @@ AR Path="/57D1B66D/563BD526" Ref="R33"  Part="1"
 F 0 "R33" V 8630 1650 50  0000 C CNN
 F 1 "10k" V 8550 1650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8480 1650 30  0001 C CNN
-F 3 "" H 8550 1650 30  0000 C CNN
+F 3 "~" H 8550 1650 30  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8550 1650
 	0    1    1    0   
 $EndComp
@@ -148,23 +149,15 @@ AR Path="/57D1B66D/563BD52C" Ref="R32"  Part="1"
 F 0 "R32" V 9280 650 50  0000 C CNN
 F 1 "10k" V 9200 650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9130 650 30  0001 C CNN
-F 3 "" H 9200 650 30  0000 C CNN
+F 3 "~" H 9200 650 30  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9200 650 
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	8700 1650 8750 1650
-Wire Wire Line
-	8750 950  9050 650 
-Wire Wire Line
-	8750 950  8750 1250
-Connection ~ 8750 1650
-Wire Wire Line
-	9350 650  9850 950 
-Wire Wire Line
-	9850 950  9850 1250
-Wire Wire Line
-	9850 1750 9550 1750
 $Comp
 L Device:C C42
 U 1 1 563BD53A
@@ -175,25 +168,14 @@ F 0 "C49" H 9275 1000 50  0000 L CNN
 F 1 "15p" H 9275 800 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 9288 750 30  0001 C CNN
 F 3 "" H 9250 900 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9250 900 
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	9100 900  8750 1250
-Connection ~ 8750 1250
-Wire Wire Line
-	9400 900  9850 1250
-Connection ~ 9850 1250
-Text Label 8850 1850 2    60   ~ 0
-DAC_OUT_A
-Text HLabel 3200 4000 0    60   Input ~ 0
-~CS
-Text HLabel 3200 4100 0    60   Input ~ 0
-SCLK
-Text HLabel 3200 4200 0    60   Input ~ 0
-MOSI
-Wire Wire Line
-	9100 2050 9100 2100
 $Comp
 L Device:CP C43
 U 1 1 563BE859
@@ -204,11 +186,14 @@ F 0 "C50" H 9275 2200 50  0000 L CNN
 F 1 "100n" H 9275 2000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 9288 1950 30  0001 C CNN
 F 3 "" H 9250 2100 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9250 2100
 	0    -1   -1   0   
 $EndComp
-Connection ~ 9100 2100
-Connection ~ 9850 1750
 $Comp
 L Device:R R26
 U 1 1 563C2225
@@ -219,6 +204,11 @@ F 0 "R34" V 10080 1750 50  0000 C CNN
 F 1 "100R" V 10000 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9930 1750 30  0001 C CNN
 F 3 "" H 10000 1750 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    10000 1750
 	0    1    1    0   
 $EndComp
@@ -232,18 +222,14 @@ F 0 "R37" V 10080 3200 50  0000 C CNN
 F 1 "100R" V 10000 3200 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9930 3200 30  0001 C CNN
 F 3 "" H 10000 3200 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    10000 3200
 	0    1    1    0   
 $EndComp
-Connection ~ 9850 3200
-Text HLabel 10150 1750 2    60   Input ~ 0
-5.0_OUT_A
-Text HLabel 10150 3200 2    60   Input ~ 0
-5.0_OUT_B
-Text HLabel 10100 3950 2    60   Input ~ 0
-2.5_OUT_B
-Text HLabel 10100 3650 2    60   Input ~ 0
-2.5_OUT_A
 $Comp
 L power:Earth_Clean #PWR062
 U 1 1 5642D7C2
@@ -270,12 +256,6 @@ F 3 "" H 1800 6450 60  0000 C CNN
 	1    1800 6450
 	1    0    0    -1  
 $EndComp
-Text Notes 1200 6400 0    60   ~ 0
-Digital Ground:
-Text Notes 2100 6400 0    60   ~ 0
-Analog Ground:
-Text Notes 1200 6200 0    60   ~ 0
-These grounds will be connected at the last stages\nof the design, but my be held seperate until then\nto avoid crosstalk
 $Comp
 L power:GND #PWR064
 U 1 1 5642E44A
@@ -341,8 +321,6 @@ F 3 "" H 9400 2050 60  0000 C CNN
 	1    9400 2100
 	0    -1   -1   0   
 $EndComp
-Text Notes 1200 6900 0    60   ~ 0
-Similarily, analog and digital supplies will be recombined at the last minute
 $Comp
 L power:+5V #PWR069
 U 1 1 5646A07F
@@ -405,6 +383,11 @@ F 0 "C53" H 3825 3050 50  0000 L CNN
 F 1 "100n" H 3825 2850 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3838 2800 30  0001 C CNN
 F 3 "" H 3800 2950 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3800 2950
 	0    -1   -1   0   
 $EndComp
@@ -418,15 +401,14 @@ F 0 "C52" H 3425 3050 50  0000 L CNN
 F 1 "100n" H 3425 2850 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3438 2800 30  0001 C CNN
 F 3 "" H 3400 2950 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3400 2950
 	0    1    -1   0   
 $EndComp
-Wire Wire Line
-	3550 2450 3550 2950
-Connection ~ 3550 2950
-Wire Wire Line
-	3650 2600 3650 2950
-Connection ~ 3650 2950
 $Comp
 L power:GND #PWR073
 U 1 1 5646BDB2
@@ -502,6 +484,11 @@ F 0 "C54" H 4850 4200 50  0000 L CNN
 F 1 "100n" H 4850 4000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4800 4100 60  0001 C CNN
 F 3 "" H 4800 4100 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4800 4100
 	1    0    0    -1  
 $EndComp
@@ -515,12 +502,14 @@ F 0 "C55" H 5150 4200 50  0000 L CNN
 F 1 "1u" H 5150 4000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5100 4100 60  0001 C CNN
 F 3 "" H 5100 4100 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5100 4100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4200 3900 4800 3900
-Connection ~ 4800 3900
 $Comp
 L power:GND #PWR078
 U 1 1 57227B4C
@@ -534,8 +523,6 @@ F 3 "" H 3500 4700 60  0000 C CNN
 	1    3500 4700
 	1    0    0    -1  
 $EndComp
-Text Notes 5250 2800 0    60   ~ 0
-The DAC can output 0 -> 2.5V\nThe amplifiers double this to 0 -> 5V
 $Comp
 L power:Earth_Clean #PWR080
 U 1 1 572AA268
@@ -572,6 +559,11 @@ F 0 "R38" V 10030 3650 50  0000 C CNN
 F 1 "100R" V 9950 3650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9880 3650 30  0001 C CNN
 F 3 "" H 9950 3650 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9950 3650
 	0    1    1    0   
 $EndComp
@@ -585,13 +577,111 @@ F 0 "R39" V 10030 3950 50  0000 C CNN
 F 1 "100R" V 9950 3950 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9880 3950 30  0001 C CNN
 F 3 "" H 9950 3950 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9950 3950
 	0    1    1    0   
 $EndComp
+$Comp
+L power:Earth_Clean #PWR079
+U 1 1 5724EA8B
+P 9100 1450
+AR Path="/563BA3F1/5724EA8B" Ref="#PWR079"  Part="1" 
+AR Path="/57D1B66D/5724EA8B" Ref="#PWR099"  Part="1" 
+F 0 "#PWR099" H 9350 1450 50  0001 C CNN
+F 1 "Earth_Clean" H 9400 1300 50  0001 C CNN
+F 2 "" H 9100 1400 60  0000 C CNN
+F 3 "" H 9100 1400 60  0000 C CNN
+	1    9100 1450
+	-1   0    0    1   
+$EndComp
+Text Label 4200 3600 0    60   ~ 0
+DAC_OUT_B
+Text Label 4200 3700 0    60   ~ 0
+DAC_OUT_A
+Text Label 4200 3500 0    60   ~ 0
+DAC_OUT_C
+Text Label 4200 3400 0    60   ~ 0
+DAC_OUT_D
+Text Label 8850 3300 2    60   ~ 0
+DAC_OUT_B
+Text Label 8850 1850 2    60   ~ 0
+DAC_OUT_A
+Text HLabel 3200 4000 0    60   Input ~ 0
+~CS
+Text HLabel 3200 4100 0    60   Input ~ 0
+SCLK
+Text HLabel 3200 4200 0    60   Input ~ 0
+MOSI
+Text HLabel 10150 1750 2    60   Input ~ 0
+5.0_OUT_A
+Text HLabel 10150 3200 2    60   Input ~ 0
+5.0_OUT_B
+Text HLabel 10100 3950 2    60   Input ~ 0
+2.5_OUT_B
+Text HLabel 10100 3650 2    60   Input ~ 0
+2.5_OUT_A
+Text Notes 1200 6400 0    60   ~ 0
+Digital Ground:
+Text Notes 2100 6400 0    60   ~ 0
+Analog Ground:
+Text Notes 1200 6200 0    60   ~ 0
+These grounds will be connected at the last stages\nof the design, but my be held seperate until then\nto avoid crosstalk
+Text Notes 1200 6900 0    60   ~ 0
+Similarily, analog and digital supplies will be recombined at the last minute
+Text Notes 5250 2800 0    60   ~ 0
+The DAC can output 0 -> 2.5V\nThe amplifiers double this to 0 -> 5V
 Text Label 9800 3650 2    60   ~ 0
 DAC_OUT_C
 Text Label 9800 3950 2    60   ~ 0
 DAC_OUT_D
+Wire Wire Line
+	4200 4100 4200 4150
+Wire Wire Line
+	4300 4150 4200 4150
+Wire Wire Line
+	8700 3100 8750 3100
+Wire Wire Line
+	8750 2400 9000 2400
+Wire Wire Line
+	8750 2400 8750 2700
+Wire Wire Line
+	9300 2400 9850 2400
+Wire Wire Line
+	9850 2400 9850 2700
+Wire Wire Line
+	9850 3200 9550 3200
+Wire Wire Line
+	9000 2700 8750 2700
+Wire Wire Line
+	9300 2700 9850 2700
+Wire Wire Line
+	8700 1650 8750 1650
+Wire Wire Line
+	8750 950  9050 650 
+Wire Wire Line
+	8750 950  8750 1250
+Wire Wire Line
+	9350 650  9850 950 
+Wire Wire Line
+	9850 950  9850 1250
+Wire Wire Line
+	9850 1750 9550 1750
+Wire Wire Line
+	9100 900  8750 1250
+Wire Wire Line
+	9400 900  9850 1250
+Wire Wire Line
+	9100 2050 9100 2100
+Wire Wire Line
+	3550 2450 3550 2950
+Wire Wire Line
+	3650 2600 3650 2950
+Wire Wire Line
+	4200 3900 4800 3900
 Wire Wire Line
 	4800 3900 4800 3950
 Wire Wire Line
@@ -622,17 +712,17 @@ Wire Wire Line
 	3650 2950 3650 3100
 Wire Wire Line
 	4800 3900 5100 3900
-$Comp
-L power:Earth_Clean #PWR079
-U 1 1 5724EA8B
-P 9100 1450
-AR Path="/563BA3F1/5724EA8B" Ref="#PWR079"  Part="1" 
-AR Path="/57D1B66D/5724EA8B" Ref="#PWR099"  Part="1" 
-F 0 "#PWR099" H 9350 1450 50  0001 C CNN
-F 1 "Earth_Clean" H 9400 1300 50  0001 C CNN
-F 2 "" H 9100 1400 60  0000 C CNN
-F 3 "" H 9100 1400 60  0000 C CNN
-	1    9100 1450
-	-1   0    0    1   
-$EndComp
+Connection ~ 4200 4150
+Connection ~ 8750 3100
+Connection ~ 8750 2700
+Connection ~ 9850 2700
+Connection ~ 8750 1650
+Connection ~ 8750 1250
+Connection ~ 9850 1250
+Connection ~ 9100 2100
+Connection ~ 9850 1750
+Connection ~ 9850 3200
+Connection ~ 3550 2950
+Connection ~ 3650 2950
+Connection ~ 4800 3900
 $EndSCHEMATC

@@ -14,16 +14,133 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 3800 11550 0    60   ~ 0
-OPA548 Power opamps
-Text Label 10200 6900 2    60   ~ 0
-+15_IN
-Text Label 10050 6700 2    60   ~ 0
-GND_IN
-Text Label 10650 5800 0    60   ~ 0
-C1+_OUT
-Text Label 10150 5800 2    60   ~ 0
-C2+_OUT
+$Sheet
+S 6050 8600 1050 800 
+U 5653042F
+F0 "INA330_interface1" 60
+F1 "INA330.sch" 60
+F2 "1.0V_REF" I L 6050 9050 60 
+F3 "2.5V_REF" I L 6050 9200 60 
+F4 "V_ERROR" I R 7100 8750 60 
+F5 "2.5V_OUT" I R 7100 8850 60 
+F6 "I_BIAS_T" I L 6050 8750 60 
+F7 "I_BIAS_R" I L 6050 8850 60 
+F8 "GND" I R 7100 9200 59 
+F9 "+5V" I R 7100 9100 59 
+$EndSheet
+$Sheet
+S 6050 9600 1050 900 
+U 56541853
+F0 "INA330_interface2" 60
+F1 "INA330.sch" 60
+F2 "1.0V_REF" I L 6050 10000 60 
+F3 "2.5V_REF" I L 6050 10100 60 
+F4 "V_ERROR" I R 7100 9800 60 
+F5 "2.5V_OUT" I R 7100 9900 60 
+F6 "I_BIAS_T" I L 6050 9750 60 
+F7 "I_BIAS_R" I L 6050 9850 60 
+F8 "GND" I R 7100 10250 59 
+F9 "+5V" I R 7100 10150 59 
+$EndSheet
+$Sheet
+S 5350 2350 1200 1700
+U 57222EA2
+F0 "DIYino" 60
+F1 "DIYino.sch" 60
+F2 "GND" I L 5350 3750 60 
+F3 "D0/RX" I R 6550 2450 60 
+F4 "D1/TX" I R 6550 2550 60 
+F5 "D2" I R 6550 2650 60 
+F6 "D3" I R 6550 2750 60 
+F7 "D4" I R 6550 2850 60 
+F8 "D5" I R 6550 2950 60 
+F9 "D6" I R 6550 3050 60 
+F10 "D7" I R 6550 3150 60 
+F11 "~RESET" I L 5350 3350 60 
+F12 "D8" I R 6550 3250 60 
+F13 "A0" I L 5350 2450 60 
+F14 "A1" I L 5350 2550 60 
+F15 "A2" I L 5350 2650 60 
+F16 "A3" I L 5350 2750 60 
+F17 "A4" I L 5350 2850 60 
+F18 "A5" I L 5350 2950 60 
+F19 "D9" I R 6550 3350 60 
+F20 "D10" I R 6550 3450 60 
+F21 "D11/MOSI" I R 6550 3550 60 
+F22 "D12/MISO" I R 6550 3650 60 
+F23 "D13/SCLK" I R 6550 3750 60 
+F24 "A6_inputonly" I L 5350 3050 60 
+F25 "A7_inputonly" I L 5350 3150 60 
+F26 "5V" I L 5350 3550 60 
+F27 "ISO_OUTPUT" I R 6550 3950 60 
+$EndSheet
+$Sheet
+S 6000 6200 1200 1750
+U 56E131DC
+F0 "ADC_Chip" 60
+F1 "ADC_Chip.sch" 60
+F2 "ADC_COM" I L 6000 7250 60 
+F3 "ADC_IN5" I L 6000 6750 60 
+F4 "ADC_IN4" I L 6000 6850 60 
+F5 "ADC_IN6" I L 6000 6550 60 
+F6 "ADC_IN7" I L 6000 6450 60 
+F7 "ADC_IN8" I L 6000 7050 60 
+F8 "ADC_START" I R 7200 6700 60 
+F9 "ADC_CS" I R 7200 6550 60 
+F10 "ADC_SCLK" I R 7200 6250 60 
+F11 "ADC_DIN" I R 7200 6450 60 
+F12 "ADC_DOUT" I R 7200 6350 60 
+F13 "ADC_DRDY" I R 7200 6900 60 
+F14 "ADC_RESET" I R 7200 6800 60 
+F15 "2.5V_Ref_Out" I R 7200 7450 60 
+F16 "ADC_IN1" I R 7200 7150 60 
+F17 "ADC_IN2" I R 7200 7250 60 
+F18 "ADC_IN3" I R 7200 7350 60 
+F19 "ADC_IN9" I L 6000 7450 60 
+F20 "ADC_IN0" I R 7200 7050 60 
+F21 "GND" I R 7200 7750 59 
+F22 "+5V" I R 7200 7650 59 
+$EndSheet
+$Sheet
+S 1050 2300 1000 750 
+U 563BA3F1
+F0 "DACOutputs1" 60
+F1 "DACOutputs.sch" 60
+F2 "~CS" I R 2050 2500 60 
+F3 "SCLK" I R 2050 2600 60 
+F4 "MOSI" I R 2050 2700 60 
+F5 "5.0_OUT_A" I L 1050 2500 60 
+F6 "5.0_OUT_B" I L 1050 2600 60 
+F7 "2.5_OUT_B" I L 1050 2850 60 
+F8 "2.5_OUT_A" I L 1050 2750 60 
+$EndSheet
+$Sheet
+S 2900 2300 1000 750 
+U 57D1B66D
+F0 "DACOutputs2" 60
+F1 "DACOutputs.sch" 60
+F2 "~CS" I R 3900 2500 60 
+F3 "SCLK" I R 3900 2600 60 
+F4 "MOSI" I R 3900 2700 60 
+F5 "5.0_OUT_A" I L 2900 2500 60 
+F6 "5.0_OUT_B" I L 2900 2600 60 
+F7 "2.5_OUT_B" I L 2900 2850 60 
+F8 "2.5_OUT_A" I L 2900 2750 60 
+$EndSheet
+$Sheet
+S 850  11900 950  850 
+U 5CC68713
+F0 "ES_Buffers" 60
+F1 "ES_Buffers.sch" 60
+F2 "ES1_OUT" I R 1800 12150 60 
+F3 "ES1_IN" I L 850 12150 60 
+F4 "ES2_OUT" I R 1800 12300 60 
+F5 "ES2_IN" I L 850 12300 60 
+F6 "ES3_OUT" I R 1800 12450 60 
+F7 "ES3_IN" I L 850 12450 60 
+F8 "ES4_OUT" I R 1800 12600 60 
+F9 "ES4_IN" I L 850 12600 60 
+$EndSheet
 $Comp
 L power:GND #PWR01
 U 1 1 5481D64A
@@ -35,8 +152,6 @@ F 3 "" H 3450 1550 60  0000 C CNN
 	1    3450 1550
 	1    0    0    -1  
 $EndComp
-Text Label 3450 1250 0    60   ~ 0
-GND_IN
 $Comp
 L power:GND #PWR02
 U 1 1 5481D790
@@ -56,6 +171,11 @@ F 0 "C1" H 4700 1100 40  0000 L CNN
 F 1 "22u" H 4706 915 40  0000 L CNN
 F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2" H 4738 850 30  0001 C CNN
 F 3 "~" H 4700 1000 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4700 1000
 	0    -1   -1   0   
 $EndComp
@@ -70,12 +190,6 @@ F 3 "" H 4900 1000 60  0000 C CNN
 	1    4900 1000
 	0    -1   -1   0   
 $EndComp
-Text Notes 6400 1150 0    60   ~ 0
-Headers to status LEDs:\nL1 - GND - L2
-Text Label 6400 1400 2    60   ~ 0
-LED1_RED
-Text Label 6400 1700 2    60   ~ 0
-LED2_RED
 $Comp
 L Device:R R1
 U 1 1 5481F981
@@ -84,6 +198,11 @@ F 0 "R1" V 6730 1400 40  0000 C CNN
 F 1 "100R" V 6657 1401 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6580 1400 30  0001 C CNN
 F 3 "~" H 6650 1400 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    6650 1400
 	0    -1   -1   0   
 $EndComp
@@ -95,11 +214,14 @@ F 0 "R2" V 6730 1700 40  0000 C CNN
 F 1 "100R" V 6657 1701 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6580 1700 30  0001 C CNN
 F 3 "~" H 6650 1700 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    6650 1700
 	0    -1   -1   0   
 $EndComp
-Text Label 2900 1250 0    60   ~ 0
-+15_IN
 $Comp
 L power:PWR_FLAG #FLG04
 U 1 1 548209EB
@@ -122,10 +244,6 @@ F 3 "" H 2900 1500 60  0000 C CNN
 	1    2900 1500
 	-1   0    0    1   
 $EndComp
-Text Notes 8850 1250 0    60   ~ 0
-Disable USB control (GPIO)
-Text Label 9350 1525 2    60   ~ 0
-DISABLE_COMMS
 $Comp
 L power:GND #PWR06
 U 1 1 55F84C49
@@ -137,8 +255,6 @@ F 3 "" H 10450 2700 60  0000 C CNN
 	1    10450 2700
 	1    0    0    -1  
 $EndComp
-Text Label 4500 900  2    60   ~ 0
-+15_IN
 $Comp
 L power:GND #PWR07
 U 1 1 5628F81C
@@ -150,14 +266,6 @@ F 3 "" H 950 4700 60  0000 C CNN
 	1    950  4700
 	0    1    1    0   
 $EndComp
-Text Label 1050 2750 2    60   ~ 0
-OPA1_IN+
-Text Label 1050 2850 2    60   ~ 0
-OPA2_IN+
-Text Label 1050 2600 2    60   ~ 0
-VLIM1
-Text Label 1050 2500 2    60   ~ 0
-VLIM2
 $Comp
 L power:+5V #PWR08
 U 1 1 5643B5CA
@@ -177,6 +285,11 @@ F 0 "C3" H 4725 2200 50  0000 L CNN
 F 1 "1u" H 4725 2000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4738 1950 30  0001 C CNN
 F 3 "" H 4700 2100 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4700 2100
 	0    -1   -1   0   
 $EndComp
@@ -188,6 +301,11 @@ F 0 "C2" H 4725 1950 50  0000 L CNN
 F 1 "47u" H 4725 1750 50  0000 L CNN
 F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2" H 4738 1700 30  0001 C CNN
 F 3 "" H 4700 1850 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4700 1850
 	0    -1   -1   0   
 $EndComp
@@ -246,14 +364,6 @@ F 3 "" H -4950 11300 60  0000 C CNN
 	1    -4950 11300
 	1    0    0    -1  
 $EndComp
-Text Notes -5550 11250 0    60   ~ 0
-Digital Ground:
-Text Notes -4650 11250 0    60   ~ 0
-Analog Ground:
-Text Notes -5550 11050 0    60   ~ 0
-These grounds will be connected at the last stages\nof the design, but will be held seperate until then\nto avoid crosstalk. This forces seperation of analog and\ndigital ground planes until the final stages
-Text Notes -5550 11750 0    60   ~ 0
-Similarily, analog and digital supplies will be recombined at the last minute
 $Comp
 L power:+5V #PWR014
 U 1 1 5648088D
@@ -276,78 +386,38 @@ F 3 "" H -4000 12050 60  0000 C CNN
 	1    -4000 12050
 	1    0    0    -1  
 $EndComp
-Text Label 7900 4550 1    60   ~ 0
-SCLK
-Text Label 7400 4550 1    60   ~ 0
-MISO
-Text Label 7800 4550 1    60   ~ 0
-MOSI
-Text Label 7700 4550 1    60   ~ 0
-ADC_CS
-Text Label 2050 2500 0    60   ~ 0
-DAC_CS1
-$Sheet
-S 6050 8600 1050 800 
-U 5653042F
-F0 "INA330_interface1" 60
-F1 "INA330.sch" 60
-F2 "1.0V_REF" I L 6050 9050 60 
-F3 "2.5V_REF" I L 6050 9200 60 
-F4 "V_ERROR" I R 7100 8750 60 
-F5 "2.5V_OUT" I R 7100 8850 60 
-F6 "I_BIAS_T" I L 6050 8750 60 
-F7 "I_BIAS_R" I L 6050 8850 60 
-F8 "GND" I R 7100 9200 59 
-F9 "+5V" I R 7100 9100 59 
-$EndSheet
-Text Notes 5100 8100 0    60   ~ 0
-Optional INA330\nThese provide the error signal instead of the DSub connector if enabled. 
-$Sheet
-S 6050 9600 1050 900 
-U 56541853
-F0 "INA330_interface2" 60
-F1 "INA330.sch" 60
-F2 "1.0V_REF" I L 6050 10000 60 
-F3 "2.5V_REF" I L 6050 10100 60 
-F4 "V_ERROR" I R 7100 9800 60 
-F5 "2.5V_OUT" I R 7100 9900 60 
-F6 "I_BIAS_T" I L 6050 9750 60 
-F7 "I_BIAS_R" I L 6050 9850 60 
-F8 "GND" I R 7100 10250 59 
-F9 "+5V" I R 7100 10150 59 
-$EndSheet
-Text Label 2950 8400 0    60   ~ 0
-INA_1.0V_REF
 $Comp
 L Device:R_Small R6
 U 1 1 565397B5
-P 2700 8250
-F 0 "R6" H 2730 8270 50  0000 L CNN
-F 1 "15k" H 2730 8210 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2700 8250 60  0001 C CNN
-F 3 "" H 2700 8250 60  0000 C CNN
-	1    2700 8250
+P 3100 8250
+F 0 "R6" H 3130 8270 50  0000 L CNN
+F 1 "15k_prec" H 3130 8210 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3100 8250 60  0001 C CNN
+F 3 "http://datasheet.octopart.com/RU73X2A15KLTDF-TE-Connectivity-datasheet-63585430.pdf" H 3100 8250 60  0001 C CNN
+F 4 "TE Connectivity" H 400 0   50  0001 C CNN "MFR"
+F 5 "RU73X2A15KLTDF" H 400 0   50  0001 C CNN "MPN"
+F 6 "Farnell" H 400 0   50  0001 C CNN "SPR"
+F 7 "2579580" H 400 0   50  0001 C CNN "SPN"
+F 8 "-" H 400 0   50  0001 C CNN "SPURL"
+	1    3100 8250
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Small R7
 U 1 1 565397BC
-P 2700 8550
-F 0 "R7" H 2730 8570 50  0000 L CNN
-F 1 "10k" H 2730 8510 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2700 8550 60  0001 C CNN
-F 3 "" H 2700 8550 60  0000 C CNN
-	1    2700 8550
+P 3100 8550
+F 0 "R7" H 3130 8570 50  0000 L CNN
+F 1 "10k_prec" H 3130 8510 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3100 8550 60  0001 C CNN
+F 3 "http://datasheet.octopart.com/RU73X2A10KLTDF-TE-Connectivity-datasheet-63585430.pdf" H 3100 8550 60  0001 C CNN
+F 4 "TE Connectivity" H 400 0   50  0001 C CNN "MFR"
+F 5 "RU73X2A10KLTDF" H 400 0   50  0001 C CNN "MPN"
+F 6 "Farnell" H 400 0   50  0001 C CNN "SPR"
+F 7 "2579579" H 400 0   50  0001 C CNN "SPN"
+F 8 "-" H 400 0   50  0001 C CNN "SPURL"
+	1    3100 8550
 	1    0    0    -1  
 $EndComp
-Text Label 5700 10350 3    60   ~ 0
-INA_2.5V_REF
-Text Label 6050 9200 2    60   ~ 0
-INA_2.5V_REF
-Text Label 5100 10000 2    60   ~ 0
-INA_1.0V_REF
-Text Label 6050 9050 2    60   ~ 0
-INA_1.0V_REF
 $Comp
 L Device:C C8
 U 1 1 56564618
@@ -356,6 +426,11 @@ F 0 "C8" H 5375 10200 50  0000 L CNN
 F 1 "10n" H 5375 10000 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5388 9950 30  0001 C CNN
 F 3 "" H 5350 10100 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5350 10100
 	0    1    1    0   
 $EndComp
@@ -367,11 +442,14 @@ F 0 "C9" H 5375 10550 50  0000 L CNN
 F 1 "10n" H 5375 10350 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5388 10300 30  0001 C CNN
 F 3 "" H 5350 10450 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5350 10450
 	0    1    1    0   
 $EndComp
-Text Label 2650 12450 2    60   ~ 0
-OPA1_IN+
 $Comp
 L Device:R R14
 U 1 1 56A9DF8F
@@ -380,6 +458,11 @@ F 0 "R14" V 2730 13600 40  0000 C CNN
 F 1 "51K" V 2657 13601 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2580 13600 30  0001 C CNN
 F 3 "~" H 2650 13600 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2650 13600
 	0    -1   1    0   
 $EndComp
@@ -391,6 +474,11 @@ F 0 "R15" V 3630 13600 40  0000 C CNN
 F 1 "200K" V 3557 13601 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3480 13600 30  0001 C CNN
 F 3 "~" H 3550 13600 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3550 13600
 	0    -1   -1   0   
 $EndComp
@@ -402,6 +490,11 @@ F 0 "C16" H 3750 13350 40  0000 L CNN
 F 1 "10n" H 3756 13165 40  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3788 13100 30  0001 C CNN
 F 3 "~" H 3750 13250 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3750 13250
 	0    1    1    0   
 $EndComp
@@ -416,8 +509,6 @@ F 3 "" H 3900 13200 60  0000 C CNN
 	1    3900 13250
 	0    -1   -1   0   
 $EndComp
-Text Label 3700 13150 0    60   ~ 0
-VLIM1
 $Comp
 L Device:CP C12
 U 1 1 56AA4316
@@ -426,6 +517,11 @@ F 0 "C12" H 3200 12100 50  0000 L CNN
 F 1 "100n" H 3200 11900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4650 13350 60  0001 C CNN
 F 3 "~" H 3150 12000 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3150 12000
 	0    1    -1   0   
 $EndComp
@@ -437,6 +533,11 @@ F 0 "C10" H 3200 11850 50  0000 L CNN
 F 1 "1u" H 3200 11650 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4200 13500 60  0001 C CNN
 F 3 "~" H 3150 11750 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3150 11750
 	0    1    -1   0   
 $EndComp
@@ -462,8 +563,6 @@ F 3 "" H 3350 11900 60  0000 C CNN
 	1    3350 11900
 	0    1    1    0   
 $EndComp
-Text Label 4450 12600 0    60   ~ 0
-C1+_OUT
 $Comp
 L Custom_Components:OPA548 U6
 U 1 1 56AB686D
@@ -472,11 +571,14 @@ F 0 "U6" H 6100 12600 60  0000 L CNN
 F 1 "OPA548" H 6200 13050 60  0000 L CNN
 F 2 "Custom:TO-263-7Lead" H 6350 12600 60  0001 C CNN
 F 3 "" H 6350 12600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    6200 12600
 	1    0    0    -1  
 $EndComp
-Text Label 5400 12450 2    60   ~ 0
-OPA3_IN+
 $Comp
 L Device:C C17
 U 1 1 56AB6895
@@ -485,6 +587,11 @@ F 0 "C17" H 6450 13350 40  0000 L CNN
 F 1 "10n" H 6456 13165 40  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6488 13100 30  0001 C CNN
 F 3 "~" H 6450 13250 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    6450 13250
 	0    1    1    0   
 $EndComp
@@ -499,10 +606,6 @@ F 3 "" H 6600 13200 60  0000 C CNN
 	1    6600 13250
 	0    -1   -1   0   
 $EndComp
-Text Label 6400 13150 0    60   ~ 0
-VLIM3
-Text Label 6550 12950 0    60   ~ 0
-ES3_OUT
 $Comp
 L Device:CP C13
 U 1 1 56AB68A8
@@ -511,6 +614,11 @@ F 0 "C13" H 5900 12100 50  0000 L CNN
 F 1 "100n" H 5900 11900 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7350 13350 60  0001 C CNN
 F 3 "~" H 5850 12000 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5850 12000
 	0    1    -1   0   
 $EndComp
@@ -522,6 +630,11 @@ F 0 "C11" H 5900 11850 50  0000 L CNN
 F 1 "1u" H 5900 11650 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6900 13500 60  0001 C CNN
 F 3 "~" H 5850 11750 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5850 11750
 	0    1    -1   0   
 $EndComp
@@ -547,10 +660,6 @@ F 3 "" H 6050 11900 60  0000 C CNN
 	1    6050 11900
 	0    1    1    0   
 $EndComp
-Text Label 7150 12600 0    60   ~ 0
-C3+_OUT
-Text Label 2650 12750 2    60   ~ 0
-OPA1_IN-
 $Comp
 L Device:R R12
 U 1 1 56DC4002
@@ -559,6 +668,11 @@ F 0 "R12" V 5430 13550 40  0000 C CNN
 F 1 "51K" V 5357 13551 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5280 13550 30  0001 C CNN
 F 3 "~" H 5350 13550 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5350 13550
 	0    -1   -1   0   
 $EndComp
@@ -570,11 +684,14 @@ F 0 "R13" V 6330 13550 40  0000 C CNN
 F 1 "200K" V 6257 13551 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6180 13550 30  0001 C CNN
 F 3 "~" H 6250 13550 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    6250 13550
 	0    -1   1    0   
 $EndComp
-Text Label 5400 12750 2    60   ~ 0
-OPA3_IN-
 $Comp
 L Connector:Barrel_Jack_Switch CON1
 U 1 1 56DD9AA0
@@ -583,25 +700,14 @@ F 0 "CON1" H 10500 7050 60  0000 C CNN
 F 1 "BARREL_JACK" H 10500 6600 60  0000 C CNN
 F 2 "Connect:BARREL_JACK" H 10500 6800 60  0001 C CNN
 F 3 "" H 10500 6800 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    10500 6800
 	-1   0    0    1   
 $EndComp
-Text Label 4800 8750 2    60   ~ 0
-INA1_T
-Text Label 4800 8850 2    60   ~ 0
-INA1_R
-Text Label 5400 9750 2    60   ~ 0
-INA2_T
-Text Label 4550 9850 2    60   ~ 0
-INA2_R
-Text Label 1500 9550 2    60   ~ 0
-INA2_T
-Text Label 1500 9350 2    60   ~ 0
-INA2_R
-Text Label 1500 9150 2    60   ~ 0
-INA1_T
-Text Label 1500 8950 2    60   ~ 0
-INA1_R
 $Comp
 L Device:R R_Prec1
 U 1 1 56D9D530
@@ -609,7 +715,12 @@ P 4150 9000
 F 0 "R_Prec1" V 4230 9000 50  0000 C CNN
 F 1 "R" V 4150 9000 50  0000 C CNN
 F 2 "Custom:Resistor_Vertical_RM5mm_Cust" V 4080 9000 30  0001 C CNN
-F 3 "" H 4150 9000 30  0000 C CNN
+F 3 "" H 4150 9000 30  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4150 9000
 	1    0    0    -1  
 $EndComp
@@ -620,12 +731,15 @@ P 4150 10000
 F 0 "R_Prec2" V 4230 10000 50  0000 C CNN
 F 1 "R" V 4150 10000 50  0000 C CNN
 F 2 "Custom:Resistor_Vertical_RM5mm_Cust" V 4080 10000 30  0001 C CNN
-F 3 "" H 4150 10000 30  0000 C CNN
+F 3 "" H 4150 10000 30  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4150 10000
 	1    0    0    -1  
 $EndComp
-Text Notes 7700 10850 2    60   ~ 0
-Optional precision resistors on-board\ninstead of supplied via DSub connector
 $Comp
 L Custom_Components:Led_x2_split D1
 U 1 1 56DBF578
@@ -634,6 +748,11 @@ F 0 "D1" H 7350 1825 50  0000 C CNN
 F 1 "Led_x2_split" H 7350 1350 50  0000 C CNN
 F 2 "Custom:Double_LEDs" H 7350 1600 60  0001 C CNN
 F 3 "" H 7350 1600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    7350 1600
 	-1   0    0    -1  
 $EndComp
@@ -656,6 +775,11 @@ F 0 "U5" H 3400 12600 60  0000 L CNN
 F 1 "OPA548" H 3500 13050 60  0000 L CNN
 F 2 "Custom:TO-263-7Lead" H 3650 12600 60  0001 C CNN
 F 3 "" H 3650 12600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3500 12600
 	1    0    0    -1  
 $EndComp
@@ -689,76 +813,14 @@ F 0 "SW1" H 9350 1675 50  0000 C CNN
 F 1 "DISABLE_COMMS" H 9400 1375 50  0000 C CNN
 F 2 "Custom:ApemSwitch" H 9550 1525 60  0001 C CNN
 F 3 "" H 9550 1525 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9550 1525
 	1    0    0    -1  
 $EndComp
-Text Label 7250 4550 1    60   ~ 0
-ADC_START
-Text Notes 4200 17500 0    60   ~ 0
-These outputs will throw ERC errors:\nthis is because only one of these chips\nwill be soldered in the complete board\n(either the OPA548 or OPA549)\nThe errors can be safely ignored
-$Sheet
-S 5350 2350 1200 1700
-U 57222EA2
-F0 "DIYino" 60
-F1 "DIYino.sch" 60
-F2 "GND" I L 5350 3750 60 
-F3 "D0/RX" I R 6550 2450 60 
-F4 "D1/TX" I R 6550 2550 60 
-F5 "D2" I R 6550 2650 60 
-F6 "D3" I R 6550 2750 60 
-F7 "D4" I R 6550 2850 60 
-F8 "D5" I R 6550 2950 60 
-F9 "D6" I R 6550 3050 60 
-F10 "D7" I R 6550 3150 60 
-F11 "~RESET" I L 5350 3350 60 
-F12 "D8" I R 6550 3250 60 
-F13 "A0" I L 5350 2450 60 
-F14 "A1" I L 5350 2550 60 
-F15 "A2" I L 5350 2650 60 
-F16 "A3" I L 5350 2750 60 
-F17 "A4" I L 5350 2850 60 
-F18 "A5" I L 5350 2950 60 
-F19 "D9" I R 6550 3350 60 
-F20 "D10" I R 6550 3450 60 
-F21 "D11/MOSI" I R 6550 3550 60 
-F22 "D12/MISO" I R 6550 3650 60 
-F23 "D13/SCLK" I R 6550 3750 60 
-F24 "A6_inputonly" I L 5350 3050 60 
-F25 "A7_inputonly" I L 5350 3150 60 
-F26 "5V" I L 5350 3550 60 
-F27 "ISO_OUTPUT" I R 6550 3950 60 
-$EndSheet
-NoConn ~ 6550 3950
-Text Label 6550 2750 0    60   ~ 0
-RS485_D
-Text Label 6550 2850 0    60   ~ 0
-RS485_DE
-Text Label 6550 3050 0    60   ~ 0
-RS485_R
-Text Label 6550 2950 0    60   ~ 0
-RS485_RE
-Text Label 5350 2550 2    60   ~ 0
-ES3_IN
-Text Label 5350 2450 2    60   ~ 0
-ES4_IN
-Text Label 5350 3350 2    60   ~ 0
-ARD_RST
-Text Label 6550 3750 0    60   ~ 0
-SCLK
-Text Label 6550 3650 0    60   ~ 0
-MISO
-Text Label 6550 3550 0    60   ~ 0
-MOSI
-Text Label 5350 2950 2    60   ~ 0
-LED1_RED
-Text Label 5350 2850 2    60   ~ 0
-LED2_RED
-Text Label 6550 2650 0    60   ~ 0
-ADC_START
-Text Label 5350 2750 2    60   ~ 0
-ADC_CS
-Text Label 6550 3450 0    60   ~ 0
-DAC_CS1
 $Comp
 L power:+5V #PWR025
 U 1 1 5723FCD0
@@ -781,28 +843,6 @@ F 3 "" H 5050 3750 60  0000 C CNN
 	1    5050 3750
 	1    0    0    -1  
 $EndComp
-Text Label 7500 4550 1    60   ~ 0
-ADC_DRDY
-Text Label 5350 2650 2    60   ~ 0
-ADC_DRDY
-Text Label 7500 7450 0    60   ~ 0
-ADC_2.5_REF
-Text Label 2450 8050 2    60   ~ 0
-ADC_2.5_REF
-Text Notes 2500 7900 0    60   ~ 0
-Voltage reference
-Text Label 2900 8050 0    60   ~ 0
-INA_2.5V_REF
-Text Label 7100 8750 0    60   ~ 0
-INA_ERROR_1
-Text Label 7100 9800 0    60   ~ 0
-INA_ERROR_2
-Text Label 4550 7450 2    60   ~ 0
-INA_ERROR_1
-Text Label 4550 7050 2    60   ~ 0
-INA_ERROR_2
-Text Label 4550 7250 2    60   ~ 0
-INA_2.5V_REF
 $Comp
 L Device:C_Small C6
 U 1 1 57317B15
@@ -811,6 +851,11 @@ F 0 "C6" H 5410 7220 50  0000 L CNN
 F 1 "1u" H 5410 7070 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5400 7150 60  0001 C CNN
 F 3 "" H 5400 7150 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5400 7150
 	1    0    0    -1  
 $EndComp
@@ -822,6 +867,11 @@ F 0 "C7" H 5500 7150 50  0000 L CNN
 F 1 "1u" H 5410 7270 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5400 7350 60  0001 C CNN
 F 3 "" H 5400 7350 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5400 7350
 	1    0    0    -1  
 $EndComp
@@ -833,44 +883,14 @@ F 0 "U1" H 4750 1200 60  0000 C CNN
 F 1 "LM7805" H 4550 1700 60  0000 C CNN
 F 2 "Custom:TO220_HORZ" H 4550 1400 60  0001 C CNN
 F 3 "" H 4550 1400 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4550 1400
 	0    -1   1    0   
 $EndComp
-NoConn ~ 7200 7350
-NoConn ~ 7200 7250
-NoConn ~ 7200 7150
-NoConn ~ 7200 7050
-$Sheet
-S 6000 6200 1200 1750
-U 56E131DC
-F0 "ADC_Chip" 60
-F1 "ADC_Chip.sch" 60
-F2 "ADC_COM" I L 6000 7250 60 
-F3 "ADC_IN5" I L 6000 6750 60 
-F4 "ADC_IN4" I L 6000 6850 60 
-F5 "ADC_IN6" I L 6000 6550 60 
-F6 "ADC_IN7" I L 6000 6450 60 
-F7 "ADC_IN8" I L 6000 7050 60 
-F8 "ADC_START" I R 7200 6700 60 
-F9 "ADC_CS" I R 7200 6550 60 
-F10 "ADC_SCLK" I R 7200 6250 60 
-F11 "ADC_DIN" I R 7200 6450 60 
-F12 "ADC_DOUT" I R 7200 6350 60 
-F13 "ADC_DRDY" I R 7200 6900 60 
-F14 "ADC_RESET" I R 7200 6800 60 
-F15 "2.5V_Ref_Out" I R 7200 7450 60 
-F16 "ADC_IN1" I R 7200 7150 60 
-F17 "ADC_IN2" I R 7200 7250 60 
-F18 "ADC_IN3" I R 7200 7350 60 
-F19 "ADC_IN9" I L 6000 7450 60 
-F20 "ADC_IN0" I R 7200 7050 60 
-F21 "GND" I R 7200 7750 59 
-F22 "+5V" I R 7200 7650 59 
-$EndSheet
-Text Label 2050 2600 0    60   ~ 0
-SCLK
-Text Label 2050 2700 0    60   ~ 0
-MOSI
 $Comp
 L Device:R_Small R5
 U 1 1 572B31E8
@@ -879,6 +899,11 @@ F 0 "R5" H 5030 7470 50  0000 L CNN
 F 1 "100R" H 5030 7410 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5000 7450 60  0001 C CNN
 F 3 "" H 5000 7450 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5000 7450
 	0    1    1    0   
 $EndComp
@@ -890,6 +915,11 @@ F 0 "R4" H 5030 7070 50  0000 L CNN
 F 1 "100R" H 5030 7010 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5000 7050 60  0001 C CNN
 F 3 "" H 5000 7050 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5000 7050
 	0    1    1    0   
 $EndComp
@@ -901,13 +931,14 @@ F 0 "W1" H 1000 10210 40  0000 C CNN
 F 1 "INA1" H 1000 10080 40  0000 C CNN
 F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 1000 10150 60  0001 C CNN
 F 3 "" H 1000 10150 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    1000 10150
 	1    0    0    -1  
 $EndComp
-Text Label 1000 10150 0    60   ~ 0
-INA_ERROR_1
-Text Label 1000 10750 0    60   ~ 0
-INA_2.5V_REF
 $Comp
 L Connector:TestPoint W3
 U 1 1 572F07FC
@@ -916,24 +947,14 @@ F 0 "W3" H 1000 10810 40  0000 C CNN
 F 1 "2.5V" H 1000 10680 40  0000 C CNN
 F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 1000 10750 60  0001 C CNN
 F 3 "" H 1000 10750 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    1000 10750
 	1    0    0    -1  
 $EndComp
-$Sheet
-S 1050 2300 1000 750 
-U 563BA3F1
-F0 "DACOutputs1" 60
-F1 "DACOutputs.sch" 60
-F2 "~CS" I R 2050 2500 60 
-F3 "SCLK" I R 2050 2600 60 
-F4 "MOSI" I R 2050 2700 60 
-F5 "5.0_OUT_A" I L 1050 2500 60 
-F6 "5.0_OUT_B" I L 1050 2600 60 
-F7 "2.5_OUT_B" I L 1050 2850 60 
-F8 "2.5_OUT_A" I L 1050 2750 60 
-$EndSheet
-Text Notes 10000 5350 0    118  ~ 0
-IO ports
 $Comp
 L Connector_Generic:Conn_01x08 P2
 U 1 1 579F23FB
@@ -942,35 +963,14 @@ F 0 "P2" H 1700 9600 50  0000 C CNN
 F 1 "820-8104" V 1800 9150 50  0000 C CNN
 F 2 "Custom:RJ45_TE" H 1700 9150 60  0001 C CNN
 F 3 "" H 1700 9150 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    1700 9150
 	1    0    0    -1  
 $EndComp
-Text Notes 3700 5550 0    118  ~ 0
-Isolated analog section
-Text Label 2700 8650 3    59   ~ 0
-ANALOG_GND
-Text Label 4150 9150 3    59   ~ 0
-ANALOG_GND
-Text Label 4150 10150 3    59   ~ 0
-ANALOG_GND
-Text Label 4850 10550 2    59   ~ 0
-ANALOG_GND
-Text Label 7100 10250 0    59   ~ 0
-ANALOG_GND
-Text Label 7100 9200 0    59   ~ 0
-ANALOG_GND
-Text Label 7200 7750 0    59   ~ 0
-ANALOG_GND
-Text Label 7200 7650 0    59   ~ 0
-ANALOG_+5
-Text Label 7100 9100 0    59   ~ 0
-ANALOG_+5
-Text Label 7100 10150 0    59   ~ 0
-ANALOG_+5
-Text Label 2550 5900 0    59   ~ 0
-ANALOG_GND
-Text Label 2550 5750 0    59   ~ 0
-ANALOG_+5
 $Comp
 L power:PWR_FLAG #FLG027
 U 1 1 57AAFAB7
@@ -982,18 +982,6 @@ F 3 "" H 3450 1450 60  0000 C CNN
 	1    3450 1450
 	0    -1   -1   0   
 $EndComp
-Text Notes 2750 1750 0    39   ~ 0
-Mark +15 and GND as power lines
-Text Notes 4100 750  0    59   ~ 0
-5V supply for digital and output analog electronics
-Text Notes 900  4250 0    59   ~ 0
-Isolated DC-DC convertor to power analog section
-Text Notes 5350 2150 0    79   ~ 0
-Microprocessor
-Text Label 6950 5500 3    39   ~ 0
-ANALOG_+5
-Text Label 6750 5500 3    39   ~ 0
-ANALOG_GND
 $Comp
 L power:GND #PWR028
 U 1 1 57AFB53B
@@ -1024,33 +1012,14 @@ F 0 "U3" H 7300 5400 50  0000 L CNN
 F 1 "ADuM7642CRQZ" H 7650 5400 50  0000 L CNN
 F 2 "Housings_SSOP:SSOP-20_4.4x6.5mm_Pitch0.65mm" H 7650 5000 50  0001 C CIN
 F 3 "" H 7650 5000 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    7650 5000
 	0    1    1    0   
 $EndComp
-Text Label 7300 6550 0    60   ~ 0
-ADC_CS_ISO
-Text Label 7300 6350 0    60   ~ 0
-MISO_ISO
-Text Label 7300 6450 0    60   ~ 0
-MOSI_ISO
-Text Label 7300 6250 0    60   ~ 0
-SCLK_ISO
-Text Label 7300 6900 0    60   ~ 0
-ADC_DRDY_ISO
-Text Label 7300 6700 0    60   ~ 0
-ADC_START_ISO
-Text Label 7900 5450 3    60   ~ 0
-SCLK_ISO
-Text Label 7400 5450 3    60   ~ 0
-MISO_ISO
-Text Label 7800 5450 3    60   ~ 0
-MOSI_ISO
-Text Label 7700 5450 3    60   ~ 0
-ADC_CS_ISO
-Text Label 7250 5450 3    60   ~ 0
-ADC_START_ISO
-Text Label 7500 5450 3    60   ~ 0
-ADC_DRDY_ISO
 $Comp
 L Device:Jumper_NO_Small JP2
 U 1 1 57B84488
@@ -1059,11 +1028,14 @@ F 0 "JP2" H 8800 5630 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8810 5490 50  0001 C CNN
 F 2 "Resistors_SMD:R_0402" H 8800 5550 60  0001 C CNN
 F 3 "" H 8800 5550 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8800 5550
 	1    0    0    -1  
 $EndComp
-Text Notes 8550 5400 0    39   ~ 0
-Override the isolation
 $Comp
 L Device:Jumper_NO_Small JP3
 U 1 1 57B893D6
@@ -1072,6 +1044,11 @@ F 0 "JP3" H 8800 5780 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8810 5640 50  0001 C CNN
 F 2 "Resistors_SMD:R_0402" H 8800 5700 60  0001 C CNN
 F 3 "" H 8800 5700 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8800 5700
 	1    0    0    -1  
 $EndComp
@@ -1083,6 +1060,11 @@ F 0 "JP4" H 8800 5930 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8810 5790 50  0001 C CNN
 F 2 "Resistors_SMD:R_0402" H 8800 5850 60  0001 C CNN
 F 3 "" H 8800 5850 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8800 5850
 	1    0    0    -1  
 $EndComp
@@ -1094,6 +1076,11 @@ F 0 "JP5" H 8800 6080 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8810 5940 50  0001 C CNN
 F 2 "Resistors_SMD:R_0402" H 8800 6000 60  0001 C CNN
 F 3 "" H 8800 6000 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8800 6000
 	1    0    0    -1  
 $EndComp
@@ -1105,6 +1092,11 @@ F 0 "JP6" H 8800 6230 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8810 6090 50  0001 C CNN
 F 2 "Resistors_SMD:R_0402" H 8800 6150 60  0001 C CNN
 F 3 "" H 8800 6150 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8800 6150
 	1    0    0    -1  
 $EndComp
@@ -1116,33 +1108,14 @@ F 0 "JP7" H 8800 6380 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 8810 6240 50  0001 C CNN
 F 2 "Resistors_SMD:R_0402" H 8800 6300 60  0001 C CNN
 F 3 "" H 8800 6300 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8800 6300
 	1    0    0    -1  
 $EndComp
-Text Label 8700 5550 2    60   ~ 0
-SCLK_ISO
-Text Label 8700 6150 2    60   ~ 0
-MISO_ISO
-Text Label 8700 5700 2    60   ~ 0
-MOSI_ISO
-Text Label 8700 6300 2    60   ~ 0
-ADC_CS_ISO
-Text Label 8700 5850 2    60   ~ 0
-ADC_START_ISO
-Text Label 8700 6000 2    60   ~ 0
-ADC_DRDY_ISO
-Text Label 8900 5550 0    60   ~ 0
-SCLK
-Text Label 8900 6150 0    60   ~ 0
-MISO
-Text Label 8900 5700 0    60   ~ 0
-MOSI
-Text Label 8900 6300 0    60   ~ 0
-ADC_CS
-Text Label 8900 5850 0    60   ~ 0
-ADC_START
-Text Label 8900 6000 0    60   ~ 0
-ADC_DRDY
 $Comp
 L Connector:TestPoint W2
 U 1 1 57BD2099
@@ -1151,13 +1124,14 @@ F 0 "W2" H 2200 10210 40  0000 C CNN
 F 1 "GND_ISO" H 2200 10080 40  0000 C CNN
 F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 2200 10150 60  0001 C CNN
 F 3 "" H 2200 10150 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2200 10150
 	1    0    0    -1  
 $EndComp
-Text Notes 900  8150 0    118  ~ 0
-IO ports
-Text Label 950  9050 1    59   ~ 0
-ANALOG_GND
 $Comp
 L Device:R_Small R_T1
 U 1 1 579C5812
@@ -1165,7 +1139,12 @@ P 5200 8750
 F 0 "R_T1" V 5100 8450 50  0000 L CNN
 F 1 "R_series" V 5100 8650 50  0000 L CNN
 F 2 "Custom:Resistor_Vertical_RM5mm_Cust" H 5200 8750 60  0001 C CNN
-F 3 "" H 5200 8750 60  0000 C CNN
+F 3 "http://datasheet.octopart.com/RU73X2A1K0LTDF-TE-Connectivity-datasheet-63585430.pdf" H 5200 8750 60  0001 C CNN
+F 4 "TE Connectivity" H 0   0   50  0001 C CNN "MFR"
+F 5 "RU73X2A1K0LTDF" H 0   0   50  0001 C CNN "MPN"
+F 6 "Farnell" H 0   0   50  0001 C CNN "SPR"
+F 7 "2579571" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5200 8750
 	0    -1   1    0   
 $EndComp
@@ -1176,7 +1155,12 @@ P 5200 8850
 F 0 "R_R1" V 5300 8750 50  0000 L CNN
 F 1 "R_series" V 5400 8550 50  0000 L CNN
 F 2 "Custom:Resistor_Vertical_RM5mm_Cust" H 5200 8850 60  0001 C CNN
-F 3 "" H 5200 8850 60  0000 C CNN
+F 3 "http://datasheet.octopart.com/RU73X2A1K0LTDF-TE-Connectivity-datasheet-63585430.pdf" H 5200 8850 60  0001 C CNN
+F 4 "TE Connectivity" H 0   0   50  0001 C CNN "MFR"
+F 5 "RU73X2A1K0LTDF" H 0   0   50  0001 C CNN "MPN"
+F 6 "Farnell" H 0   0   50  0001 C CNN "SPR"
+F 7 "2579571" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5200 8850
 	0    1    1    0   
 $EndComp
@@ -1187,7 +1171,12 @@ P 5650 9750
 F 0 "R_T2" V 5550 9750 50  0000 L CNN
 F 1 "R_series" V 5450 9750 50  0000 L CNN
 F 2 "Custom:Resistor_Vertical_RM5mm_Cust" H 5650 9750 60  0001 C CNN
-F 3 "" H 5650 9750 60  0000 C CNN
+F 3 "http://datasheet.octopart.com/RU73X2A1K0LTDF-TE-Connectivity-datasheet-63585430.pdf" H 5650 9750 60  0001 C CNN
+F 4 "TE Connectivity" H 0   0   50  0001 C CNN "MFR"
+F 5 "RU73X2A1K0LTDF" H 0   0   50  0001 C CNN "MPN"
+F 6 "Farnell" H 0   0   50  0001 C CNN "SPR"
+F 7 "2579571" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5650 9750
 	0    1    1    0   
 $EndComp
@@ -1198,7 +1187,12 @@ P 4850 9850
 F 0 "R_R2" V 4750 9750 50  0000 L CNN
 F 1 "R_series" V 4650 9750 50  0000 L CNN
 F 2 "Custom:Resistor_Vertical_RM5mm_Cust" H 4850 9850 60  0001 C CNN
-F 3 "" H 4850 9850 60  0000 C CNN
+F 3 "http://datasheet.octopart.com/RU73X2A1K0LTDF-TE-Connectivity-datasheet-63585430.pdf" H 4850 9850 60  0001 C CNN
+F 4 "TE Connectivity" H 0   0   50  0001 C CNN "MFR"
+F 5 "RU73X2A1K0LTDF" H 0   0   50  0001 C CNN "MPN"
+F 6 "Farnell" H 0   0   50  0001 C CNN "SPR"
+F 7 "2579571" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4850 9850
 	0    1    1    0   
 $EndComp
@@ -1210,6 +1204,11 @@ F 0 "D2" H 8750 2450 50  0000 C CNN
 F 1 "POWER" H 8750 2250 50  0000 C CNN
 F 2 "LEDs:LED_0805" H 8750 2350 60  0001 C CNN
 F 3 "" H 8750 2350 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8750 2350
 	0    -1   -1   0   
 $EndComp
@@ -1221,6 +1220,11 @@ F 0 "R3" H 8780 2620 50  0000 L CNN
 F 1 "100R" H 8780 2560 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8750 2600 60  0001 C CNN
 F 3 "" H 8750 2600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    8750 2600
 	1    0    0    -1  
 $EndComp
@@ -1246,10 +1250,6 @@ F 3 "" H 8750 2700 60  0000 C CNN
 	1    8750 2700
 	1    0    0    -1  
 $EndComp
-Text Notes 8500 2750 1    60   ~ 0
-Power indicator
-Text Label 7200 6800 0    59   ~ 0
-ANALOG_+5
 $Comp
 L power:Earth_Clean #PWR032
 U 1 1 57C4F5F1
@@ -1294,8 +1294,6 @@ F 3 "" H 3350 13250 60  0000 C CNN
 	1    3350 13300
 	0    1    1    0   
 $EndComp
-Text Label 2350 14650 2    60   ~ 0
-OPA2_IN+
 $Comp
 L Device:R R18
 U 1 1 57D06085
@@ -1304,6 +1302,11 @@ F 0 "R18" V 2430 15800 40  0000 C CNN
 F 1 "51K" V 2357 15801 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2280 15800 30  0001 C CNN
 F 3 "~" H 2350 15800 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2350 15800
 	0    -1   1    0   
 $EndComp
@@ -1315,6 +1318,11 @@ F 0 "R19" V 3330 15800 40  0000 C CNN
 F 1 "200K" V 3257 15801 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3180 15800 30  0001 C CNN
 F 3 "~" H 3250 15800 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3250 15800
 	0    -1   -1   0   
 $EndComp
@@ -1326,6 +1334,11 @@ F 0 "C24" H 3450 15550 40  0000 L CNN
 F 1 "10n" H 3456 15365 40  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3488 15300 30  0001 C CNN
 F 3 "~" H 3450 15450 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3450 15450
 	0    1    1    0   
 $EndComp
@@ -1340,10 +1353,6 @@ F 3 "" H 3600 15400 60  0000 C CNN
 	1    3600 15450
 	0    -1   -1   0   
 $EndComp
-Text Label 3400 15350 0    60   ~ 0
-VLIM2
-Text Label 3550 15150 0    60   ~ 0
-ES2_OUT
 $Comp
 L Device:CP C20
 U 1 1 57D060A2
@@ -1352,6 +1361,11 @@ F 0 "C20" H 2900 14300 50  0000 L CNN
 F 1 "100n" H 2900 14100 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4350 15550 60  0001 C CNN
 F 3 "~" H 2850 14200 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2850 14200
 	0    1    -1   0   
 $EndComp
@@ -1363,6 +1377,11 @@ F 0 "C18" H 2900 14050 50  0000 L CNN
 F 1 "1u" H 2900 13850 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3900 15700 60  0001 C CNN
 F 3 "~" H 2850 13950 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2850 13950
 	0    1    -1   0   
 $EndComp
@@ -1388,8 +1407,6 @@ F 3 "" H 3050 14100 60  0000 C CNN
 	1    3050 14100
 	0    1    1    0   
 $EndComp
-Text Label 4150 14800 0    60   ~ 0
-C2+_OUT
 $Comp
 L Custom_Components:OPA548 U8
 U 1 1 57D060BD
@@ -1398,11 +1415,14 @@ F 0 "U8" H 5800 14800 60  0000 L CNN
 F 1 "OPA548" H 5900 15250 60  0000 L CNN
 F 2 "Custom:TO-263-7Lead" H 6050 14800 60  0001 C CNN
 F 3 "" H 6050 14800 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5900 14800
 	1    0    0    -1  
 $EndComp
-Text Label 5100 14650 2    60   ~ 0
-OPA4_IN+
 $Comp
 L Device:C C25
 U 1 1 57D060C5
@@ -1411,6 +1431,11 @@ F 0 "C25" H 6150 15550 40  0000 L CNN
 F 1 "10n" H 6156 15365 40  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6188 15300 30  0001 C CNN
 F 3 "~" H 6150 15450 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    6150 15450
 	0    1    1    0   
 $EndComp
@@ -1425,10 +1450,6 @@ F 3 "" H 6300 15400 60  0000 C CNN
 	1    6300 15450
 	0    -1   -1   0   
 $EndComp
-Text Label 6100 15350 0    60   ~ 0
-VLIM4
-Text Label 6250 15150 0    60   ~ 0
-ES4_OUT
 $Comp
 L Device:CP C21
 U 1 1 57D060D4
@@ -1437,6 +1458,11 @@ F 0 "C21" H 5600 14300 50  0000 L CNN
 F 1 "100n" H 5600 14100 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7050 15550 60  0001 C CNN
 F 3 "~" H 5550 14200 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5550 14200
 	0    1    -1   0   
 $EndComp
@@ -1448,6 +1474,11 @@ F 0 "C19" H 5600 14050 50  0000 L CNN
 F 1 "1u" H 5600 13850 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6600 15700 60  0001 C CNN
 F 3 "~" H 5550 13950 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5550 13950
 	0    1    -1   0   
 $EndComp
@@ -1473,10 +1504,6 @@ F 3 "" H 5750 14100 60  0000 C CNN
 	1    5750 14100
 	0    1    1    0   
 $EndComp
-Text Label 6850 14800 0    60   ~ 0
-C4+_OUT
-Text Label 2350 14950 2    60   ~ 0
-OPA2_IN-
 $Comp
 L Device:R R16
 U 1 1 57D060F0
@@ -1485,6 +1512,11 @@ F 0 "R16" V 5130 15750 40  0000 C CNN
 F 1 "51K" V 5057 15751 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4980 15750 30  0001 C CNN
 F 3 "~" H 5050 15750 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5050 15750
 	0    -1   -1   0   
 $EndComp
@@ -1496,11 +1528,14 @@ F 0 "R17" V 6030 15750 40  0000 C CNN
 F 1 "200K" V 5957 15751 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5880 15750 30  0001 C CNN
 F 3 "~" H 5950 15750 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5950 15750
 	0    -1   1    0   
 $EndComp
-Text Label 5100 14950 2    60   ~ 0
-OPA4_IN-
 $Comp
 L Custom_Components:OPA548 U7
 U 1 1 57D060FF
@@ -1509,6 +1544,11 @@ F 0 "U7" H 3100 14800 60  0000 L CNN
 F 1 "OPA548" H 3200 15250 60  0000 L CNN
 F 2 "Custom:TO-263-7Lead" H 3350 14800 60  0001 C CNN
 F 3 "" H 3350 14800 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    3200 14800
 	1    0    0    -1  
 $EndComp
@@ -1578,33 +1618,6 @@ F 3 "" H 3050 15450 60  0000 C CNN
 	1    3050 15500
 	0    1    1    0   
 $EndComp
-Text Label 2900 2750 2    60   ~ 0
-OPA3_IN+
-Text Label 2900 2850 2    60   ~ 0
-OPA4_IN+
-Text Label 2900 2500 2    60   ~ 0
-VLIM3
-Text Label 2900 2600 2    60   ~ 0
-VLIM4
-Text Label 3900 2500 0    60   ~ 0
-DAC_CS2
-Text Label 3900 2600 0    60   ~ 0
-SCLK
-Text Label 3900 2700 0    60   ~ 0
-MOSI
-$Sheet
-S 2900 2300 1000 750 
-U 57D1B66D
-F0 "DACOutputs2" 60
-F1 "DACOutputs.sch" 60
-F2 "~CS" I R 3900 2500 60 
-F3 "SCLK" I R 3900 2600 60 
-F4 "MOSI" I R 3900 2700 60 
-F5 "5.0_OUT_A" I L 2900 2500 60 
-F6 "5.0_OUT_B" I L 2900 2600 60 
-F7 "2.5_OUT_B" I L 2900 2850 60 
-F8 "2.5_OUT_A" I L 2900 2750 60 
-$EndSheet
 $Comp
 L Custom_Components:TMA0505S U2
 U 1 1 57D2CBDA
@@ -1613,6 +1626,11 @@ F 0 "U2" H 1500 4455 60  0000 C CNN
 F 1 "TMA0505S" H 1350 4850 60  0000 C CNN
 F 2 "Custom:SIP_TMA0505" H 1350 4650 60  0001 C CNN
 F 3 "" H 1350 4650 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    1350 4650
 	1    0    0    -1  
 $EndComp
@@ -1624,13 +1642,14 @@ F 0 "C5" H 2125 4750 50  0000 L CNN
 F 1 "47u" H 2125 4550 50  0000 L CNN
 F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2" H 2138 4500 30  0001 C CNN
 F 3 "" H 2100 4650 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2100 4650
 	1    0    0    -1  
 $EndComp
-Text Label 6550 3350 0    60   ~ 0
-DAC_CS2
-Text Label 6550 3150 0    60   ~ 0
-ES1_IN
 $Comp
 L Connector_Generic:Conn_02x04_Odd_Even P1
 U 1 1 57C0CF99
@@ -1639,13 +1658,14 @@ F 0 "P1" H 10350 6150 50  0000 C CNN
 F 1 "233-2977" H 10375 5575 50  0000 C CNN
 F 2 "Custom:Molex_Microfit3_Header_02x04_Angled_43045-080x_FIXED" H 10550 5500 60  0001 C CNN
 F 3 "" H 10350 4700 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    10350 5900
 	1    0    0    1   
 $EndComp
-Text Label 10650 5700 0    60   ~ 0
-C3+_OUT
-Text Label 10150 5700 2    60   ~ 0
-C4+_OUT
 $Comp
 L power:Earth_Clean #PWR048
 U 1 1 57C2F7BB
@@ -1657,18 +1677,6 @@ F 3 "" H 10400 6200 60  0000 C CNN
 	1    10400 6250
 	1    0    0    -1  
 $EndComp
-Text Label 10000 11700 0    60   ~ 0
-RS485_+5V
-Text Label 10600 13650 0    60   ~ 0
-RS485_+5V
-Text Label 10600 13850 0    60   ~ 0
-RS485_B
-Text Label 10600 13750 0    60   ~ 0
-RS485_A
-Text Label 10000 12200 0    60   ~ 0
-RS485_A
-Text Label 10000 12400 0    60   ~ 0
-RS485_B
 $Comp
 L Connector_Generic:Conn_01x04 P3
 U 1 1 57F9154E
@@ -1677,11 +1685,14 @@ F 0 "P3" H 9750 14100 50  0000 C CNN
 F 1 "RS485" V 9850 13850 50  0000 C CNN
 F 2 "Connectors_Molex:Molex_PicoBlade_53048-0410_04x1.25mm_Angled" H 9750 13850 60  0001 C CNN
 F 3 "" H 9750 13850 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9750 13850
 	-1   0    0    1   
 $EndComp
-Text Notes 9850 11500 0    60   ~ 0
-Isolated RS485 interface
 $Comp
 L Device:C_Small C15
 U 1 1 57FA6D71
@@ -1690,6 +1701,11 @@ F 0 "C15" H 5510 12670 50  0000 L CNN
 F 1 "100p" H 5510 12520 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5500 12600 60  0001 C CNN
 F 3 "" H 5500 12600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5500 12600
 	-1   0    0    1   
 $EndComp
@@ -1701,6 +1717,11 @@ F 0 "C23" H 5210 14870 50  0000 L CNN
 F 1 "100p" H 5210 14720 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5200 14800 60  0001 C CNN
 F 3 "" H 5200 14800 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5200 14800
 	-1   0    0    1   
 $EndComp
@@ -1712,6 +1733,11 @@ F 0 "C22" H 2510 14870 50  0000 L CNN
 F 1 "100p" H 2510 14720 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 2500 14800 60  0001 C CNN
 F 3 "" H 2500 14800 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2500 14800
 	-1   0    0    1   
 $EndComp
@@ -1723,19 +1749,14 @@ F 0 "C14" H 2810 12670 50  0000 L CNN
 F 1 "100p" H 2810 12520 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 2800 12600 60  0001 C CNN
 F 3 "" H 2800 12600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    2800 12600
 	-1   0    0    1   
 $EndComp
-Text Label 9000 12600 2    60   ~ 0
-RS485_D
-Text Label 9000 12350 2    60   ~ 0
-RS485_DE
-Text Label 9000 12100 2    60   ~ 0
-RS485_RE
-Text Label 2200 10750 0    59   ~ 0
-ANALOG_+5
-Text Label 5350 3050 2    60   ~ 0
-DISABLE_COMMS
 $Comp
 L Device:CP C4
 U 1 1 55F84C3A
@@ -1744,6 +1765,11 @@ F 0 "C4" H 10500 2600 50  0000 L CNN
 F 1 "1u" H 10500 2400 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 10450 2500 60  0001 C CNN
 F 3 "~" H 10450 2500 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    10450 2500
 	1    0    0    -1  
 $EndComp
@@ -1777,12 +1803,14 @@ F 0 "JP1" H 9900 2250 50  0000 L CNN
 F 1 "DISABLE FLASH" H 9850 2450 50  0000 C BNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 9850 2350 50  0001 C CNN
 F 3 "" H 9850 2350 50  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9850 2350
 	1    0    0    -1  
 $EndComp
-Text Label 9850 2450 3    60   ~ 0
-ARD_RST
-NoConn ~ 9600 2350
 $Comp
 L Connector_Generic:Conn_02x04_Odd_Even P6
 U 1 1 58356D49
@@ -1791,11 +1819,14 @@ F 0 "P6" H 4700 6500 50  0000 C CNN
 F 1 "ADC breakout" H 4700 5950 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch1.27mm" H 4700 5050 50  0001 C CNN
 F 3 "" H 4700 5050 50  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4700 6250
 	1    0    0    1   
 $EndComp
-Text Label 4300 6200 2    59   ~ 0
-ANALOG_GND
 $Comp
 L Custom_Components:ISO3088 U4
 U 1 1 58365E80
@@ -1804,11 +1835,14 @@ F 0 "U4" H 9500 13050 60  0000 C CNN
 F 1 "ISO3088" H 9500 11250 60  0000 C CNN
 F 2 "Housings_SOIC:SOIC-16W_7.5x10.3mm_Pitch1.27mm" H 9550 13150 40  0001 C CNN
 F 3 "" H 9525 12200 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    9500 12300
 	-1   0    0    -1  
 $EndComp
-Text Label 9000 11900 2    60   ~ 0
-RS485_R
 $Comp
 L power:+5V #PWR051
 U 1 1 5837D6F6
@@ -1831,17 +1865,727 @@ F 3 "" H 8700 13000 60  0000 C CNN
 	1    8700 13000
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:PWR_FLAG #FLG053
+U 1 1 583A088E
+P 10200 13650
+F 0 "#FLG053" H 10200 13745 50  0001 C CNN
+F 1 "PWR_FLAG" H 10200 13830 50  0000 C CNN
+F 2 "" H 10200 13650 50  0000 C CNN
+F 3 "" H 10200 13650 50  0000 C CNN
+	1    10200 13650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG054
+U 1 1 583A0B49
+P 10200 13950
+F 0 "#FLG054" H 10200 14045 50  0001 C CNN
+F 1 "PWR_FLAG" H 10200 14130 50  0000 C CNN
+F 2 "" H 10200 13950 50  0000 C CNN
+F 3 "" H 10200 13950 50  0000 C CNN
+	1    10200 13950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C56
+U 1 1 583BA2A7
+P 10750 12250
+F 0 "C56" H 10760 12320 50  0000 L CNN
+F 1 "1u" H 10760 12170 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 10750 12250 50  0001 C CNN
+F 3 "" H 10750 12250 50  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    10750 12250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R8
+U 1 1 583D010F
+P 9850 14450
+F 0 "R8" H 9880 14470 50  0000 L CNN
+F 1 "RS485_TERM" H 9880 14410 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0516_L15.5mm_D5.0mm_P5.08mm_Vertical" H 9850 14450 50  0001 C CNN
+F 3 "" H 9850 14450 50  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    9850 14450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C57
+U 1 1 583E6A0D
+P 11000 12250
+F 0 "C57" H 11010 12320 50  0000 L CNN
+F 1 "100n" H 11010 12170 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 11000 12250 50  0001 C CNN
+F 3 "" H 11000 12250 50  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    11000 12250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 5835AF45
+P 4250 3400
+F 0 "R9" V 4330 3400 40  0000 C CNN
+F 1 "10k" V 4257 3401 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 3400 30  0001 C CNN
+F 3 "~" H 4250 3400 30  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    4250 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 5835B2B7
+P 4250 3800
+F 0 "R10" V 4330 3800 40  0000 C CNN
+F 1 "1k" V 4257 3801 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 3800 30  0001 C CNN
+F 3 "~" H 4250 3800 30  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    4250 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR055
+U 1 1 5835B58F
+P 4250 3950
+F 0 "#PWR055" H 4250 3950 30  0001 C CNN
+F 1 "GND" H 4250 3880 30  0001 C CNN
+F 2 "" H 4250 3950 60  0000 C CNN
+F 3 "" H 4250 3950 60  0000 C CNN
+	1    4250 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint W4
+U 1 1 582EA773
+P 2200 10750
+F 0 "W4" H 2200 10810 40  0000 C CNN
+F 1 "5V_ISO" H 2200 10680 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 2200 10750 60  0001 C CNN
+F 3 "" H 2200 10750 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    2200 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint W7
+U 1 1 5CB8B9E9
+P 7150 11900
+F 0 "W7" H 7150 11960 40  0000 C CNN
+F 1 "VLIM1" H 7150 11830 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7150 11900 60  0001 C CNN
+F 3 "" H 7150 11900 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    7150 11900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W6
+U 1 1 5CB8BE17
+P 7150 11600
+F 0 "W6" H 7150 11660 40  0000 C CNN
+F 1 "OPA1_IN-" H 7150 11530 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7150 11600 60  0001 C CNN
+F 3 "" H 7150 11600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    7150 11600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W5
+U 1 1 5CB9F68C
+P 7150 11300
+F 0 "W5" H 7150 11360 40  0000 C CNN
+F 1 "OPA1_IN+" H 7150 11230 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7150 11300 60  0001 C CNN
+F 3 "" H 7150 11300 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    7150 11300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W10
+U 1 1 5CB9F839
+P 7900 11900
+F 0 "W10" H 7900 11960 40  0000 C CNN
+F 1 "VLIM2" H 7900 11830 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7900 11900 60  0001 C CNN
+F 3 "" H 7900 11900 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    7900 11900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W9
+U 1 1 5CBB30AD
+P 7900 11600
+F 0 "W9" H 7900 11660 40  0000 C CNN
+F 1 "OPA2_IN-" H 7900 11530 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7900 11600 60  0001 C CNN
+F 3 "" H 7900 11600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    7900 11600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W8
+U 1 1 5CBB3171
+P 7900 11300
+F 0 "W8" H 7900 11360 40  0000 C CNN
+F 1 "OPA2_IN+" H 7900 11230 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7900 11300 60  0001 C CNN
+F 3 "" H 7900 11300 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    7900 11300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W12
+U 1 1 5CD6D499
+P 8250 11600
+F 0 "W12" H 8250 11660 40  0000 C CNN
+F 1 "VIN" H 8250 11530 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 8250 11600 60  0001 C CNN
+F 3 "" H 8250 11600 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    8250 11600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W11
+U 1 1 5CD6D65E
+P 8250 11300
+F 0 "W11" H 8250 11360 40  0000 C CNN
+F 1 "GND" H 8250 11230 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 8250 11300 60  0001 C CNN
+F 3 "" H 8250 11300 60  0000 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    8250 11300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x01 J1
+U 1 1 5CD9CE47
+P 10400 7450
+F 0 "J1" H 10450 7667 50  0000 C CNN
+F 1 "OptionalPower" H 10450 7576 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 10400 7450 50  0001 C CNN
+F 3 "~" H 10400 7450 50  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    10400 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x01 J2
+U 1 1 5CD96E5B
+P 1250 7600
+F 0 "J2" H 1300 7817 50  0000 C CNN
+F 1 "V_ref_external" H 1300 7726 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1250 7600 50  0001 C CNN
+F 3 "~" H 1250 7600 50  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    1250 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R43
+U 1 1 5CEEFC86
+P 1600 7700
+F 0 "R43" H 1659 7746 50  0000 L CNN
+F 1 "none" H 1659 7655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1600 7700 50  0001 C CNN
+F 3 "~" H 1600 7700 50  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "SPR"
+F 7 "-" H 0   0   50  0001 C CNN "SPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPURL"
+	1    1600 7700
+	1    0    0    -1  
+$EndComp
+Text Notes 3800 11550 0    60   ~ 0
+OPA548 Power opamps
+Text Label 10200 6900 2    60   ~ 0
++15_IN
+Text Label 10050 6700 2    60   ~ 0
+GND_IN
+Text Label 10650 5800 0    60   ~ 0
+C1+_OUT
+Text Label 10150 5800 2    60   ~ 0
+C2+_OUT
+Text Label 3450 1250 0    60   ~ 0
+GND_IN
+Text Notes 6400 1150 0    60   ~ 0
+Headers to status LEDs:\nL1 - GND - L2
+Text Label 6400 1400 2    60   ~ 0
+LED1_RED
+Text Label 6400 1700 2    60   ~ 0
+LED2_RED
+Text Label 2900 1250 0    60   ~ 0
++15_IN
+Text Notes 8850 1250 0    60   ~ 0
+Disable USB control (GPIO)
+Text Label 9350 1525 2    60   ~ 0
+DISABLE_COMMS
+Text Label 4500 900  2    60   ~ 0
++15_IN
+Text Label 1050 2750 2    60   ~ 0
+OPA1_IN+
+Text Label 1050 2850 2    60   ~ 0
+OPA2_IN+
+Text Label 1050 2600 2    60   ~ 0
+VLIM1
+Text Label 1050 2500 2    60   ~ 0
+VLIM2
+Text Notes -5550 11250 0    60   ~ 0
+Digital Ground:
+Text Notes -4650 11250 0    60   ~ 0
+Analog Ground:
+Text Notes -5550 11050 0    60   ~ 0
+These grounds will be connected at the last stages\nof the design, but will be held seperate until then\nto avoid crosstalk. This forces seperation of analog and\ndigital ground planes until the final stages
+Text Notes -5550 11750 0    60   ~ 0
+Similarily, analog and digital supplies will be recombined at the last minute
+Text Label 7900 4550 1    60   ~ 0
+SCLK
+Text Label 7400 4550 1    60   ~ 0
+MISO
+Text Label 7800 4550 1    60   ~ 0
+MOSI
+Text Label 7700 4550 1    60   ~ 0
+ADC_CS
+Text Label 2050 2500 0    60   ~ 0
+DAC_CS1
+Text Label 3350 8400 0    60   ~ 0
+INA_1.0V_REF
+Text Label 5700 10350 3    60   ~ 0
+INA_2.5V_REF
+Text Label 6050 9200 2    60   ~ 0
+INA_2.5V_REF
+Text Label 5100 10000 2    60   ~ 0
+INA_1.0V_REF
+Text Label 6050 9050 2    60   ~ 0
+INA_1.0V_REF
+Text Label 2650 12450 2    60   ~ 0
+OPA1_IN+
+Text Label 3700 13150 0    60   ~ 0
+VLIM1
+Text Label 4450 12600 0    60   ~ 0
+C1+_OUT
+Text Label 5400 12450 2    60   ~ 0
+OPA3_IN+
+Text Label 6400 13150 0    60   ~ 0
+VLIM3
+Text Label 6550 12950 0    60   ~ 0
+ES3_OUT
+Text Label 7150 12600 0    60   ~ 0
+C3+_OUT
+Text Label 2650 12750 2    60   ~ 0
+OPA1_IN-
+Text Label 5400 12750 2    60   ~ 0
+OPA3_IN-
+Text Label 4800 8750 2    60   ~ 0
+INA1_T
+Text Label 4800 8850 2    60   ~ 0
+INA1_R
+Text Label 5400 9750 2    60   ~ 0
+INA2_T
+Text Label 4550 9850 2    60   ~ 0
+INA2_R
+Text Label 1500 9550 2    60   ~ 0
+INA2_T
+Text Label 1500 9350 2    60   ~ 0
+INA2_R
+Text Label 1500 9150 2    60   ~ 0
+INA1_T
+Text Label 1500 8950 2    60   ~ 0
+INA1_R
+Text Notes 7700 10850 2    60   ~ 0
+Optional precision resistors on-board\ninstead of supplied via DSub connector
+Text Label 7250 4550 1    60   ~ 0
+ADC_START
+Text Notes 4200 17500 0    60   ~ 0
+These outputs will throw ERC errors:\nthis is because only one of these chips\nwill be soldered in the complete board\n(either the OPA548 or OPA549)\nThe errors can be safely ignored
+Text Label 6550 2750 0    60   ~ 0
+RS485_D
+Text Label 6550 2850 0    60   ~ 0
+RS485_DE
+Text Label 6550 3050 0    60   ~ 0
+RS485_R
+Text Label 6550 2950 0    60   ~ 0
+RS485_RE
+Text Label 5350 2550 2    60   ~ 0
+ES3_IN
+Text Label 5350 2450 2    60   ~ 0
+ES4_IN
+Text Label 5350 3350 2    60   ~ 0
+ARD_RST
+Text Label 6550 3750 0    60   ~ 0
+SCLK
+Text Label 6550 3650 0    60   ~ 0
+MISO
+Text Label 6550 3550 0    60   ~ 0
+MOSI
+Text Label 5350 2950 2    60   ~ 0
+LED1_RED
+Text Label 5350 2850 2    60   ~ 0
+LED2_RED
+Text Label 6550 2650 0    60   ~ 0
+ADC_START
+Text Label 5350 2750 2    60   ~ 0
+ADC_CS
+Text Label 6550 3450 0    60   ~ 0
+DAC_CS1
+Text Label 7500 4550 1    60   ~ 0
+ADC_DRDY
+Text Label 5350 2650 2    60   ~ 0
+ADC_DRDY
+Text Label 7500 7450 0    60   ~ 0
+ADC_2.5_REF
+Text Label 2300 8050 2    60   ~ 0
+ADC_2.5_REF
+Text Notes 2900 7900 0    60   ~ 0
+Use either the internal or the external voltage\nref for the INAs, dividing to create a 1.0V ref
+Text Label 3300 8050 0    60   ~ 0
+INA_2.5V_REF
+Text Label 7100 8750 0    60   ~ 0
+INA_ERROR_1
+Text Label 7100 9800 0    60   ~ 0
+INA_ERROR_2
+Text Label 4550 7450 2    60   ~ 0
+INA_ERROR_1
+Text Label 4550 7050 2    60   ~ 0
+INA_ERROR_2
+Text Label 4550 7250 2    60   ~ 0
+INA_2.5V_REF
+Text Label 2050 2600 0    60   ~ 0
+SCLK
+Text Label 2050 2700 0    60   ~ 0
+MOSI
+Text Label 1000 10150 0    60   ~ 0
+INA_ERROR_1
+Text Label 1000 10750 0    60   ~ 0
+INA_2.5V_REF
+Text Notes 10000 5350 0    118  ~ 0
+IO ports
+Text Notes 3700 5550 0    118  ~ 0
+Isolated analog section
+Text Label 3100 8650 3    59   ~ 0
+ANALOG_GND
+Text Label 4150 9150 3    59   ~ 0
+ANALOG_GND
+Text Label 4150 10150 3    59   ~ 0
+ANALOG_GND
+Text Label 4850 10550 2    59   ~ 0
+ANALOG_GND
+Text Label 7100 10250 0    59   ~ 0
+ANALOG_GND
+Text Label 7100 9200 0    59   ~ 0
+ANALOG_GND
+Text Label 7200 7750 0    59   ~ 0
+ANALOG_GND
+Text Label 7200 7650 0    59   ~ 0
+ANALOG_+5
+Text Label 7100 9100 0    59   ~ 0
+ANALOG_+5
+Text Label 7100 10150 0    59   ~ 0
+ANALOG_+5
+Text Label 2550 5900 0    59   ~ 0
+ANALOG_GND
+Text Label 2550 5750 0    59   ~ 0
+ANALOG_+5
+Text Notes 2750 1750 0    39   ~ 0
+Mark +15 and GND as power lines
+Text Notes 4100 750  0    59   ~ 0
+5V supply for digital and output analog electronics
+Text Notes 900  4250 0    59   ~ 0
+Isolated DC-DC convertor to power analog section
+Text Notes 5350 2150 0    79   ~ 0
+Microprocessor
+Text Label 6950 5500 3    39   ~ 0
+ANALOG_+5
+Text Label 6750 5500 3    39   ~ 0
+ANALOG_GND
+Text Label 7300 6550 0    60   ~ 0
+ADC_CS_ISO
+Text Label 7300 6350 0    60   ~ 0
+MISO_ISO
+Text Label 7300 6450 0    60   ~ 0
+MOSI_ISO
+Text Label 7300 6250 0    60   ~ 0
+SCLK_ISO
+Text Label 7300 6900 0    60   ~ 0
+ADC_DRDY_ISO
+Text Label 7300 6700 0    60   ~ 0
+ADC_START_ISO
+Text Label 7900 5450 3    60   ~ 0
+SCLK_ISO
+Text Label 7400 5450 3    60   ~ 0
+MISO_ISO
+Text Label 7800 5450 3    60   ~ 0
+MOSI_ISO
+Text Label 7700 5450 3    60   ~ 0
+ADC_CS_ISO
+Text Label 7250 5450 3    60   ~ 0
+ADC_START_ISO
+Text Label 7500 5450 3    60   ~ 0
+ADC_DRDY_ISO
+Text Notes 8550 5400 0    39   ~ 0
+Override the isolation
+Text Label 8700 5550 2    60   ~ 0
+SCLK_ISO
+Text Label 8700 6150 2    60   ~ 0
+MISO_ISO
+Text Label 8700 5700 2    60   ~ 0
+MOSI_ISO
+Text Label 8700 6300 2    60   ~ 0
+ADC_CS_ISO
+Text Label 8700 5850 2    60   ~ 0
+ADC_START_ISO
+Text Label 8700 6000 2    60   ~ 0
+ADC_DRDY_ISO
+Text Label 8900 5550 0    60   ~ 0
+SCLK
+Text Label 8900 6150 0    60   ~ 0
+MISO
+Text Label 8900 5700 0    60   ~ 0
+MOSI
+Text Label 8900 6300 0    60   ~ 0
+ADC_CS
+Text Label 8900 5850 0    60   ~ 0
+ADC_START
+Text Label 8900 6000 0    60   ~ 0
+ADC_DRDY
+Text Notes 900  8150 0    118  ~ 0
+IO ports
+Text Label 950  9050 1    59   ~ 0
+ANALOG_GND
+Text Notes 8500 2750 1    60   ~ 0
+Power indicator
+Text Label 7200 6800 0    59   ~ 0
+ANALOG_+5
+Text Label 2350 14650 2    60   ~ 0
+OPA2_IN+
+Text Label 3400 15350 0    60   ~ 0
+VLIM2
+Text Label 3550 15150 0    60   ~ 0
+ES2_OUT
+Text Label 4150 14800 0    60   ~ 0
+C2+_OUT
+Text Label 5100 14650 2    60   ~ 0
+OPA4_IN+
+Text Label 6100 15350 0    60   ~ 0
+VLIM4
+Text Label 6250 15150 0    60   ~ 0
+ES4_OUT
+Text Label 6850 14800 0    60   ~ 0
+C4+_OUT
+Text Label 2350 14950 2    60   ~ 0
+OPA2_IN-
+Text Label 5100 14950 2    60   ~ 0
+OPA4_IN-
+Text Label 2900 2750 2    60   ~ 0
+OPA3_IN+
+Text Label 2900 2850 2    60   ~ 0
+OPA4_IN+
+Text Label 2900 2500 2    60   ~ 0
+VLIM3
+Text Label 2900 2600 2    60   ~ 0
+VLIM4
+Text Label 3900 2500 0    60   ~ 0
+DAC_CS2
+Text Label 3900 2600 0    60   ~ 0
+SCLK
+Text Label 3900 2700 0    60   ~ 0
+MOSI
+Text Label 6550 3350 0    60   ~ 0
+DAC_CS2
+Text Label 6550 3150 0    60   ~ 0
+ES1_IN
+Text Label 10650 5700 0    60   ~ 0
+C3+_OUT
+Text Label 10150 5700 2    60   ~ 0
+C4+_OUT
+Text Label 10000 11700 0    60   ~ 0
+RS485_+5V
+Text Label 10600 13650 0    60   ~ 0
+RS485_+5V
+Text Label 10600 13850 0    60   ~ 0
+RS485_B
+Text Label 10600 13750 0    60   ~ 0
+RS485_A
+Text Label 10000 12200 0    60   ~ 0
+RS485_A
+Text Label 10000 12400 0    60   ~ 0
+RS485_B
+Text Notes 9850 11500 0    60   ~ 0
+Isolated RS485 interface
+Text Label 9000 12600 2    60   ~ 0
+RS485_D
+Text Label 9000 12350 2    60   ~ 0
+RS485_DE
+Text Label 9000 12100 2    60   ~ 0
+RS485_RE
+Text Label 2200 10750 0    59   ~ 0
+ANALOG_+5
+Text Label 5350 3050 2    60   ~ 0
+DISABLE_COMMS
+Text Label 9850 2450 3    60   ~ 0
+ARD_RST
+Text Label 4300 6200 2    59   ~ 0
+ANALOG_GND
+Text Label 9000 11900 2    60   ~ 0
+RS485_R
 Text Label 10200 12900 0    60   ~ 0
 RS485_GND
 Text Label 10600 13950 0    60   ~ 0
 RS485_GND
+Text Label 10900 12050 1    60   ~ 0
+RS485_+5V
+Text Label 10900 12450 3    60   ~ 0
+RS485_GND
+Text Label 9850 14350 0    60   ~ 0
+RS485_A
+Text Label 9850 14650 0    60   ~ 0
+RS485_B
+Text Notes 10450 14500 0    47   ~ 0
+Optional terminating\nresistor
+Text Label 4250 3250 2    60   ~ 0
++15_IN
+Text Label 2200 10150 0    59   ~ 0
+ANALOG_GND
+Text Label 7150 11300 2    60   ~ 0
+OPA1_IN+
+Text Label 7150 11600 2    60   ~ 0
+OPA1_IN-
+Text Label 7900 11300 2    60   ~ 0
+OPA2_IN+
+Text Label 7900 11600 2    60   ~ 0
+OPA2_IN-
+Text Label 7150 11900 2    60   ~ 0
+VLIM1
+Text Label 7900 11900 2    60   ~ 0
+VLIM2
+Text Notes 600  11600 0    30   ~ 0
+The OPAs should start disabled, so use a buffer with a pull-down\nto ensure this is the case. This sacrifices the ability to monitor the\nthermal state, but I think it's worth it. 
+Text Label 3850 12950 0    60   ~ 0
+ES1_OUT
+Text Label 1800 12150 0    60   ~ 0
+ES4_OUT
+Text Label 1800 12300 0    60   ~ 0
+ES3_OUT
+Text Label 1800 12450 0    60   ~ 0
+ES2_OUT
+Text Label 1800 12600 0    60   ~ 0
+ES1_OUT
+Text Label 850  12150 2    60   ~ 0
+ES4_IN
+Text Label 850  12300 2    60   ~ 0
+ES3_IN
+Text Label 850  12450 2    60   ~ 0
+ES2_IN
+Text Label 850  12600 2    60   ~ 0
+ES1_IN
+Text Label 6550 3250 0    60   ~ 0
+ES2_IN
+Text Notes 750  9950 0    118  ~ 0
+Testpoints
+Text Notes 5750 11200 0    118  ~ 0
+Testpoints
+Text Label 8250 11600 0    60   ~ 0
++15_IN
+Text Label 8250 11300 0    60   ~ 0
+GND_IN
+Text Label 10700 7450 0    60   ~ 0
++15_IN
+Text Label 10200 7450 2    60   ~ 0
+GND_IN
+Text Notes 650  7050 0    98   ~ 0
+Optional external voltage reference
+Text Label 1750 7600 0    60   ~ 0
+REF_EXT_N
+Text Label 1050 7600 2    60   ~ 0
+REF_EXT_P
+Text Label 7200 7150 0    60   ~ 0
+REF_EXT_N
+Text Label 7200 7050 0    60   ~ 0
+REF_EXT_P
+Text Label 2300 8200 2    60   ~ 0
+REF_EXT_P
+Text Label 1800 7800 0    59   ~ 0
+ANALOG_GND
 Wire Wire Line
 	3450 1250 3450 1450
 Wire Wire Line
 	4500 900  4500 1000
 Wire Wire Line
 	2900 1250 2900 1400
-Connection ~ 2900 1400
 Wire Wire Line
 	7200 6250 7300 6250
 Wire Wire Line
@@ -1858,24 +2602,20 @@ Wire Wire Line
 	6800 1400 6900 1400
 Wire Wire Line
 	4500 1000 4550 1000
-Connection ~ 4500 1000
 Wire Wire Line
 	4850 1000 4900 1000
 Wire Wire Line
 	4500 1800 4500 1850
 Wire Wire Line
 	4550 1850 4500 1850
-Connection ~ 4500 1850
 Wire Wire Line
 	4500 2100 4550 2100
-Connection ~ 4500 2100
 Wire Wire Line
-	2700 8350 2700 8400
-Connection ~ 2700 8400
+	3100 8350 3100 8400
 Wire Wire Line
-	2950 8400 2700 8400
+	3350 8400 3100 8400
 Wire Wire Line
-	2700 8050 2700 8150
+	3100 8050 3100 8150
 Wire Wire Line
 	5500 10450 5500 10350
 Wire Wire Line
@@ -1886,7 +2626,6 @@ Wire Wire Line
 	5100 10000 5500 10000
 Wire Wire Line
 	5500 10100 5500 10000
-Connection ~ 5500 10000
 Wire Wire Line
 	3350 13150 3350 13300
 Wire Wire Line
@@ -1895,18 +2634,14 @@ Wire Wire Line
 	3600 13000 3600 13150
 Wire Wire Line
 	3700 13150 3600 13150
-Connection ~ 3600 13150
 Wire Wire Line
 	3850 12950 3700 12950
 Wire Wire Line
 	2950 11750 2950 11850
 Wire Wire Line
 	2950 11850 2800 11850
-Connection ~ 2950 11850
 Wire Wire Line
 	3350 11750 3350 11900
-Connection ~ 3350 12000
-Connection ~ 3350 11900
 Wire Wire Line
 	4150 12600 4400 12600
 Wire Wire Line
@@ -1917,18 +2652,14 @@ Wire Wire Line
 	6300 13000 6300 13150
 Wire Wire Line
 	6400 13150 6300 13150
-Connection ~ 6300 13150
 Wire Wire Line
 	6550 12950 6400 12950
 Wire Wire Line
 	5650 11750 5650 11850
 Wire Wire Line
 	5650 11850 5500 11850
-Connection ~ 5650 11850
 Wire Wire Line
 	6050 11750 6050 11900
-Connection ~ 6050 12000
-Connection ~ 6050 11900
 Wire Wire Line
 	6850 12600 6950 12600
 Wire Wire Line
@@ -1941,7 +2672,6 @@ Wire Wire Line
 	7650 1500 7650 1600
 Wire Wire Line
 	7850 1600 7650 1600
-Connection ~ 7650 1600
 Wire Wire Line
 	5350 3750 5050 3750
 Wire Wire Line
@@ -1949,13 +2679,11 @@ Wire Wire Line
 Wire Wire Line
 	7300 6900 7200 6900
 Wire Wire Line
-	2450 8050 2700 8050
-Connection ~ 2700 8050
+	2850 8050 3100 8050
 Wire Wire Line
 	4800 1300 4800 1350
 Wire Wire Line
 	4800 1350 4900 1350
-Connection ~ 4800 1350
 Wire Wire Line
 	7500 7450 7200 7450
 Wire Wire Line
@@ -1964,13 +2692,10 @@ Wire Wire Line
 	5100 7450 5400 7450
 Wire Wire Line
 	5100 7050 5400 7050
-Connection ~ 5400 7050
-Connection ~ 5400 7450
 Wire Wire Line
 	4900 7050 4550 7050
 Wire Wire Line
 	4550 7450 4900 7450
-Connection ~ 5400 7250
 Wire Wire Line
 	-4000 11300 -4950 11300
 Wire Wire Line
@@ -1981,12 +2706,10 @@ Wire Wire Line
 	1050 8850 1050 9050
 Wire Wire Line
 	950  9050 1050 9050
-Connection ~ 1050 9050
 Wire Wire Line
 	1050 9250 1500 9250
 Wire Wire Line
 	1050 9450 1500 9450
-Connection ~ 1050 9250
 Wire Notes Line
 	450  5050 8800 5050
 Wire Notes Line
@@ -2015,27 +2738,22 @@ Wire Wire Line
 	2200 4950 2200 5900
 Wire Wire Line
 	2350 4500 2350 5750
-Connection ~ 3450 1450
 Wire Wire Line
 	6900 5450 6950 5450
 Wire Wire Line
 	6950 5450 6950 5500
-Connection ~ 6950 5450
 Wire Wire Line
 	6700 5450 6750 5450
 Wire Wire Line
 	6750 5500 6750 5450
-Connection ~ 6750 5450
 Wire Wire Line
 	6700 4550 6750 4550
 Wire Wire Line
 	6750 4550 6750 4500
-Connection ~ 6750 4550
 Wire Wire Line
 	6950 4500 6950 4550
 Wire Wire Line
 	6900 4550 6950 4550
-Connection ~ 6950 4550
 Wire Wire Line
 	7300 6350 7200 6350
 Wire Wire Line
@@ -2056,15 +2774,12 @@ Wire Wire Line
 	6050 9850 4950 9850
 Wire Wire Line
 	4750 9850 4150 9850
-Connection ~ 4400 12600
 Wire Wire Line
 	2650 12750 2800 12750
 Wire Wire Line
 	2650 12450 2800 12450
-Connection ~ 2800 12750
 Wire Wire Line
 	2800 13600 3400 13600
-Connection ~ 2800 13600
 Wire Wire Line
 	3700 13600 4400 13600
 Wire Wire Line
@@ -2077,14 +2792,12 @@ Wire Wire Line
 	5400 12750 5500 12750
 Wire Wire Line
 	5500 12700 5500 12750
-Connection ~ 5500 12750
 Wire Wire Line
 	5500 13550 6100 13550
 Wire Wire Line
 	6400 13550 6950 13550
 Wire Wire Line
 	6950 13550 6950 12600
-Connection ~ 6950 12600
 Wire Wire Line
 	3050 15350 3050 15500
 Wire Wire Line
@@ -2093,18 +2806,14 @@ Wire Wire Line
 	3300 15200 3300 15350
 Wire Wire Line
 	3400 15350 3300 15350
-Connection ~ 3300 15350
 Wire Wire Line
 	3550 15150 3400 15150
 Wire Wire Line
 	2650 13950 2650 14050
 Wire Wire Line
 	2650 14050 2500 14050
-Connection ~ 2650 14050
 Wire Wire Line
 	3050 13950 3050 14100
-Connection ~ 3050 14200
-Connection ~ 3050 14100
 Wire Wire Line
 	3850 14800 4100 14800
 Wire Wire Line
@@ -2115,29 +2824,22 @@ Wire Wire Line
 	6000 15200 6000 15350
 Wire Wire Line
 	6100 15350 6000 15350
-Connection ~ 6000 15350
 Wire Wire Line
 	6250 15150 6100 15150
 Wire Wire Line
 	5350 13950 5350 14050
 Wire Wire Line
 	5350 14050 5200 14050
-Connection ~ 5350 14050
 Wire Wire Line
 	5750 13950 5750 14100
-Connection ~ 5750 14200
-Connection ~ 5750 14100
 Wire Wire Line
 	6550 14800 6650 14800
-Connection ~ 4100 14800
 Wire Wire Line
 	2350 14950 2500 14950
 Wire Wire Line
 	2350 14650 2500 14650
-Connection ~ 2500 14950
 Wire Wire Line
 	2500 15800 3100 15800
-Connection ~ 2500 15800
 Wire Wire Line
 	3400 15800 4100 15800
 Wire Wire Line
@@ -2150,37 +2852,28 @@ Wire Wire Line
 	5100 14950 5200 14950
 Wire Wire Line
 	5200 14900 5200 14950
-Connection ~ 5200 14950
 Wire Wire Line
 	5200 15750 5800 15750
 Wire Wire Line
 	6100 15750 6650 15750
 Wire Wire Line
 	6650 15750 6650 14800
-Connection ~ 6650 14800
 Wire Wire Line
 	2000 4500 2100 4500
 Wire Wire Line
 	2100 4800 2000 4800
-Connection ~ 2000 4800
-Connection ~ 2100 4500
 Wire Wire Line
 	2000 4550 2000 4500
 Wire Wire Line
 	10150 6250 10400 6250
-Connection ~ 10400 6250
 Wire Wire Line
 	5500 12500 5500 12450
-Connection ~ 5500 12450
 Wire Wire Line
 	5200 14700 5200 14650
-Connection ~ 5200 14650
 Wire Wire Line
 	2500 14700 2500 14650
-Connection ~ 2500 14650
 Wire Wire Line
 	2800 12500 2800 12450
-Connection ~ 2800 12450
 Wire Wire Line
 	2650 13950 2700 13950
 Wire Wire Line
@@ -2243,16 +2936,12 @@ Wire Wire Line
 	5300 6850 6000 6850
 Wire Wire Line
 	4500 6200 4300 6200
-Connection ~ 4500 6200
 Wire Wire Line
 	9000 13000 8700 13000
 Wire Wire Line
 	9000 12800 9000 12900
-Connection ~ 9000 12900
-Connection ~ 9000 13000
 Wire Wire Line
 	10000 12800 10000 12900
-Connection ~ 10000 12900
 Wire Wire Line
 	10200 12900 10000 12900
 Wire Notes Line
@@ -2271,120 +2960,16 @@ Wire Wire Line
 	10600 13850 9950 13850
 Wire Wire Line
 	9950 13950 10200 13950
-$Comp
-L power:PWR_FLAG #FLG053
-U 1 1 583A088E
-P 10200 13650
-F 0 "#FLG053" H 10200 13745 50  0001 C CNN
-F 1 "PWR_FLAG" H 10200 13830 50  0000 C CNN
-F 2 "" H 10200 13650 50  0000 C CNN
-F 3 "" H 10200 13650 50  0000 C CNN
-	1    10200 13650
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG054
-U 1 1 583A0B49
-P 10200 13950
-F 0 "#FLG054" H 10200 14045 50  0001 C CNN
-F 1 "PWR_FLAG" H 10200 14130 50  0000 C CNN
-F 2 "" H 10200 13950 50  0000 C CNN
-F 3 "" H 10200 13950 50  0000 C CNN
-	1    10200 13950
-	-1   0    0    1   
-$EndComp
-Connection ~ 10200 13950
-Connection ~ 10200 13650
-$Comp
-L Device:C_Small C56
-U 1 1 583BA2A7
-P 10750 12250
-F 0 "C56" H 10760 12320 50  0000 L CNN
-F 1 "1u" H 10760 12170 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 10750 12250 50  0001 C CNN
-F 3 "" H 10750 12250 50  0000 C CNN
-	1    10750 12250
-	1    0    0    -1  
-$EndComp
-Text Label 10900 12050 1    60   ~ 0
-RS485_+5V
-Text Label 10900 12450 3    60   ~ 0
-RS485_GND
-$Comp
-L Device:R_Small R8
-U 1 1 583D010F
-P 9850 14450
-F 0 "R8" H 9880 14470 50  0000 L CNN
-F 1 "RS485_TERM" H 9880 14410 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0516_L15.5mm_D5.0mm_P5.08mm_Vertical" H 9850 14450 50  0001 C CNN
-F 3 "" H 9850 14450 50  0000 C CNN
-	1    9850 14450
-	1    0    0    -1  
-$EndComp
-Text Label 9850 14350 0    60   ~ 0
-RS485_A
-Text Label 9850 14650 0    60   ~ 0
-RS485_B
 Wire Wire Line
 	9850 14550 9850 14650
-Text Notes 10450 14500 0    47   ~ 0
-Optional terminating\nresistor
-$Comp
-L Device:C_Small C57
-U 1 1 583E6A0D
-P 11000 12250
-F 0 "C57" H 11010 12320 50  0000 L CNN
-F 1 "100n" H 11010 12170 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 11000 12250 50  0001 C CNN
-F 3 "" H 11000 12250 50  0000 C CNN
-	1    11000 12250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10750 12150 10900 12150
 Wire Wire Line
 	10750 12350 10900 12350
 Wire Wire Line
 	10900 12450 10900 12350
-Connection ~ 10900 12350
 Wire Wire Line
 	10900 12050 10900 12150
-Connection ~ 10900 12150
-$Comp
-L Device:R R9
-U 1 1 5835AF45
-P 4250 3400
-F 0 "R9" V 4330 3400 40  0000 C CNN
-F 1 "10k" V 4257 3401 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 3400 30  0001 C CNN
-F 3 "~" H 4250 3400 30  0000 C CNN
-	1    4250 3400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R10
-U 1 1 5835B2B7
-P 4250 3800
-F 0 "R10" V 4330 3800 40  0000 C CNN
-F 1 "1k" V 4257 3801 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4180 3800 30  0001 C CNN
-F 3 "~" H 4250 3800 30  0000 C CNN
-	1    4250 3800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR055
-U 1 1 5835B58F
-P 4250 3950
-F 0 "#PWR055" H 4250 3950 30  0001 C CNN
-F 1 "GND" H 4250 3880 30  0001 C CNN
-F 2 "" H 4250 3950 60  0000 C CNN
-F 3 "" H 4250 3950 60  0000 C CNN
-	1    4250 3950
-	1    0    0    -1  
-$EndComp
-Text Label 4250 3250 2    60   ~ 0
-+15_IN
 Wire Wire Line
 	4250 3550 4250 3600
 Wire Wire Line
@@ -2393,26 +2978,12 @@ Wire Wire Line
 	4500 3150 4500 3600
 Wire Wire Line
 	4500 3600 4250 3600
-Connection ~ 4250 3600
-$Comp
-L Connector:TestPoint W4
-U 1 1 582EA773
-P 2200 10750
-F 0 "W4" H 2200 10810 40  0000 C CNN
-F 1 "5V_ISO" H 2200 10680 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 2200 10750 60  0001 C CNN
-F 3 "" H 2200 10750 60  0000 C CNN
-	1    2200 10750
-	1    0    0    -1  
-$EndComp
-Text Label 2200 10150 0    59   ~ 0
-ANALOG_GND
 Wire Wire Line
 	2900 1400 2900 1500
 Wire Wire Line
 	4500 1850 4500 2100
 Wire Wire Line
-	2700 8400 2700 8450
+	3100 8400 3100 8450
 Wire Wire Line
 	5500 10000 6050 10000
 Wire Wire Line
@@ -2434,7 +3005,7 @@ Wire Wire Line
 Wire Wire Line
 	7650 1600 7650 1700
 Wire Wire Line
-	2700 8050 2900 8050
+	3100 8050 3300 8050
 Wire Wire Line
 	4800 1350 4800 1450
 Wire Wire Line
@@ -2535,186 +3106,132 @@ Wire Wire Line
 	4500 6050 4500 6150
 Wire Wire Line
 	4500 6200 4500 6250
-Text Label 7150 11300 2    60   ~ 0
-OPA1_IN+
-Text Label 7150 11600 2    60   ~ 0
-OPA1_IN-
-Text Label 7900 11300 2    60   ~ 0
-OPA2_IN+
-Text Label 7900 11600 2    60   ~ 0
-OPA2_IN-
-Text Label 7150 11900 2    60   ~ 0
-VLIM1
-Text Label 7900 11900 2    60   ~ 0
-VLIM2
-$Comp
-L Connector:TestPoint W7
-U 1 1 5CB8B9E9
-P 7150 11900
-F 0 "W7" H 7150 11960 40  0000 C CNN
-F 1 "VLIM1" H 7150 11830 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7150 11900 60  0001 C CNN
-F 3 "" H 7150 11900 60  0000 C CNN
-	1    7150 11900
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint W6
-U 1 1 5CB8BE17
-P 7150 11600
-F 0 "W6" H 7150 11660 40  0000 C CNN
-F 1 "OPA1_IN-" H 7150 11530 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7150 11600 60  0001 C CNN
-F 3 "" H 7150 11600 60  0000 C CNN
-	1    7150 11600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint W5
-U 1 1 5CB9F68C
-P 7150 11300
-F 0 "W5" H 7150 11360 40  0000 C CNN
-F 1 "OPA1_IN+" H 7150 11230 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7150 11300 60  0001 C CNN
-F 3 "" H 7150 11300 60  0000 C CNN
-	1    7150 11300
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint W10
-U 1 1 5CB9F839
-P 7900 11900
-F 0 "W10" H 7900 11960 40  0000 C CNN
-F 1 "VLIM2" H 7900 11830 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7900 11900 60  0001 C CNN
-F 3 "" H 7900 11900 60  0000 C CNN
-	1    7900 11900
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint W9
-U 1 1 5CBB30AD
-P 7900 11600
-F 0 "W9" H 7900 11660 40  0000 C CNN
-F 1 "OPA2_IN-" H 7900 11530 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7900 11600 60  0001 C CNN
-F 3 "" H 7900 11600 60  0000 C CNN
-	1    7900 11600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint W8
-U 1 1 5CBB3171
-P 7900 11300
-F 0 "W8" H 7900 11360 40  0000 C CNN
-F 1 "OPA2_IN+" H 7900 11230 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 7900 11300 60  0001 C CNN
-F 3 "" H 7900 11300 60  0000 C CNN
-	1    7900 11300
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	10100 6700 10200 6700
 Wire Wire Line
 	10050 6700 10100 6700
-Connection ~ 10100 6700
 Wire Wire Line
 	10100 6800 10100 6700
 Wire Wire Line
 	10200 6800 10100 6800
-Connection ~ 10150 6000
 Wire Wire Line
 	10150 6000 10150 6250
-Connection ~ 10650 6000
 Wire Wire Line
 	10650 6000 10650 6250
-Connection ~ 4500 6150
 Wire Wire Line
 	4500 6150 4500 6200
-Connection ~ 4500 6250
 Wire Wire Line
 	4500 6250 4500 6350
+Wire Wire Line
+	2850 8200 2850 8050
+Wire Wire Line
+	2300 8050 2500 8050
+Wire Wire Line
+	2300 8200 2500 8200
+Wire Wire Line
+	2500 8200 2500 8050
+Wire Wire Line
+	2500 8200 2850 8200
+Wire Wire Line
+	1550 7600 1600 7600
+Wire Wire Line
+	1600 7600 1750 7600
+Wire Wire Line
+	1800 7800 1600 7800
+Connection ~ 2900 1400
+Connection ~ 4500 1000
+Connection ~ 4500 1850
+Connection ~ 4500 2100
+Connection ~ 3100 8400
+Connection ~ 5500 10000
+Connection ~ 3600 13150
+Connection ~ 2950 11850
+Connection ~ 3350 12000
+Connection ~ 3350 11900
+Connection ~ 6300 13150
+Connection ~ 5650 11850
+Connection ~ 6050 12000
+Connection ~ 6050 11900
+Connection ~ 7650 1600
+Connection ~ 3100 8050
+Connection ~ 4800 1350
+Connection ~ 5400 7050
+Connection ~ 5400 7450
+Connection ~ 5400 7250
+Connection ~ 1050 9050
+Connection ~ 1050 9250
+Connection ~ 3450 1450
+Connection ~ 6950 5450
+Connection ~ 6750 5450
+Connection ~ 6750 4550
+Connection ~ 6950 4550
+Connection ~ 4400 12600
+Connection ~ 2800 12750
+Connection ~ 2800 13600
+Connection ~ 5500 12750
+Connection ~ 6950 12600
+Connection ~ 3300 15350
+Connection ~ 2650 14050
+Connection ~ 3050 14200
+Connection ~ 3050 14100
+Connection ~ 6000 15350
+Connection ~ 5350 14050
+Connection ~ 5750 14200
+Connection ~ 5750 14100
+Connection ~ 4100 14800
+Connection ~ 2500 14950
+Connection ~ 2500 15800
+Connection ~ 5200 14950
+Connection ~ 6650 14800
+Connection ~ 2000 4800
+Connection ~ 2100 4500
+Connection ~ 10400 6250
+Connection ~ 5500 12450
+Connection ~ 5200 14650
+Connection ~ 2500 14650
+Connection ~ 2800 12450
+Connection ~ 4500 6200
+Connection ~ 9000 12900
+Connection ~ 9000 13000
+Connection ~ 10000 12900
+Connection ~ 10200 13950
+Connection ~ 10200 13650
+Connection ~ 10900 12350
+Connection ~ 10900 12150
+Connection ~ 4250 3600
+Connection ~ 10100 6700
+Connection ~ 10150 6000
+Connection ~ 10650 6000
+Connection ~ 4500 6150
+Connection ~ 4500 6250
 Connection ~ 5200 15750
 Connection ~ 5500 13550
-Text Notes 600  11600 0    30   ~ 0
-The OPAs should start disabled, so use a buffer with a pull-down\nto ensure this is the case. This sacrifices the ability to monitor the\nthermal state, but I think it's worth it. 
-Text Label 3850 12950 0    60   ~ 0
-ES1_OUT
-$Sheet
-S 850  11900 950  850 
-U 5CC68713
-F0 "ES_Buffers" 60
-F1 "ES_Buffers.sch" 60
-F2 "ES1_OUT" I R 1800 12150 60 
-F3 "ES1_IN" I L 850 12150 60 
-F4 "ES2_OUT" I R 1800 12300 60 
-F5 "ES2_IN" I L 850 12300 60 
-F6 "ES3_OUT" I R 1800 12450 60 
-F7 "ES3_IN" I L 850 12450 60 
-F8 "ES4_OUT" I R 1800 12600 60 
-F9 "ES4_IN" I L 850 12600 60 
-$EndSheet
-Text Label 1800 12150 0    60   ~ 0
-ES4_OUT
-Text Label 1800 12300 0    60   ~ 0
-ES3_OUT
-Text Label 1800 12450 0    60   ~ 0
-ES2_OUT
-Text Label 1800 12600 0    60   ~ 0
-ES1_OUT
-Text Label 850  12150 2    60   ~ 0
-ES4_IN
-Text Label 850  12300 2    60   ~ 0
-ES3_IN
-Text Label 850  12450 2    60   ~ 0
-ES2_IN
-Text Label 850  12600 2    60   ~ 0
-ES1_IN
-Text Label 6550 3250 0    60   ~ 0
-ES2_IN
-Text Notes 750  9950 0    118  ~ 0
-Testpoints
-Text Notes 5750 11200 0    118  ~ 0
-Testpoints
+Connection ~ 2500 8200
+Connection ~ 1600 7600
+NoConn ~ 6550 3950
+NoConn ~ 7200 7350
+NoConn ~ 7200 7250
+NoConn ~ 9600 2350
 $Comp
-L Connector:TestPoint W12
-U 1 1 5CD6D499
-P 8250 11600
-F 0 "W12" H 8250 11660 40  0000 C CNN
-F 1 "VIN" H 8250 11530 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 8250 11600 60  0001 C CNN
-F 3 "" H 8250 11600 60  0000 C CNN
-	1    8250 11600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint W11
-U 1 1 5CD6D65E
-P 8250 11300
-F 0 "W11" H 8250 11360 40  0000 C CNN
-F 1 "GND" H 8250 11230 40  0000 C CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 8250 11300 60  0001 C CNN
-F 3 "" H 8250 11300 60  0000 C CNN
-	1    8250 11300
-	-1   0    0    1   
-$EndComp
-Text Label 8250 11600 0    60   ~ 0
-+15_IN
-Text Label 8250 11300 0    60   ~ 0
-GND_IN
-$Comp
-L Connector_Generic:Conn_02x01 J1
-U 1 1 5CD9CE47
-P 10400 7450
-F 0 "J1" H 10450 7667 50  0000 C CNN
-F 1 "OptionalPower" H 10450 7576 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 10400 7450 50  0001 C CNN
-F 3 "~" H 10400 7450 50  0001 C CNN
-	1    10400 7450
+L Device:Jumper_NO_Small JP8
+U 1 1 5CD86BF6
+P 2550 7350
+F 0 "JP8" H 2550 7430 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 2560 7290 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric" H 2550 7350 60  0001 C CNN
+F 3 "" H 2550 7350 60  0000 C CNN
+F 4 "-" H -6250 1050 50  0001 C CNN "MFR"
+F 5 "-" H -6250 1050 50  0001 C CNN "MPN"
+F 6 "-" H -6250 1050 50  0001 C CNN "SPR"
+F 7 "-" H -6250 1050 50  0001 C CNN "SPN"
+F 8 "-" H -6250 1050 50  0001 C CNN "SPURL"
+	1    2550 7350
 	1    0    0    -1  
 $EndComp
-Text Label 10700 7450 0    60   ~ 0
-+15_IN
-Text Label 10200 7450 2    60   ~ 0
-GND_IN
+Text Label 2450 7350 2    60   ~ 0
+ADC_2.5_REF
+Text Label 2650 7350 0    60   ~ 0
+REF_EXT_P
+Text Notes 650  7250 0    30   ~ 0
+The user can cut the trace (marked on the PCB) to use the external voltage reference\n instead. This will require reconfiguring the ADC too. The jumper lets them undo this\n decision if required. 
 $EndSCHEMATC
