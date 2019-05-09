@@ -1143,8 +1143,6 @@ Text Label 8900 5850 0    60   ~ 0
 ADC_START
 Text Label 8900 6000 0    60   ~ 0
 ADC_DRDY
-Text Notes 750  9950 0    118  ~ 0
-Testpoints
 $Comp
 L Connector:TestPoint W2
 U 1 1 57BD2099
@@ -2674,4 +2672,49 @@ Text Label 850  12600 2    60   ~ 0
 ES1_IN
 Text Label 6550 3250 0    60   ~ 0
 ES2_IN
+Text Notes 750  9950 0    118  ~ 0
+Testpoints
+Text Notes 5750 11200 0    118  ~ 0
+Testpoints
+$Comp
+L Connector:TestPoint W12
+U 1 1 5CD6D499
+P 8250 11600
+F 0 "W12" H 8250 11660 40  0000 C CNN
+F 1 "VIN" H 8250 11530 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 8250 11600 60  0001 C CNN
+F 3 "" H 8250 11600 60  0000 C CNN
+	1    8250 11600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint W11
+U 1 1 5CD6D65E
+P 8250 11300
+F 0 "W11" H 8250 11360 40  0000 C CNN
+F 1 "GND" H 8250 11230 40  0000 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 8250 11300 60  0001 C CNN
+F 3 "" H 8250 11300 60  0000 C CNN
+	1    8250 11300
+	-1   0    0    1   
+$EndComp
+Text Label 8250 11600 0    60   ~ 0
++15_IN
+Text Label 8250 11300 0    60   ~ 0
+GND_IN
+$Comp
+L Connector_Generic:Conn_02x01 J1
+U 1 1 5CD9CE47
+P 10400 7450
+F 0 "J1" H 10450 7667 50  0000 C CNN
+F 1 "OptionalPower" H 10450 7576 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 10400 7450 50  0001 C CNN
+F 3 "~" H 10400 7450 50  0001 C CNN
+	1    10400 7450
+	1    0    0    -1  
+$EndComp
+Text Label 10700 7450 0    60   ~ 0
++15_IN
+Text Label 10200 7450 2    60   ~ 0
+GND_IN
 $EndSCHEMATC
