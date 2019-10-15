@@ -58,7 +58,7 @@ AR Path="/5653042F/55CA0E8C" Ref="C_filter1"  Part="1"
 AR Path="/56541853/55CA0E8C" Ref="C_filter2"  Part="1" 
 F 0 "C_filter1" H 8750 3900 40  0000 L CNN
 F 1 "1n" H 8756 3715 40  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 8788 3650 30  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8788 3650 30  0000 C CNN
 F 3 "~" H 8750 3800 60  0000 C CNN
 F 4 "-" H 0   0   50  0001 C CNN "MFR"
 F 5 "-" H 0   0   50  0001 C CNN "MPN"
@@ -76,7 +76,7 @@ AR Path="/5653042F/55CA0F0E" Ref="C26"  Part="1"
 AR Path="/56541853/55CA0F0E" Ref="C27"  Part="1" 
 F 0 "C26" H 7700 2800 40  0000 L CNN
 F 1 "100n" H 7700 2600 40  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7750 2550 30  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7750 2550 30  0000 C CNN
 F 3 "~" H 7650 2700 300 0000 C CNN
 F 4 "-" H 0   0   50  0001 C CNN "MFR"
 F 5 "-" H 0   0   50  0001 C CNN "MPN"
