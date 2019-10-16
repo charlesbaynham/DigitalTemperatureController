@@ -22,11 +22,10 @@ F1 "INA330.sch" 60
 F2 "1.0V_REF" I L 6050 9050 60 
 F3 "2.5V_REF" I L 6050 9200 60 
 F4 "V_ERROR" I R 7100 8750 60 
-F5 "2.5V_OUT" I R 7100 8850 60 
-F6 "I_BIAS_T" I L 6050 8750 60 
-F7 "I_BIAS_R" I L 6050 8850 60 
-F8 "GND" I R 7100 9200 59 
-F9 "+5V" I R 7100 9100 59 
+F5 "I_BIAS_T" I L 6050 8750 60 
+F6 "I_BIAS_R" I L 6050 8850 60 
+F7 "GND" I R 7100 9200 59 
+F8 "+5V" I R 7100 9100 59 
 $EndSheet
 $Sheet
 S 6050 9600 1050 900 
@@ -36,11 +35,10 @@ F1 "INA330.sch" 60
 F2 "1.0V_REF" I L 6050 10000 60 
 F3 "2.5V_REF" I L 6050 10100 60 
 F4 "V_ERROR" I R 7100 9800 60 
-F5 "2.5V_OUT" I R 7100 9900 60 
-F6 "I_BIAS_T" I L 6050 9750 60 
-F7 "I_BIAS_R" I L 6050 9850 60 
-F8 "GND" I R 7100 10250 59 
-F9 "+5V" I R 7100 10150 59 
+F5 "I_BIAS_T" I L 6050 9750 60 
+F6 "I_BIAS_R" I L 6050 9850 60 
+F7 "GND" I R 7100 10250 59 
+F8 "+5V" I R 7100 10150 59 
 $EndSheet
 $Sheet
 S 5350 2350 1200 1700
@@ -389,33 +387,33 @@ $EndComp
 $Comp
 L Device:R_Small R_Prec3
 U 1 1 565397B5
-P 3000 8250
-F 0 "R_Prec3" H 3030 8270 50  0000 L CNN
-F 1 "33k_prec" H 3030 8210 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3000 8250 60  0001 C CNN
-F 3 "https://www.digikey.co.uk/product-detail/en/URG2012L-223-L-T05/408-1781-1-ND/4552703?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=gbp&site=us&utm_source=octopart" H 3000 8250 60  0001 C CNN
-F 4 "Susumu" H 300 0   50  0001 C CNN "MFR"
-F 5 "RG2012L-333-L-T05" H 300 0   50  0001 C CNN "MPN"
-F 6 "Digikey" H 300 0   50  0001 C CNN "SPR"
-F 7 "408-1781-1-ND" H 300 0   50  0001 C CNN "SPN"
-F 8 "-" H 300 0   50  0001 C CNN "SPURL"
-	1    3000 8250
+P 2300 7000
+F 0 "R_Prec3" H 2330 7020 50  0000 L CNN
+F 1 "33k_prec" H 2330 6960 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2300 7000 60  0001 C CNN
+F 3 "https://www.digikey.co.uk/product-detail/en/URG2012L-223-L-T05/408-1781-1-ND/4552703?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=gbp&site=us&utm_source=octopart" H 2300 7000 60  0001 C CNN
+F 4 "Susumu" H -400 -1250 50  0001 C CNN "MFR"
+F 5 "RG2012L-333-L-T05" H -400 -1250 50  0001 C CNN "MPN"
+F 6 "Digikey" H -400 -1250 50  0001 C CNN "SPR"
+F 7 "408-1781-1-ND" H -400 -1250 50  0001 C CNN "SPN"
+F 8 "-" H -400 -1250 50  0001 C CNN "SPURL"
+	1    2300 7000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Small R_Prec4
 U 1 1 565397BC
-P 3000 8550
-F 0 "R_Prec4" H 3030 8570 50  0000 L CNN
-F 1 "22k_prec" H 3030 8510 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3000 8550 60  0001 C CNN
-F 3 "https://www.digikey.co.uk/product-detail/en/URG2012L-223-L-T05/408-1781-1-ND/4552703?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=gbp&site=us&utm_source=octopart" H 3000 8550 60  0001 C CNN
-F 4 "Susumu" H 300 0   50  0001 C CNN "MFR"
-F 5 "RG2012L-223-L-T05" H 300 0   50  0001 C CNN "MPN"
-F 6 "Digikey" H 300 0   50  0001 C CNN "SPR"
-F 7 "408-1781-1-ND" H 300 0   50  0001 C CNN "SPN"
-F 8 "-" H 300 0   50  0001 C CNN "SPURL"
-	1    3000 8550
+P 2300 7300
+F 0 "R_Prec4" H 2330 7320 50  0000 L CNN
+F 1 "22k_prec" H 2330 7260 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2300 7300 60  0001 C CNN
+F 3 "https://www.digikey.co.uk/product-detail/en/URG2012L-223-L-T05/408-1781-1-ND/4552703?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=gbp&site=us&utm_source=octopart" H 2300 7300 60  0001 C CNN
+F 4 "Susumu" H -400 -1250 50  0001 C CNN "MFR"
+F 5 "RG2012L-223-L-T05" H -400 -1250 50  0001 C CNN "MPN"
+F 6 "Digikey" H -400 -1250 50  0001 C CNN "SPR"
+F 7 "408-1781-1-ND" H -400 -1250 50  0001 C CNN "SPN"
+F 8 "-" H -400 -1250 50  0001 C CNN "SPURL"
+	1    2300 7300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1120,8 +1118,8 @@ $Comp
 L Device:R_Small R_T1
 U 1 1 579C5812
 P 5200 8750
-F 0 "R_T1" V 5100 8450 50  0000 L CNN
-F 1 "1k_prec" V 5100 8650 50  0000 L CNN
+F 0 "R_T1" V 5100 8550 50  0000 L CNN
+F 1 "1k_prec" V 5200 8600 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5200 8750 60  0001 C CNN
 F 3 "https://www.digikey.co.uk/product-detail/en/URG2012L-102-L-T05/408-1774-1-ND/4552696?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=gbp&site=us&utm_source=octopart" H 5200 8750 60  0001 C CNN
 F 4 "Susumu" H 0   0   50  0001 C CNN "MFR"
@@ -1136,8 +1134,8 @@ $Comp
 L Device:R_Small R_R1
 U 1 1 579D6F87
 P 5200 8850
-F 0 "R_R1" V 5300 8750 50  0000 L CNN
-F 1 "1k_prec" V 5400 8550 50  0000 L CNN
+F 0 "R_R1" V 5300 8850 50  0000 L CNN
+F 1 "1k_prec" V 5200 8700 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5200 8850 60  0001 C CNN
 F 3 "https://www.digikey.co.uk/product-detail/en/URG2012L-102-L-T05/408-1774-1-ND/4552696?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=gbp&site=us&utm_source=octopart" H 5200 8850 60  0001 C CNN
 F 4 "Susumu" H 0   0   50  0001 C CNN "MFR"
@@ -2160,7 +2158,7 @@ L Connector:Conn_Coaxial J2
 U 1 1 5DBE7B3A
 P 4700 5500
 F 0 "J2" H 4900 5400 50  0000 C CNN
-F 1 "External ref" H 5050 5500 50  0000 C CNN
+F 1 "External 2.5v ref" H 5150 5500 50  0000 C CNN
 F 2 "Connector_Coaxial:MMCX_Molex_73415-1471_Vertical" H 4700 5500 50  0001 C CNN
 F 3 "http://datasheet.octopart.com/73415-1471-Molex-datasheet-10674667.pdf" H 4700 5500 50  0001 C CNN
 F 4 "Molex" H 0   -250 50  0001 C CNN "MFR"
@@ -2174,17 +2172,17 @@ $EndComp
 $Comp
 L Jumper:Jumper_3_Bridged12 SELECT_VRef1
 U 1 1 5DC41BC8
-P 2600 8050
-F 0 "SELECT_VRef1" V 2646 8117 50  0000 L CNN
-F 1 "Select V_ref" V 2555 8117 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_Pad1.0x1.5mm_NumberLabels" H 2600 8050 50  0001 C CNN
-F 3 "~" H 2600 8050 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    2600 8050
+P 1900 6800
+F 0 "SELECT_VRef1" V 1946 6867 50  0000 L CNN
+F 1 "Select V_ref" V 1855 6867 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_Pad1.0x1.5mm_NumberLabels" H 1900 6800 50  0001 C CNN
+F 3 "~" H 1900 6800 50  0001 C CNN
+F 4 "-" H -700 -1250 50  0001 C CNN "MFR"
+F 5 "-" H -700 -1250 50  0001 C CNN "MPN"
+F 6 "-" H -700 -1250 50  0001 C CNN "SPR"
+F 7 "-" H -700 -1250 50  0001 C CNN "SPN"
+F 8 "-" H -700 -1250 50  0001 C CNN "SPURL"
+	1    1900 6800
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -2589,9 +2587,7 @@ Text Label 7700 4550 1    60   ~ 0
 ADC_CS
 Text Label 2050 2500 0    60   ~ 0
 DAC_CS1
-Text Notes 5100 8100 0    60   ~ 0
-Optional INA330\nThese provide the error signal instead of the DSub connector if enabled. 
-Text Label 3250 8400 0    60   ~ 0
+Text Label 2550 7150 0    60   ~ 0
 INA_1.0V_REF
 Text Label 5700 10350 3    60   ~ 0
 INA_2.5V_REF
@@ -2633,8 +2629,8 @@ Text Label 1500 9150 2    60   ~ 0
 INA1_T
 Text Label 1500 8950 2    60   ~ 0
 INA1_R
-Text Notes 7700 10850 2    60   ~ 0
-Optional precision resistors on-board\ninstead of supplied via DSub connector
+Text Notes 3500 8800 3    60   ~ 0
+Optional precision resistors on-board\ninstead of supplied via RJ45 connector
 Text Label 7250 4550 1    60   ~ 0
 ADC_START
 Text Notes 4200 17500 0    60   ~ 0
@@ -2675,11 +2671,11 @@ Text Label 5350 2650 2    60   ~ 0
 ADC_DRDY
 Text Label 7500 7450 0    60   ~ 0
 ADC_2.5_REF
-Text Label 2600 8300 2    60   ~ 0
+Text Label 1900 7050 2    60   ~ 0
 ADC_2.5_REF
-Text Notes 2750 7800 0    60   ~ 0
+Text Notes 2050 6550 0    60   ~ 0
 Voltage reference\nwith optional external
-Text Label 3200 8050 0    60   ~ 0
+Text Label 2500 6800 0    60   ~ 0
 INA_2.5V_REF
 Text Label 7100 8750 0    60   ~ 0
 INA_ERROR_1
@@ -2703,7 +2699,7 @@ Text Notes 10000 5350 0    118  ~ 0
 IO ports
 Text Notes 3700 5300 0    118  ~ 0
 Isolated analog section
-Text Label 3000 8650 3    59   ~ 0
+Text Label 2300 7400 3    59   ~ 0
 ANALOG_GND
 Text Label 4150 9150 3    59   ~ 0
 ANALOG_GND
@@ -2941,7 +2937,7 @@ Text Label 5200 5700 0    60   ~ 0
 EXT_REF_N
 Text Label 5200 5800 0    59   ~ 0
 ANALOG_GND
-Text Label 2600 7800 2    60   ~ 0
+Text Label 1900 6550 2    60   ~ 0
 EXT_REF_P
 Text Label 1150 14050 2    60   ~ 0
 ES2_OUT
@@ -2990,11 +2986,11 @@ Wire Wire Line
 Wire Wire Line
 	4500 2100 4550 2100
 Wire Wire Line
-	3000 8350 3000 8400
+	2300 7100 2300 7150
 Wire Wire Line
-	3250 8400 3000 8400
+	2550 7150 2300 7150
 Wire Wire Line
-	3000 8050 3000 8150
+	2300 6800 2300 6900
 Wire Wire Line
 	5500 10450 5500 10350
 Wire Wire Line
@@ -3054,7 +3050,7 @@ Wire Wire Line
 Wire Wire Line
 	7300 6900 7200 6900
 Wire Wire Line
-	2750 8050 3000 8050
+	2050 6800 2300 6800
 Wire Wire Line
 	4800 1300 4800 1350
 Wire Wire Line
@@ -3350,7 +3346,7 @@ Wire Wire Line
 Wire Wire Line
 	4500 1850 4500 2100
 Wire Wire Line
-	3000 8400 3000 8450
+	2300 7150 2300 7200
 Wire Wire Line
 	5500 10000 6050 10000
 Wire Wire Line
@@ -3372,7 +3368,7 @@ Wire Wire Line
 Wire Wire Line
 	7650 1600 7650 1700
 Wire Wire Line
-	3000 8050 3200 8050
+	2300 6800 2500 6800
 Wire Wire Line
 	4800 1350 4800 1450
 Wire Wire Line
@@ -3549,7 +3545,7 @@ Connection ~ 2900 1400
 Connection ~ 4500 1000
 Connection ~ 4500 1850
 Connection ~ 4500 2100
-Connection ~ 3000 8400
+Connection ~ 2300 7150
 Connection ~ 5500 10000
 Connection ~ 3600 13150
 Connection ~ 2950 11850
@@ -3560,7 +3556,7 @@ Connection ~ 5650 11850
 Connection ~ 6050 12000
 Connection ~ 6050 11900
 Connection ~ 7650 1600
-Connection ~ 3000 8050
+Connection ~ 2300 6800
 Connection ~ 4800 1350
 Connection ~ 5400 7050
 Connection ~ 5400 7450
@@ -3678,4 +3674,22 @@ F 3 "" H 700 15450 50  0001 C CNN
 	1    700  15450
 	-1   0    0    1   
 $EndComp
+Text Notes 5200 8400 0    98   ~ 0
+Temperature sensing, via INA330 chips
+Wire Notes Line
+	8200 8200 8200 11000
+Wire Notes Line
+	3000 8200 3000 11000
+Wire Notes Line
+	3000 8200 8200 8200
+Wire Notes Line
+	4000 9000 3550 9000
+Wire Notes Line
+	4000 10000 3550 10000
+Text Notes 3550 8600 0    60   ~ 0
+Series resistors, required to ensure\nstability of INA330 excitation
+Wire Notes Line
+	4950 8600 5200 8600
+Wire Notes Line
+	5200 8600 5200 8650
 $EndSCHEMATC
