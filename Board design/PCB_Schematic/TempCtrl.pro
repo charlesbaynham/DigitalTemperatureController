@@ -1,4 +1,4 @@
-update=23/04/2019 12:56:27
+update=16/10/2019 11:52:32
 version=1
 last_client=kicad
 [cvpcb]
@@ -38,6 +38,8 @@ MinMicroViaDiameter=0.508
 MinMicroViaDrill=0.127
 MinHoleToHole=0.25
 TrackWidth1=0.254
+TrackWidth2=0.75
+TrackWidth3=1.5
 ViaDiameter1=0.889
 ViaDrill1=0.635
 dPairWidth1=0.254

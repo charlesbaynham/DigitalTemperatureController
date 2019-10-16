@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "C:\\Users\\cb6\\OneDrive - National Physical Laboratory\\WorkingDirs\\Complete projects\\Digital Temperature Controller\\Board design\\PCB_Schematic\\TempCtrl.sch")
-    (date "16/10/2019 11:33:27")
+    (date "16/10/2019 11:36:35")
     (tool "Eeschema (5.1.0)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -518,7 +518,7 @@
       (tstamp 57B25DF7))
     (comp (ref JP2)
       (value Jumper_NO_Small)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Custom:SmallJumperNoCourtyard)
       (fields
         (field (name MFR) -)
         (field (name MPN) -)
@@ -530,7 +530,7 @@
       (tstamp 57B84488))
     (comp (ref JP3)
       (value Jumper_NO_Small)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Custom:SmallJumperNoCourtyard)
       (fields
         (field (name MFR) -)
         (field (name MPN) -)
@@ -542,7 +542,7 @@
       (tstamp 57B893D6))
     (comp (ref JP4)
       (value Jumper_NO_Small)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Custom:SmallJumperNoCourtyard)
       (fields
         (field (name MFR) -)
         (field (name MPN) -)
@@ -554,7 +554,7 @@
       (tstamp 57B897B7))
     (comp (ref JP5)
       (value Jumper_NO_Small)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Custom:SmallJumperNoCourtyard)
       (fields
         (field (name MFR) -)
         (field (name MPN) -)
@@ -566,7 +566,7 @@
       (tstamp 57B89B9B))
     (comp (ref JP6)
       (value Jumper_NO_Small)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Custom:SmallJumperNoCourtyard)
       (fields
         (field (name MFR) -)
         (field (name MPN) -)
@@ -578,7 +578,7 @@
       (tstamp 57B8D1D2))
     (comp (ref JP7)
       (value Jumper_NO_Small)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Custom:SmallJumperNoCourtyard)
       (fields
         (field (name MFR) -)
         (field (name MPN) -)

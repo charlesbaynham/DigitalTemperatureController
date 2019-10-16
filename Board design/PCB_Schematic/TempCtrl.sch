@@ -2102,22 +2102,6 @@ F 3 "" H 1600 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Barrel_Jack_Switch CON2
-U 1 1 5DA9519C
-P 10500 7500
-F 0 "CON2" H 10500 7750 60  0000 C CNN
-F 1 "BARREL_JACK" H 10500 7300 60  0000 C CNN
-F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 10500 7500 60  0001 C CNN
-F 3 "" H 10500 7500 60  0000 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    10500 7500
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:LED D6
 U 1 1 5DAD671D
 P 10450 8650
@@ -2204,10 +2188,10 @@ F 8 "-" H 0   -250 50  0001 C CNN "SPURL"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Jumper:Jumper_3_Bridged12 JP8
+L Jumper:Jumper_3_Bridged12 SELECT_VRef1
 U 1 1 5DC41BC8
 P 2600 8050
-F 0 "JP8" V 2646 8117 50  0000 L CNN
+F 0 "SELECT_VRef1" V 2646 8117 50  0000 L CNN
 F 1 "Select V_ref" V 2555 8117 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_Pad1.0x1.5mm_NumberLabels" H 2600 8050 50  0001 C CNN
 F 3 "~" H 2600 8050 50  0001 C CNN
@@ -2231,10 +2215,10 @@ F 3 "" H 1150 14850 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Jumper:Jumper_3_Bridged12 JP9
+L Jumper:Jumper_3_Bridged12 DISABLE_OPA2
 U 1 1 5DB2FC4A
 P 4400 15350
-F 0 "JP9" V 4354 15417 50  0000 L CNN
+F 0 "DISABLE_OPA2" V 4354 15417 50  0000 L CNN
 F 1 "Disable_OPA2" V 4445 15417 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_Pad1.0x1.5mm_NumberLabels" H 4400 15350 50  0001 C CNN
 F 3 "~" H 4400 15350 50  0001 C CNN
@@ -2258,10 +2242,10 @@ F 3 "" H 4400 15550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper:Jumper_3_Bridged12 JP10
+L Jumper:Jumper_3_Bridged12 DISABLE_OPA1
 U 1 1 5DC4B2BE
 P 4650 13200
-F 0 "JP10" V 4604 13267 50  0000 L CNN
+F 0 "DISABLE_OPA1" V 4604 13267 50  0000 L CNN
 F 1 "Disable_OPA1" V 4695 13267 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_Pad1.0x1.5mm_NumberLabels" H 4650 13200 50  0001 C CNN
 F 3 "~" H 4650 13200 50  0001 C CNN
@@ -2349,22 +2333,6 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD11
-U 1 1 5DC94585
-P 1350 14450
-F 0 "CHILD11" H 1378 14476 50  0000 L CNN
-F 1 "PIN" H 1378 14385 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14450 50  0001 C CNN
-F 3 "~" H 1350 14450 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    1350 14450
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:Conn_01x01_Female CHILD10
 U 1 1 5DC946AF
 P 1350 14300
@@ -2378,22 +2346,6 @@ F 6 "-" H 0   0   50  0001 C CNN "SPR"
 F 7 "-" H 0   0   50  0001 C CNN "SPN"
 F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    1350 14300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female CHILD12
-U 1 1 5DC94A6F
-P 1350 14550
-F 0 "CHILD12" H 1378 14576 50  0000 L CNN
-F 1 "PIN" H 1378 14485 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14550 50  0001 C CNN
-F 3 "~" H 1350 14550 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    1350 14550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2548,42 +2500,10 @@ F 3 "" H 1200 15950 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD13
-U 1 1 5DD8FAE6
-P 1350 14650
-F 0 "CHILD13" H 1378 14676 50  0000 L CNN
-F 1 "PIN" H 1378 14585 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14650 50  0001 C CNN
-F 3 "~" H 1350 14650 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    1350 14650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female CHILD14
-U 1 1 5DD8FAEC
-P 1350 14750
-F 0 "CHILD14" H 1378 14776 50  0000 L CNN
-F 1 "PIN" H 1378 14685 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14750 50  0001 C CNN
-F 3 "~" H 1350 14750 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    1350 14750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:Jumper_3_Bridged12 JP12
+L Jumper:Jumper_3_Bridged12 DISABLE_OPA3
 U 1 1 5DDEE61A
 P 7250 13000
-F 0 "JP12" V 7204 13067 50  0000 L CNN
+F 0 "DISABLE_OPA3" V 7204 13067 50  0000 L CNN
 F 1 "Disable_OPA3" V 7295 13067 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_Pad1.0x1.5mm_NumberLabels" H 7250 13000 50  0001 C CNN
 F 3 "~" H 7250 13000 50  0001 C CNN
@@ -2607,10 +2527,10 @@ F 3 "" H 7250 13200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper:Jumper_3_Bridged12 JP11
+L Jumper:Jumper_3_Bridged12 DISABLE_OPA4
 U 1 1 5DE0500C
 P 6950 14200
-F 0 "JP11" V 6904 14267 50  0000 L CNN
+F 0 "DISABLE_OPA4" V 6904 14267 50  0000 L CNN
 F 1 "Disable_OPA4" V 6995 14267 50  0000 L CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_Pad1.0x1.5mm_NumberLabels" H 6950 14200 50  0001 C CNN
 F 3 "~" H 6950 14200 50  0001 C CNN
@@ -3025,10 +2945,6 @@ Text Label 1600 3500 2    60   ~ 0
 VLIM2
 Text Notes 2300 3600 0    39   ~ 0
 Optional breakout for 5V outputs, for\nuse when low noise instead of current\ncapacity is needed
-Text Label 10200 7600 2    60   ~ 0
-+15_IN
-Text Label 10050 7400 2    60   ~ 0
-GND_IN
 Text Notes 9500 8450 0    60   ~ 0
 Power indicator
 Text Label 7400 7000 0    60   ~ 0
@@ -3049,20 +2965,12 @@ Text Label 1150 13900 2    60   ~ 0
 ES1_OUT
 Text Label 1150 14200 2    60   ~ 0
 OPA1_IN+
-Text Label 1150 14450 2    60   ~ 0
-VLIM1
 Text Label 1150 14300 2    60   ~ 0
 OPA2_IN+
-Text Label 1150 14550 2    60   ~ 0
-VLIM2
 Text Label 4650 12950 0    60   ~ 0
 ES1_OUT
 Text Notes 650  13700 0    39   ~ 0
 These connectors allow connection of a \ndaughter board, for high-current usage. \nIf this option is used, OPAs 1&2 must be\ndisabled via their jumpers.\nCurrent limits will no longer be accurate, unless\nthe microprocessor code is also altered.
-Text Label 1150 14650 2    60   ~ 0
-VLIM3
-Text Label 1150 14750 2    60   ~ 0
-VLIM4
 Text Label 7250 12750 0    60   ~ 0
 ES3_OUT
 Text Label 6950 13950 0    60   ~ 0
@@ -3604,14 +3512,6 @@ Wire Notes Line
 Wire Notes Line
 	1300 3300 3500 3300
 Wire Wire Line
-	10100 7400 10200 7400
-Wire Wire Line
-	10050 7400 10100 7400
-Wire Wire Line
-	10100 7500 10100 7400
-Wire Wire Line
-	10200 7500 10100 7500
-Wire Wire Line
 	7200 7050 7300 7050
 Wire Wire Line
 	7200 7150 7300 7150
@@ -3728,9 +3628,10 @@ Connection ~ 4500 6150
 Connection ~ 4500 6250
 Connection ~ 5200 15750
 Connection ~ 5500 13550
-Connection ~ 10100 7400
 NoConn ~ 6550 3950
 NoConn ~ 7200 7350
 NoConn ~ 7200 7250
 NoConn ~ 9600 2350
+Text Notes 750  14650 0    60   ~ 0
+VLIM 1-4 are already\nbroken out above
 $EndSCHEMATC
