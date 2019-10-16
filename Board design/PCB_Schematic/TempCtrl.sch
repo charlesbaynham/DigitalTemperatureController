@@ -2075,31 +2075,15 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x05 J1
-U 1 1 5DA7A86A
-P 1800 3600
-F 0 "J1" H 1880 3642 50  0000 L CNN
-F 1 "5V_Outputs" H 1880 3551 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 1800 3600 50  0001 C CNN
-F 3 "~" H 1800 3600 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    1800 3600
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR04
 U 1 1 5DA7B605
-P 1600 3800
-F 0 "#PWR04" H 1600 3550 50  0001 C CNN
-F 1 "GND" H 1605 3627 50  0000 C CNN
-F 2 "" H 1600 3800 50  0001 C CNN
-F 3 "" H 1600 3800 50  0001 C CNN
-	1    1600 3800
-	1    0    0    -1  
+P 1600 3950
+F 0 "#PWR04" H 1600 3700 50  0001 C CNN
+F 1 "GND" H 1605 3777 50  0000 C CNN
+F 2 "" H 1600 3950 50  0001 C CNN
+F 3 "" H 1600 3950 50  0001 C CNN
+	1    1600 3950
+	0    1    1    0   
 $EndComp
 $Comp
 L Device:LED D6
@@ -2285,12 +2269,12 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD7
+L Connector:Conn_01x01_Female DB_ES1
 U 1 1 5DC9279B
 P 1350 13900
-F 0 "CHILD7" H 1378 13926 50  0000 L CNN
+F 0 "DB_ES1" H 1378 13926 50  0000 L CNN
 F 1 "PIN" H 1378 13835 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 13900 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 1350 13900 50  0001 C CNN
 F 3 "~" H 1350 13900 50  0001 C CNN
 F 4 "-" H 0   0   50  0001 C CNN "MFR"
 F 5 "-" H 0   0   50  0001 C CNN "MPN"
@@ -2301,12 +2285,12 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD8
+L Connector:Conn_01x01_Female DB_ES2
 U 1 1 5DC93ED0
 P 1350 14050
-F 0 "CHILD8" H 1378 14076 50  0000 L CNN
+F 0 "DB_ES2" H 1378 14076 50  0000 L CNN
 F 1 "PIN" H 1378 13985 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14050 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 1350 14050 50  0001 C CNN
 F 3 "~" H 1350 14050 50  0001 C CNN
 F 4 "-" H 0   0   50  0001 C CNN "MFR"
 F 5 "-" H 0   0   50  0001 C CNN "MPN"
@@ -2317,12 +2301,12 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD9
+L Connector:Conn_01x01_Female DB_OPA1
 U 1 1 5DC942A0
 P 1350 14200
-F 0 "CHILD9" H 1378 14226 50  0000 L CNN
+F 0 "DB_OPA1" H 1378 14226 50  0000 L CNN
 F 1 "PIN" H 1378 14135 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 1350 14200 50  0001 C CNN
 F 3 "~" H 1350 14200 50  0001 C CNN
 F 4 "-" H 0   0   50  0001 C CNN "MFR"
 F 5 "-" H 0   0   50  0001 C CNN "MPN"
@@ -2333,12 +2317,12 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD10
+L Connector:Conn_01x01_Female DB_OPA2
 U 1 1 5DC946AF
 P 1350 14300
-F 0 "CHILD10" H 1378 14326 50  0000 L CNN
+F 0 "DB_OPA2" H 1378 14326 50  0000 L CNN
 F 1 "PIN" H 1378 14235 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14300 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 1350 14300 50  0001 C CNN
 F 3 "~" H 1350 14300 50  0001 C CNN
 F 4 "-" H 0   0   50  0001 C CNN "MFR"
 F 5 "-" H 0   0   50  0001 C CNN "MPN"
@@ -2349,10 +2333,10 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD1
+L Connector:Conn_01x01_Female DB_GND1
 U 1 1 5DC94BF2
 P 1350 14900
-F 0 "CHILD1" H 1378 14926 50  0000 L CNN
+F 0 "DB_GND1" H 1378 14926 50  0000 L CNN
 F 1 "PIN" H 1378 14835 50  0000 L CNN
 F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 14900 50  0001 C CNN
 F 3 "~" H 1350 14900 50  0001 C CNN
@@ -2376,10 +2360,10 @@ F 3 "" H 1150 15100 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD2
+L Connector:Conn_01x01_Female DB_GND2
 U 1 1 5DCABB11
 P 1350 15150
-F 0 "CHILD2" H 1378 15176 50  0000 L CNN
+F 0 "DB_GND2" H 1378 15176 50  0000 L CNN
 F 1 "PIN" H 1378 15085 50  0000 L CNN
 F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 15150 50  0001 C CNN
 F 3 "~" H 1350 15150 50  0001 C CNN
@@ -2403,10 +2387,10 @@ F 3 "" H 1150 15350 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD3
+L Connector:Conn_01x01_Female DB_GND3
 U 1 1 5DCC1E62
 P 1350 15400
-F 0 "CHILD3" H 1378 15426 50  0000 L CNN
+F 0 "DB_GND3" H 1378 15426 50  0000 L CNN
 F 1 "PIN" H 1378 15335 50  0000 L CNN
 F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1350 15400 50  0001 C CNN
 F 3 "~" H 1350 15400 50  0001 C CNN
@@ -2419,10 +2403,10 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD4
+L Connector:Conn_01x01_Female DB_VCC1
 U 1 1 5DCD876F
 P 1400 15550
-F 0 "CHILD4" H 1428 15576 50  0000 L CNN
+F 0 "DB_VCC1" H 1428 15576 50  0000 L CNN
 F 1 "PIN" H 1428 15485 50  0000 L CNN
 F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1400 15550 50  0001 C CNN
 F 3 "~" H 1400 15550 50  0001 C CNN
@@ -2446,10 +2430,10 @@ F 3 "" H 1200 15550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD5
+L Connector:Conn_01x01_Female DB_VCC2
 U 1 1 5DCEFC7A
 P 1400 15750
-F 0 "CHILD5" H 1428 15776 50  0000 L CNN
+F 0 "DB_VCC2" H 1428 15776 50  0000 L CNN
 F 1 "PIN" H 1428 15685 50  0000 L CNN
 F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1400 15750 50  0001 C CNN
 F 3 "~" H 1400 15750 50  0001 C CNN
@@ -2473,10 +2457,10 @@ F 3 "" H 1200 15750 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female CHILD6
+L Connector:Conn_01x01_Female DB_VCC3
 U 1 1 5DD05F71
 P 1400 15950
-F 0 "CHILD6" H 1428 15976 50  0000 L CNN
+F 0 "DB_VCC3" H 1428 15976 50  0000 L CNN
 F 1 "PIN" H 1428 15885 50  0000 L CNN
 F 2 "TestPoint:TestPoint_THTPad_3.0x3.0mm_Drill1.5mm" H 1400 15950 50  0001 C CNN
 F 3 "~" H 1400 15950 50  0001 C CNN
@@ -2937,9 +2921,9 @@ Text Label 6550 3250 0    60   ~ 0
 ES2_IN
 Text Label 1600 3400 2    60   ~ 0
 VLIM1
-Text Label 1600 3600 2    60   ~ 0
+Text Label 1600 3750 2    60   ~ 0
 VLIM3
-Text Label 1600 3700 2    60   ~ 0
+Text Label 1600 3850 2    60   ~ 0
 VLIM4
 Text Label 1600 3500 2    60   ~ 0
 VLIM2
@@ -3634,4 +3618,37 @@ NoConn ~ 7200 7250
 NoConn ~ 9600 2350
 Text Notes 750  14650 0    60   ~ 0
 VLIM 1-4 are already\nbroken out above
+$Comp
+L Connector_Generic:Conn_01x03 J1
+U 1 1 5DBA25BD
+P 1800 3500
+F 0 "J1" H 1880 3542 50  0000 L CNN
+F 1 "5V_Outputs_1" H 1880 3451 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1800 3500 50  0001 C CNN
+F 3 "~" H 1800 3500 50  0001 C CNN
+	1    1800 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J3
+U 1 1 5DBA3E57
+P 1800 3850
+F 0 "J3" H 1880 3892 50  0000 L CNN
+F 1 "5V_Outputs_2" H 1880 3801 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1800 3850 50  0001 C CNN
+F 3 "~" H 1800 3850 50  0001 C CNN
+	1    1800 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0118
+U 1 1 5DBA4B47
+P 1600 3600
+F 0 "#PWR0118" H 1600 3350 50  0001 C CNN
+F 1 "GND" H 1605 3427 50  0000 C CNN
+F 2 "" H 1600 3600 50  0001 C CNN
+F 3 "" H 1600 3600 50  0001 C CNN
+	1    1600 3600
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
