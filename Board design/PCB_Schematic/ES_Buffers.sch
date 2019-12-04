@@ -273,9 +273,9 @@ F 1 "74LS125" H 4900 2176 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 1950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls125a" H 4900 1950 50  0001 C CNN
 F 4 "Texas Instruments" H 0   0   50  0001 C CNN "MFR"
-F 5 "SN74LS125AD" H 0   0   50  0001 C CNN "MPN"
+F 5 "SN74LS125ADBR" H 0   0   50  0001 C CNN "MPN"
 F 6 "Digikey" H 0   0   50  0001 C CNN "SPR"
-F 7 "296-1637-5-ND" H 0   0   50  0001 C CNN "SPN"
+F 7 "296-31847-2-ND" H 0   0   50  0001 C CNN "SPN"
 F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    4900 1950
 	1    0    0    -1  
