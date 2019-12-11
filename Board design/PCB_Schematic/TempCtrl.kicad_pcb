@@ -67,7 +67,7 @@
     (pad_drill 0.84)
     (pad_to_mask_clearance 0)
     (aux_axis_origin 0 0)
-    (visible_elements 7FFFEF7F)
+    (visible_elements 7FFFFFFF)
     (pcbplotparams
       (layerselection 0x010fc_ffffffff)
       (usegerberextensions true)
@@ -4509,8 +4509,8 @@
     (descr "Through hole pin header")
     (tags "pin header")
     (path /582FEE26)
-    (fp_text reference JP1 (at 0 -5.1 180) (layer F.SilkS) hide
-      (effects (font (size 1 1) (thickness 0.15)))
+    (fp_text reference JP1 (at -2.2 -0.1 270) (layer F.SilkS)
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value "DISABLE FLASH" (at 3.3 2.7 270) (layer F.SilkS)
       (effects (font (size 0.75 0.75) (thickness 0.15)))
