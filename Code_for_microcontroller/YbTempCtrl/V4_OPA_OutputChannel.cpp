@@ -77,10 +77,15 @@ namespace YbCtrl {
 	CtrlChannelReturn V4_OPA_OutputChannel::isOverheated(bool& state) {
 		CONSOLE_LOG_LN(F("V4_OPA_OutputChannel::isOverheated(ref)"));
 		
-		if (_lastCtrl == -1) {
-			state = false;
+		if (ES_FLOAT_ON) {
+			if (_lastCtrl == -1) {
+				state = false;
+			} else {
+				state = ! digitalRead(_OPA_ES);
+			}
 		} else {
-			state = ! digitalRead(_OPA_ES);
+			state = false;
+			return CtrlChannelReturn::NOT_IMPLEMENTED;
 		}
 
 		return CtrlChannelReturn::NO_ERROR;
