@@ -95,9 +95,15 @@ namespace YbCtrl {
 		 * @brief      Enable OPA output
 		 */
 		virtual void enableOutput() {
-			// Float the E/S pin
-			pinMode(_OPA_ES, INPUT);
-
+			if (ES_FLOAT_ON) {
+				// Float the E/S pin
+				pinMode(_OPA_ES, INPUT);
+			} else {
+				// Write HIGH on the E/S pin
+				pinMode(_OPA_ES, OUTPUT);
+				digitalWrite(_OPA_ES, HIGH);
+			}
+			
 			CONSOLE_LOG_LN(F("V4_OPA_OutputChannel::Enabled output"));
 		}
 

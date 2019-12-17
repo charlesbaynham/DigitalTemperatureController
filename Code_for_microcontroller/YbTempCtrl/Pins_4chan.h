@@ -35,6 +35,9 @@ const uint8_t ADC_POW     = 12;   /*!< ADC channel for chip power level measurem
 
 const uint8_t ADC_TESTER = 7;
 
+// E/S pin settings
+const bool ES_FLOAT_ON = false;    /*!< Should the E/S pins float or be driven high to enable the OPAs? */
+
 // DAC pins
 const uint8_t DAC_CS 			= 10;		/*!< Chip select pin of the DAC on the ATMega */
 const uint8_t OPA_ES1 			= A1;		/*!< E/S pin for first OPA */

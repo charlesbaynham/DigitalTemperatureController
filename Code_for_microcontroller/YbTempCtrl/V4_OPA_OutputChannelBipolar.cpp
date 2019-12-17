@@ -60,9 +60,17 @@ namespace YbCtrl {
 	// Enable OPA output
 	void V4_OPA_OutputChannelBipolar::enableOutput() {
 		
-		// Float both E/S pins
-		pinMode(_OPA_ES, INPUT);
-		pinMode(_OPA_ESAlt, INPUT);
+		if (ES_FLOAT_ON) {
+			// Float both E/S pins
+			pinMode(_OPA_ES, INPUT);
+			pinMode(_OPA_ESAlt, INPUT);
+		} else {
+			// Write HIGH on both pins
+			pinMode(_OPA_ES, OUTPUT);
+			pinMode(_OPA_ESAlt, OUTPUT);
+			digitalWrite(_OPA_ES, HIGH);
+			digitalWrite(_OPA_ESAlt, HIGH);
+		}
 
 		CONSOLE_LOG_LN("V4_OPA_OutputChannelBipolar::Enabled output on pins ");
 		CONSOLE_LOG(_OPA_ES);
