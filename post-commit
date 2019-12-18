@@ -1,6 +1,9 @@
 #!/bin/sh
+## This code should be copied into .git/hooks/post-commit
+## It will run automatically after every new commit, and will copy the newest GIT hash
+## into a file to be included by the c code. 
 
-version_str=`git rev-parse --short HEAD`
+version_str=`git describe --always --dirty=-D`
 top_level_dir=$(git rev-parse --show-toplevel)
 filename=Code_for_microcontroller/YbTempCtrl/latest_hash.h
 
