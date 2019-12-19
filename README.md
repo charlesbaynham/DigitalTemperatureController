@@ -18,7 +18,7 @@ This README file gives a brief overview of the device, but a much more detailed 
 Output
 ------
 
-Output is by either OPA458 high power opamps. Output can be up to 1A continuous, at voltages up to ±24V depending on the power supply.
+Output is by OPA458 high power opamps. Output can be up to 1A continuous, at voltages up to ±15V depending on the power supply.
 
 Input
 -----
@@ -48,6 +48,16 @@ Manual
 ------
 
 You should go read it now. It's in `./Manual`. 
+
+Extensions
+----------
+
+The board is designed to break out the important analog (and come digital) connections, so that additional functionality can be enabled by adding a daughter-board to the main board. For example, you might 
+* Require higher output currents
+* Not need current driving capability, but would prefer very low-noise output instead
+* Need an extreme level of stability, so use an external, ovenized voltage reference
+
+None of these daughter-boards yet exist, but the interface required to create them exists from V5 onwards. 
 
 Initial setup
 -------------
