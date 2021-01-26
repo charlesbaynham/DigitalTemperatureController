@@ -7530,7 +7530,7 @@
   (gr_text "DC power input\n7V <= V <= 24V" (at 177.3555 56.3245 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.25)) (justify left))
   )
-  (gr_text "Temperature Controller V5.2 - Charles Baynham 2020" (at 173 133) (layer F.Cu)
+  (gr_text "Temperature Controller V5.3 - Charles Baynham 2020" (at 173 133) (layer F.Cu)
     (effects (font (size 1.5 1.5) (thickness 0.3) italic) (justify left))
   )
   (gr_text "For a  PCB Train 4 Layer M/L 1.6 mm FR4 1 oz board:\n50 Ohm impedance => 0.40mm width" (at 213.25 158) (layer Dwgs.User)
