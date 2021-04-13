@@ -480,33 +480,6 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C16
-U 1 1 56AA32F6
-P 3750 13250
-F 0 "C16" H 3750 13350 40  0000 L CNN
-F 1 "10n" H 3756 13165 40  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3788 13100 30  0001 C CNN
-F 3 "" H 3750 13250 60  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    3750 13250
-	0    1    1    0   
-$EndComp
-$Comp
-L power:Earth_Clean #PWR016
-U 1 1 56AA3632
-P 3900 13250
-F 0 "#PWR016" H 4150 13250 50  0001 C CNN
-F 1 "Earth_Clean" H 4200 13100 50  0001 C CNN
-F 2 "" H 3900 13200 60  0000 C CNN
-F 3 "" H 3900 13200 60  0000 C CNN
-	1    3900 13250
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Device:CP C12
 U 1 1 56AA4316
 P 3150 12000
@@ -575,33 +548,6 @@ F 7 "2496316" H 0   0   50  0001 C CNN "SPN"
 F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    6200 12600
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C17
-U 1 1 56AB6895
-P 6450 13250
-F 0 "C17" H 6450 13350 40  0000 L CNN
-F 1 "10n" H 6456 13165 40  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6488 13100 30  0001 C CNN
-F 3 "" H 6450 13250 60  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    6450 13250
-	0    1    1    0   
-$EndComp
-$Comp
-L power:Earth_Clean #PWR019
-U 1 1 56AB689D
-P 6600 13250
-F 0 "#PWR019" H 6850 13250 50  0001 C CNN
-F 1 "Earth_Clean" H 6900 13100 50  0001 C CNN
-F 2 "" H 6600 13200 60  0000 C CNN
-F 3 "" H 6600 13200 60  0000 C CNN
-	1    6600 13250
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:CP C13
@@ -1308,33 +1254,6 @@ F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C24
-U 1 1 57D06093
-P 3450 15600
-F 0 "C24" H 3450 15700 40  0000 L CNN
-F 1 "10n" H 3456 15515 40  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3488 15450 30  0001 C CNN
-F 3 "" H 3450 15600 60  0001 C CNN
-F 4 "-" H 0   150 50  0001 C CNN "MFR"
-F 5 "-" H 0   150 50  0001 C CNN "MPN"
-F 6 "-" H 0   150 50  0001 C CNN "SPR"
-F 7 "-" H 0   150 50  0001 C CNN "SPN"
-F 8 "-" H 0   150 50  0001 C CNN "SPURL"
-	1    3450 15600
-	0    1    1    0   
-$EndComp
-$Comp
-L power:Earth_Clean #PWR036
-U 1 1 57D0609A
-P 3600 15600
-F 0 "#PWR036" H 3850 15600 50  0001 C CNN
-F 1 "Earth_Clean" H 3900 15450 50  0001 C CNN
-F 2 "" H 3600 15550 60  0000 C CNN
-F 3 "" H 3600 15550 60  0000 C CNN
-	1    3600 15600
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Device:CP C20
 U 1 1 57D060A2
 P 2850 14200
@@ -1403,33 +1322,6 @@ F 7 "2496316" H 0   0   50  0001 C CNN "SPN"
 F 8 "-" H 0   0   50  0001 C CNN "SPURL"
 	1    5900 14800
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C25
-U 1 1 57D060C5
-P 6150 15450
-F 0 "C25" H 6150 15550 40  0000 L CNN
-F 1 "10n" H 6156 15365 40  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6188 15300 30  0001 C CNN
-F 3 "" H 6150 15450 60  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "SPR"
-F 7 "-" H 0   0   50  0001 C CNN "SPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPURL"
-	1    6150 15450
-	0    1    1    0   
-$EndComp
-$Comp
-L power:Earth_Clean #PWR039
-U 1 1 57D060CC
-P 6300 15450
-F 0 "#PWR039" H 6550 15450 50  0001 C CNN
-F 1 "Earth_Clean" H 6600 15300 50  0001 C CNN
-F 2 "" H 6300 15400 60  0000 C CNN
-F 3 "" H 6300 15400 60  0000 C CNN
-	1    6300 15450
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:CP C21
@@ -3425,15 +3317,11 @@ Wire Wire Line
 Wire Wire Line
 	5500 10000 6050 10000
 Wire Wire Line
-	3600 13150 3600 13250
-Wire Wire Line
 	2950 11850 2950 12000
 Wire Wire Line
 	3350 12000 3350 12100
 Wire Wire Line
 	3350 11900 3350 12000
-Wire Wire Line
-	6300 13150 6300 13250
 Wire Wire Line
 	5650 11850 5650 12000
 Wire Wire Line
@@ -3486,8 +3374,6 @@ Wire Wire Line
 	3050 14200 3050 14300
 Wire Wire Line
 	3050 14100 3050 14200
-Wire Wire Line
-	6000 15350 6000 15450
 Wire Wire Line
 	5350 14050 5350 14200
 Wire Wire Line
@@ -3636,11 +3522,9 @@ Connection ~ 4500 1850
 Connection ~ 4500 2100
 Connection ~ 2300 7150
 Connection ~ 5500 10000
-Connection ~ 3600 13150
 Connection ~ 2950 11850
 Connection ~ 3350 12000
 Connection ~ 3350 11900
-Connection ~ 6300 13150
 Connection ~ 5650 11850
 Connection ~ 6050 12000
 Connection ~ 6050 11900
@@ -3665,7 +3549,6 @@ Connection ~ 6950 12600
 Connection ~ 2650 14050
 Connection ~ 3050 14200
 Connection ~ 3050 14100
-Connection ~ 6000 15350
 Connection ~ 5350 14050
 Connection ~ 5750 14200
 Connection ~ 5750 14100

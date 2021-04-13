@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L TempCtrl-rescue:ATmega328P-AU-MCU_Microchip_ATmega IC1
+L MCU_Microchip_ATmega:ATmega328P-AU IC1
 U 1 1 56BA55CF
 P 1900 3900
 AR Path="/56BA55CF" Ref="IC1"  Part="1" 
