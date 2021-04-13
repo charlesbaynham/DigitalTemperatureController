@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:TempCtrl-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -15,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATmega:ATmega328P-AU IC1
+L TempCtrl-rescue:ATmega328P-AU-MCU_Microchip_ATmega IC1
 U 1 1 56BA55CF
 P 1900 3900
 AR Path="/56BA55CF" Ref="IC1"  Part="1" 
