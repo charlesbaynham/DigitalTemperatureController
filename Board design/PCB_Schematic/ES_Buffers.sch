@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+LIBS:TempCtrl-cache
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -65,7 +66,7 @@ AR Path="/5CC83A23" Ref="U?"  Part="2"
 AR Path="/5CC68713/5CC83A23" Ref="U18"  Part="2" 
 F 0 "U18" H 4900 3167 50  0000 C CNN
 F 1 "74LS125" H 4900 3076 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 2850 50  0001 C CNN
+F 2 "Package_SO:SSOP-14_5.3x6.2mm_P0.65mm" H 4900 2850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls125a" H 4900 2850 50  0001 C CNN
 F 4 "Texas Instruments" H 0   0   50  0001 C CNN "MFR"
 F 5 "SN74LS125ADBR" H 0   0   50  0001 C CNN "MPN"
@@ -127,7 +128,7 @@ AR Path="/5CC83A40" Ref="U?"  Part="3"
 AR Path="/5CC68713/5CC83A40" Ref="U18"  Part="3" 
 F 0 "U18" H 4900 4067 50  0000 C CNN
 F 1 "74LS125" H 4900 3976 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 3750 50  0001 C CNN
+F 2 "Package_SO:SSOP-14_5.3x6.2mm_P0.65mm" H 4900 3750 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls125a" H 4900 3750 50  0001 C CNN
 F 4 "Texas Instruments" H 0   0   50  0001 C CNN "MFR"
 F 5 "SN74LS125AD" H 0   0   50  0001 C CNN "MPN"
@@ -189,7 +190,7 @@ AR Path="/5CC83A5D" Ref="U?"  Part="4"
 AR Path="/5CC68713/5CC83A5D" Ref="U18"  Part="4" 
 F 0 "U18" H 4900 4967 50  0000 C CNN
 F 1 "74LS125" H 4900 4876 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 4650 50  0001 C CNN
+F 2 "Package_SO:SSOP-14_5.3x6.2mm_P0.65mm" H 4900 4650 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls125a" H 4900 4650 50  0001 C CNN
 F 4 "Texas Instruments" H 0   0   50  0001 C CNN "MFR"
 F 5 "SN74LS125AD" H 0   0   50  0001 C CNN "MPN"
@@ -251,7 +252,7 @@ AR Path="/5CC83A80" Ref="U?"  Part="5"
 AR Path="/5CC68713/5CC83A80" Ref="U18"  Part="5" 
 F 0 "U18" H 7050 5617 50  0000 C CNN
 F 1 "74LS125" H 7050 5526 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 7050 5300 50  0001 C CNN
+F 2 "Package_SO:SSOP-14_5.3x6.2mm_P0.65mm" H 7050 5300 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls125a" H 7050 5300 50  0001 C CNN
 F 4 "Texas Instruments" H 0   0   50  0001 C CNN "MFR"
 F 5 "SN74LS125AD" H 0   0   50  0001 C CNN "MPN"
@@ -269,7 +270,7 @@ AR Path="/5CC83A7A" Ref="U?"  Part="1"
 AR Path="/5CC68713/5CC83A7A" Ref="U18"  Part="1" 
 F 0 "U18" H 4900 2267 50  0000 C CNN
 F 1 "74LS125" H 4900 2176 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4900 1950 50  0001 C CNN
+F 2 "Package_SO:SSOP-14_5.3x6.2mm_P0.65mm" H 4900 1950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls125a" H 4900 1950 50  0001 C CNN
 F 4 "Texas Instruments" H 0   0   50  0001 C CNN "MFR"
 F 5 "SN74LS125ADBR" H 0   0   50  0001 C CNN "MPN"
